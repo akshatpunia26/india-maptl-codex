@@ -196,6 +196,7 @@ export function LeftRail({
   const [lensSubStep, setLensSubStep] = useState<"era" | "interpretation">("era");
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (stage !== "step-2") setLensSubStep("era");
   }, [stage]);
 

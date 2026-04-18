@@ -1,687 +1,265 @@
 "use client";
 
-import { toPng } from "html-to-image";
-import Image from "next/image";
-import { startTransition, useEffect, useMemo, useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import { useEffect, useMemo, useState } from "react";
 
-import { LeftRail } from "@/components/panels/LeftRail";
-import { RightPanel } from "@/components/panels/RightPanel";
-import {
-  FeasibleStop,
-  LensesGenerationResult,
-  NormalizedPlaceCandidate,
-  TimelineGenerationResult,
-} from "@/lib/history/types";
-import { buildStoryPayload } from "@/lib/journey/story";
-import { loadPersistedJourneyState, savePersistedJourneyState } from "@/lib/journey/storage";
-import {
-  AppStage,
-  MapDestination,
-  PersistedJourneyState,
-  SavedJourney,
-  SetupState,
-  StoryPayload,
-  StoryTab,
-} from "@/lib/journey/types";
-import { toMapDestination } from "@/lib/utils/map";
+import { Place } from "@/lib/mock/types";
+import { CityContext, Curiosity, JourneyConcept, RouteData, StoryPack, WalkCandidatePlace } from "@/lib/walk/types";
 
-function getDefaultSetupState(): SetupState {
-  return {
-    destinationInput: "",
-    selectedPlace: null,
-    tripLength: "1 day",
-    selectedEra: null,
-    selectedInterpretationLens: null,
-    pace: "Balanced",
-  };
+const MapCanvas = dynamic(() => import("@/components/map/MapCanvas"), { ssr: false });
+
+type Stage = "page-1" | "page-2" | "page-3" | "page-4";
+
+const durationOptions = ["90 min", "2 hours", "3 hours"];
+const curiosityOptions: Curiosity[] = ["power", "sacred", "markets", "architecture", "ruins", "river", "old city", "surprise me"];
+
+function asPlaces(stops: WalkCandidatePlace[]): Place[] {
+  return stops.map((stop) => ({
+    id: stop.id,
+    title: stop.title,
+    lat: stop.lat,
+    lng: stop.lng,
+    era: stop.chronologyLabel,
+    themeTags: [stop.siteType],
+    blurb: stop.historicalSummary,
+    dateLabel: stop.chronologyLabel,
+    iconKey: "archive",
+  }));
 }
 
-async function requestJson<TResponse>(input: RequestInfo, init?: RequestInit): Promise<TResponse> {
-  const response = await fetch(input, init);
-  const payload = await response.json().catch(() => null);
-
-  if (!response.ok) {
-    throw new Error(
-      typeof payload?.error === "string" ? payload.error : `Request failed: ${response.status}`,
-    );
-  }
-
-  return payload as TResponse;
-}
-
-function dedupeJourneys(journeys: SavedJourney[]) {
-  const seen = new Set<string>();
-
-  return journeys.filter((journey) => {
-    if (seen.has(journey.id)) {
-      return false;
-    }
-
-    seen.add(journey.id);
-    return true;
-  });
-}
-
-function PlusIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-      <path d="M7 1v12M1 7h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
-  );
+async function postJson<T>(url: string, body: unknown): Promise<T> {
+  const response = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  const payload = await response.json();
+  if (!response.ok) throw new Error(payload.error ?? "Request failed");
+  return payload as T;
 }
 
 export function AppShell() {
-  const mapCaptureRef = useRef<HTMLDivElement | null>(null);
+  const [stage, setStage] = useState<Stage>("page-1");
+  const [city, setCity] = useState("Agra");
+  const [duration, setDuration] = useState("2 hours");
+  const [curiosity, setCuriosity] = useState<Curiosity>("power");
+  const [cityContext, setCityContext] = useState<CityContext | null>(null);
+  const [journeys, setJourneys] = useState<JourneyConcept[]>([]);
+  const [selectedJourney, setSelectedJourney] = useState<JourneyConcept | null>(null);
+  const [orderedStops, setOrderedStops] = useState<WalkCandidatePlace[]>([]);
+  const [routeData, setRouteData] = useState<RouteData | null>(null);
+  const [storyPack, setStoryPack] = useState<StoryPack | null>(null);
+  const [activeStopIndex, setActiveStopIndex] = useState(0);
+  const [loading, setLoading] = useState<string | null>(null);
+  const [status, setStatus] = useState<string | null>(null);
+  const [askInput, setAskInput] = useState("");
+  const [askAnswer, setAskAnswer] = useState<string | null>(null);
+  const [trivia, setTrivia] = useState<Array<{ type: string; text: string }>>([]);
+  const [token, setToken] = useState<{ tokenTitle: string; unlockLine: string } | null>(() => {
+    if (typeof window === "undefined") return null;
+    const stored = window.localStorage.getItem("maptl-v3");
+    if (!stored) return null;
+    return JSON.parse(stored).token ?? null;
+  });
+  const [storyCard, setStoryCard] = useState<{ hook: string; closingLine: string } | null>(() => {
+    if (typeof window === "undefined") return null;
+    const stored = window.localStorage.getItem("maptl-v3");
+    if (!stored) return null;
+    return JSON.parse(stored).storyCard ?? null;
+  });
+  const [narration, setNarration] = useState<string | null>(null);
 
-  const [stage, setStage] = useState<AppStage>("intro");
-  const [setupState, setSetupState] = useState<SetupState>(getDefaultSetupState);
-  const [placeCandidates, setPlaceCandidates] = useState<NormalizedPlaceCandidate[]>([]);
-  const [destination, setDestination] = useState<MapDestination | null>(null);
-  const [dossierKey, setDossierKey] = useState<string | null>(null);
-  const [lensResult, setLensResult] = useState<LensesGenerationResult | null>(null);
-  const [savedJourneys, setSavedJourneys] = useState<SavedJourney[]>([]);
-  const [selectedJourneyId, setSelectedJourneyId] = useState("");
-  const [activeChapterIndex, setActiveChapterIndex] = useState(0);
-  const [storyTab, setStoryTab] = useState<StoryTab>("info");
-  const [isSuggestionsLoading, setIsSuggestionsLoading] = useState(false);
-  const [isSetupLoading, setIsSetupLoading] = useState(false);
-  const [isStoryLoading, setIsStoryLoading] = useState(false);
-  const [isMapFullscreen, setIsMapFullscreen] = useState(false);
-  const [showSatellite, setShowSatellite] = useState(false);
-  const [isExporting, setIsExporting] = useState(false);
-  const [statusMessage, setStatusMessage] = useState<string | null>(null);
-  const [exportMessage, setExportMessage] = useState<string | null>(null);
-  const [isHydrated, setIsHydrated] = useState(false);
-  const destinationQuery = setupState.destinationInput.trim();
-  const visiblePlaceCandidates = destinationQuery.length >= 2 ? placeCandidates : [];
+  const currentStop = orderedStops[activeStopIndex];
+  const currentNarrative = storyPack?.stopNarratives.find((stop) => stop.stopId === currentStop?.id);
 
-  const currentJourney = useMemo(
-    () => savedJourneys.find((journey) => journey.id === selectedJourneyId) ?? null,
-    [savedJourneys, selectedJourneyId],
-  );
-  const currentStory: StoryPayload | null = currentJourney?.story ?? null;
-  const chapterCount = currentJourney?.story.narrative.chapters.length ?? 0;
-  const resolvedChapterIndex = chapterCount > 0 ? Math.min(activeChapterIndex, chapterCount - 1) : 0;
-
-  useEffect(() => {
-    let cancelled = false;
-
-    queueMicrotask(() => {
-      if (cancelled) {
-        return;
-      }
-
-      const persisted = loadPersistedJourneyState();
-
-      if (persisted) {
-        const journeys = dedupeJourneys(persisted.savedJourneys ?? []);
-        const selected = journeys.find((journey) => journey.id === persisted.selectedJourneyId) ?? null;
-
-        setSavedJourneys(journeys);
-        setSetupState(persisted.setupState ?? getDefaultSetupState());
-        setDestination(persisted.destination ?? null);
-        setDossierKey(persisted.dossierKey ?? null);
-        setLensResult(persisted.lensResult ?? null);
-        setSelectedJourneyId(selected?.id ?? "");
-        setActiveChapterIndex(persisted.activeChapterIndex ?? 0);
-        setStoryTab(persisted.storyTab ?? "info");
-        setStage(persisted.stage ?? "intro");
-      }
-
-      setIsHydrated(true);
-    });
-
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  const selectedPlace = setupState.selectedPlace;
 
   useEffect(() => {
-    if (!isHydrated || stage !== "step-1") {
-      return;
-    }
+    localStorage.setItem("maptl-v3", JSON.stringify({ token, storyCard }));
+  }, [token, storyCard]);
 
-    const query = destinationQuery;
-    if (query.length < 2) {
-      return;
-    }
+  const walkContext = useMemo(() => {
+    if (!selectedJourney || !storyPack || !routeData || !cityContext) return null;
+    return { city: cityContext.city, journey: selectedJourney, orderedStops, routeData, storyPack };
+  }, [cityContext, orderedStops, routeData, selectedJourney, storyPack]);
 
-    // Skip search when the input reflects a confirmed place selection
-    if (selectedPlace?.canonicalLabel === query) {
-      return;
-    }
-
-    let cancelled = false;
-    const timeout = window.setTimeout(async () => {
-      setIsSuggestionsLoading(true);
-      try {
-        const response = await requestJson<{ candidates: NormalizedPlaceCandidate[] }>(
-          `/api/place/resolve?query=${encodeURIComponent(query)}`,
-        );
-        if (!cancelled) {
-          setPlaceCandidates(response.candidates);
-        }
-      } catch {
-        if (!cancelled) {
-          setPlaceCandidates([]);
-        }
-      } finally {
-        if (!cancelled) {
-          setIsSuggestionsLoading(false);
-        }
-      }
-    }, 250);
-
-    return () => {
-      cancelled = true;
-      window.clearTimeout(timeout);
-    };
-  }, [destinationQuery, isHydrated, stage, selectedPlace]);
-
-  useEffect(() => {
-    if (!isHydrated) {
-      return;
-    }
-
-    const persisted: PersistedJourneyState = {
-      version: 2,
-      stage,
-      setupState,
-      destination,
-      dossierKey,
-      lensResult,
-      savedJourneys,
-      selectedJourneyId,
-      activeChapterIndex: resolvedChapterIndex,
-      storyTab,
-    };
-
-    savePersistedJourneyState(persisted);
-  }, [
-    destination,
-    dossierKey,
-    isHydrated,
-    lensResult,
-    resolvedChapterIndex,
-    savedJourneys,
-    selectedJourneyId,
-    setupState,
-    stage,
-    storyTab,
-  ]);
-
-  const applyJourneySelection = (journey: SavedJourney) => {
-    setSelectedJourneyId(journey.id);
-    setSetupState(journey.setup);
-    setDestination(journey.destination);
-    setDossierKey(journey.dossierKey);
-    setLensResult(journey.lensResult);
-    setActiveChapterIndex(0);
-    setStoryTab("info");
-    setIsMapFullscreen(false);
-    setShowSatellite(false);
-    setExportMessage(null);
-    setStatusMessage(journey.story.warnings[0] ?? null);
-    setStage(journey.status === "ended" ? "summary" : "step-3");
-  };
-
-  const resetDraft = (nextStage: AppStage) => {
-    setStage(nextStage);
-    setSetupState(getDefaultSetupState());
-    setPlaceCandidates([]);
-    setDestination(null);
-    setDossierKey(null);
-    setLensResult(null);
-    setSelectedJourneyId("");
-    setActiveChapterIndex(0);
-    setStoryTab("info");
-    setIsMapFullscreen(false);
-    setShowSatellite(false);
-    setStatusMessage(null);
-    setExportMessage(null);
-  };
-
-  const handleContinueToLens = async () => {
-    const query = setupState.destinationInput.trim();
-    if (!query || isSetupLoading) {
-      return;
-    }
-
-    setIsSetupLoading(true);
-    setStatusMessage(null);
-
+  const runFindJourneys = async () => {
+    setLoading("city");
+    setStatus(null);
     try {
-      const selectedPlace =
-        setupState.selectedPlace ??
-        placeCandidates[0] ??
-        (
-          await requestJson<{ candidates: NormalizedPlaceCandidate[] }>(
-            `/api/place/resolve?query=${encodeURIComponent(query)}`,
-          )
-        ).candidates[0];
-
-      if (!selectedPlace) {
-        throw new Error("No matching place was found. Try a broader city name.");
-      }
-
-      const dossierResponse = await requestJson<{
-        dossier: {
-          key: string;
-          place: NormalizedPlaceCandidate;
-          coverageConfidence: number;
-          warnings: string[];
-        };
-      }>("/api/dossier/build", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          place: selectedPlace,
-        }),
+      const context = await postJson<CityContext>("/api/walk/city-context", { city, duration, curiosity });
+      const journeyResult = await postJson<{ journeys: JourneyConcept[] }>("/api/walk/journeys", {
+        city: context.city,
+        curiosity: context.resolvedCuriosity,
+        duration,
+        candidates: context.candidates,
       });
-
-      const lensesResponse = await requestJson<
-        { dossierKey: string } & LensesGenerationResult
-      >("/api/lenses/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          dossierKey: dossierResponse.dossier.key,
-        }),
-      });
-
-      startTransition(() => {
-        setSetupState((current) => ({
-          ...current,
-          destinationInput: dossierResponse.dossier.place.canonicalLabel,
-          selectedPlace: dossierResponse.dossier.place,
-          selectedEra: lensesResponse.recommendedDefaults.era ?? null,
-          selectedInterpretationLens:
-            lensesResponse.recommendedDefaults.interpretationLens ?? null,
-        }));
-        setPlaceCandidates([]);
-        setDestination(toMapDestination(dossierResponse.dossier.place));
-        setDossierKey(dossierResponse.dossier.key);
-        setLensResult(lensesResponse);
-        setStage("step-2");
-        setStatusMessage(
-          lensesResponse.warnings[0] ??
-            dossierResponse.dossier.warnings[0] ??
-            null,
-        );
-      });
+      setCityContext(context);
+      setJourneys(journeyResult.journeys);
+      setStage("page-2");
+      if (context.curiosityReason) setStatus(context.curiosityReason);
     } catch (error) {
-      setStatusMessage(
-        error instanceof Error
-          ? error.message
-          : "We could not build a dossier for this place.",
-      );
+      setStatus(error instanceof Error ? error.message : "Could not build city context.");
     } finally {
-      setIsSetupLoading(false);
+      setLoading(null);
     }
   };
 
-  const handleGenerateStory = async () => {
-    if (
-      !destination ||
-      !dossierKey ||
-      !lensResult ||
-      !setupState.selectedEra ||
-      !setupState.selectedInterpretationLens ||
-      isStoryLoading
-    ) {
-      return;
-    }
-
-    setIsStoryLoading(true);
-    setStatusMessage(null);
-    setIsMapFullscreen(false);
-
+  const previewJourney = async (journey: JourneyConcept) => {
+    if (!cityContext) return;
+    setLoading("preview");
     try {
-      const result = await requestJson<{
-        dossier: {
-          key: string;
-          place: NormalizedPlaceCandidate;
-          coverageConfidence: number;
-        };
-        timeline: TimelineGenerationResult;
-        feasibleStops: FeasibleStop[];
-      }>("/api/timeline/generate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          dossierKey,
-          selectedEra: setupState.selectedEra,
-          selectedInterpretationLens: setupState.selectedInterpretationLens,
-          tripLength: setupState.tripLength,
-          pace: setupState.pace,
-        }),
+      const preview = await postJson<{ orderedStops: WalkCandidatePlace[]; route: RouteData }>("/api/walk/preview", {
+        journey,
+        candidates: cityContext.candidates,
       });
-
-      const story = buildStoryPayload({
-        dossierKey,
-        destination: toMapDestination(result.dossier.place),
-        feasibleStops: result.feasibleStops,
-        timeline: result.timeline,
-        selectedEra: setupState.selectedEra,
-        selectedInterpretationLens: setupState.selectedInterpretationLens,
-        coverageConfidence: result.dossier.coverageConfidence,
-      });
-
-      const nextJourney: SavedJourney = {
-        id: currentJourney?.id ?? `journey-${Date.now()}`,
-        label: story.narrative.title,
-        setup: setupState,
-        destination: story.destination,
-        dossierKey,
-        lensResult,
-        story,
-        notes: currentJourney?.notes ?? "",
-        status: "active",
-        createdAt: currentJourney?.createdAt ?? new Date().toISOString(),
-      };
-
-      startTransition(() => {
-        setSavedJourneys((current) =>
-          dedupeJourneys([
-            nextJourney,
-            ...current.filter((journey) => journey.id !== nextJourney.id),
-          ]),
-        );
-        setSelectedJourneyId(nextJourney.id);
-        // Preserve existing destination object to avoid spurious fitBounds on the map
-        setDestination((curr) =>
-          curr?.canonicalLabel === story.destination.canonicalLabel ? curr : story.destination,
-        );
-        setActiveChapterIndex(0);
-        setStoryTab("info");
-        setStatusMessage(story.warnings[0] ?? null);
-        setStage("step-3");
-      });
-    } catch (error) {
-      setStatusMessage(
-        error instanceof Error
-          ? error.message
-          : "The timeline could not be generated for this lens.",
-      );
+      setSelectedJourney(journey);
+      setOrderedStops(preview.orderedStops);
+      setRouteData(preview.route);
+      setStage("page-3");
     } finally {
-      setIsStoryLoading(false);
+      setLoading(null);
     }
   };
 
-  const handleExportMap = async () => {
-    if (!currentJourney || !mapCaptureRef.current || isExporting) {
-      return;
-    }
-
-    setIsExporting(true);
-    setExportMessage(null);
-
-    try {
-      const dataUrl = await toPng(mapCaptureRef.current, {
-        cacheBust: true,
-        pixelRatio: 2,
-        backgroundColor: "#f6f2ea",
-      });
-
-      const link = document.createElement("a");
-      link.href = dataUrl;
-      link.download = `${currentJourney.story.exportTitle}.png`;
-      link.click();
-
-      setExportMessage("Map exported as a PNG.");
-    } catch {
-      setExportMessage("Export could not capture the map right now.");
-    } finally {
-      setIsExporting(false);
-    }
+  const generateWalk = async () => {
+    if (!selectedJourney || !routeData) return;
+    setLoading("story");
+    const result = await postJson<{ storyPack: StoryPack }>("/api/walk/generate", { journey: selectedJourney, orderedStops, routeData });
+    setStoryPack(result.storyPack);
+    setStage("page-4");
+    setActiveStopIndex(0);
+    setLoading(null);
   };
 
-  const handleDownloadStory = () => {
-    if (!currentJourney) return;
-    const payload = JSON.stringify(currentJourney, null, 2);
-    const blob = new Blob([payload], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = `${currentJourney.story.exportTitle}.json`;
-    link.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const journeyOptions = useMemo(
-    () =>
-      dedupeJourneys(savedJourneys).map((journey) => ({
-        id: journey.id,
-        label: journey.status === "ended" ? `${journey.label} · ended` : journey.label,
-      })),
-    [savedJourneys],
-  );
+  const mapDestination = cityContext
+    ? { canonicalLabel: cityContext.city, label: cityContext.city, center: cityContext.center, displayContext: "India", placeType: "place", mapboxId: cityContext.normalizedCity, bounds: cityContext.bounds, zoom: 12 }
+    : null;
 
   return (
-    <main className="h-[100dvh] overflow-hidden px-4 py-4 text-foreground">
-      <div className="mx-auto flex h-full max-w-[1800px] flex-col gap-3">
-        {/* Header */}
-        <header className="panel-soft flex items-center gap-4 rounded-[22px] px-5 py-3">
-          <button
-            type="button"
-            onClick={() => resetDraft("intro")}
-            className="flex items-center gap-3 text-left"
-          >
-            <Image
-              src="/logo.png"
-              alt="MapTL logo"
-              width={36}
-              height={36}
-              className="h-9 w-9 object-contain"
-              priority
-            />
-            <div>
-              <p className="text-[1.35rem] font-extrabold leading-none tracking-[-0.06em] text-[#1f1a14]">
-                maptl
-              </p>
-              <p className="mt-0.5 text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#a89b8a]">
-                Walk through what still stands
-              </p>
-            </div>
-          </button>
-
-          <div className="ml-auto flex items-center gap-2">
-            {journeyOptions.length > 0 && (
-              <div className="flex items-center gap-1.5 rounded-[14px] border border-[rgba(116,102,82,0.1)] bg-white px-3 py-1.5">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#a89b8a] whitespace-nowrap">
-                  Journeys
-                </span>
-                <select
-                  value={selectedJourneyId}
-                  onChange={(event) => {
-                    const journeyId = event.target.value;
-                    const selected = savedJourneys.find((journey) => journey.id === journeyId);
-                    if (selected) {
-                      applyJourneySelection(selected);
-                    }
-                  }}
-                  className="max-w-[160px] bg-transparent text-[12.5px] font-semibold text-[#2a251e] outline-none cursor-pointer"
-                >
-                  {selectedJourneyId === "" ? (
-                    <option value="">Select…</option>
-                  ) : null}
-                  {journeyOptions.map((journey) => (
-                    <option key={journey.id} value={journey.id}>
-                      {journey.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            )}
-
-            <button
-              type="button"
-              onClick={() => resetDraft("step-1")}
-              aria-label="New journey"
-              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1f1a14] text-white transition-colors hover:bg-[#302921]"
-            >
-              <PlusIcon />
-            </button>
-          </div>
-        </header>
-
-        <div className="grid min-h-0 flex-1 grid-cols-[minmax(300px,28%)_minmax(0,72%)] gap-3">
-          <LeftRail
-            stage={stage}
-            setupState={setupState}
-            placeCandidates={visiblePlaceCandidates}
-            lensResult={lensResult}
-            currentJourney={currentJourney}
-            storyTab={storyTab}
-            activeChapterIndex={resolvedChapterIndex}
-            isSuggestionsLoading={isSuggestionsLoading}
-            isSetupLoading={isSetupLoading}
-            isStoryLoading={isStoryLoading}
-            isExporting={isExporting}
-            statusMessage={statusMessage}
-            exportMessage={exportMessage}
-            onStart={() => resetDraft("step-1")}
-            onDestinationInput={(value) => {
-              setPlaceCandidates([]);
-              setIsSuggestionsLoading(false);
-              setSetupState((current) => ({
-                ...current,
-                destinationInput: value,
-                selectedPlace:
-                  current.selectedPlace?.canonicalLabel === value ? current.selectedPlace : null,
-              }));
-            }}
-            onSelectPlaceCandidate={(candidate) => {
-              setPlaceCandidates([]);
-              setIsSuggestionsLoading(false);
-              setSetupState((current) => ({
-                ...current,
-                destinationInput: candidate.canonicalLabel,
-                selectedPlace: candidate,
-              }));
-            }}
-            onApplySuggestion={(value) => {
-              setPlaceCandidates([]);
-              setIsSuggestionsLoading(false);
-              setSetupState((current) => ({
-                ...current,
-                destinationInput: value,
-                selectedPlace: null,
-              }));
-            }}
-            onSelectTripLength={(tripLength) =>
-              setSetupState((current) => ({
-                ...current,
-                tripLength,
-              }))
-            }
-            onSelectEra={(selectedEra) =>
-              setSetupState((current) => ({
-                ...current,
-                selectedEra: selectedEra as SetupState["selectedEra"],
-              }))
-            }
-            onSelectInterpretationLens={(selectedInterpretationLens) =>
-              setSetupState((current) => ({
-                ...current,
-                selectedInterpretationLens:
-                  selectedInterpretationLens as SetupState["selectedInterpretationLens"],
-              }))
-            }
-            onSelectPace={(pace) =>
-              setSetupState((current) => ({
-                ...current,
-                pace,
-              }))
-            }
-            onContinueToLens={handleContinueToLens}
-            onGenerateStory={handleGenerateStory}
-            onBackToDestination={() => {
-              setStage("step-1");
-              setIsMapFullscreen(false);
-            }}
-            onBackToLens={() => {
-              setStage("step-2");
-              setStoryTab("info");
-              setIsMapFullscreen(false);
-            }}
-            onSelectStoryTab={setStoryTab}
-            onUpdateNotes={(notes) => {
-              if (!selectedJourneyId) {
-                return;
-              }
-
-              setSavedJourneys((current) =>
-                current.map((journey) =>
-                  journey.id === selectedJourneyId
-                    ? {
-                        ...journey,
-                        notes,
-                      }
-                    : journey,
-                ),
-              );
-            }}
-            onSelectChapterIndex={setActiveChapterIndex}
-            onEndJourney={() => {
-              if (!selectedJourneyId) {
-                return;
-              }
-
-              setSavedJourneys((current) =>
-                current.map((journey) =>
-                  journey.id === selectedJourneyId
-                    ? {
-                        ...journey,
-                        status: "ended",
-                        endedAt: new Date().toISOString(),
-                      }
-                    : journey,
-                ),
-              );
-              setIsMapFullscreen(false);
-              setStage("summary");
-            }}
-            onExportMap={handleExportMap}
-            onDownloadStory={handleDownloadStory}
-            onGoHome={() => resetDraft("intro")}
-          />
-
-          <RightPanel
-            stage={stage}
-            setupInput={setupState.destinationInput}
-            destination={currentJourney?.destination ?? destination}
-            story={currentStory}
-            activeChapterIndex={resolvedChapterIndex}
-            isSetupLoading={isSetupLoading}
-            isStoryLoading={isStoryLoading}
-            isMapFullscreen={isMapFullscreen}
-            showSatellite={showSatellite}
-            captureRef={mapCaptureRef}
-            onSelectPlace={(placeId) => {
-              const nextIndex =
-                currentJourney?.story.narrative.chapters.findIndex(
-                  (chapter) => chapter.placeId === placeId,
-                ) ?? -1;
-
-              if (nextIndex >= 0) {
-                setActiveChapterIndex(nextIndex);
-              }
-            }}
-            onSelectChapterIndex={setActiveChapterIndex}
-            onToggleFullscreen={() => setIsMapFullscreen((current) => !current)}
-            onToggleSatellite={() => setShowSatellite((current) => !current)}
-          />
+    <main className="mx-auto min-h-[100dvh] max-w-[1600px] p-3 md:p-4">
+      <header className="panel-soft mb-3 flex items-center justify-between rounded-2xl px-4 py-3">
+        <div>
+          <p className="text-2xl font-black tracking-tight">maptl</p>
+          <p className="text-xs text-[#6f6557]">maptl turns any Indian city into a guided historical walk built from what still stands.</p>
         </div>
-      </div>
+      </header>
+
+      {status ? <div className="mb-2 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">{status}</div> : null}
+
+      {stage === "page-1" ? (
+        <section className="grid gap-3 lg:grid-cols-[420px_1fr]">
+          <div className="panel-surface rounded-3xl p-5">
+            <h1 className="text-3xl font-black tracking-tight">pick a city</h1>
+            <p className="mt-2 text-sm text-[#6f6557]">start anywhere in india. we begin with places that still stand and can still be mapped.</p>
+            <input value={city} onChange={(e) => setCity(e.target.value)} className="mt-4 w-full rounded-xl border border-[var(--line)] bg-white px-3 py-2" placeholder="Agra" />
+            <div className="mt-4 flex flex-wrap gap-2">{durationOptions.map((option) => <button key={option} onClick={() => setDuration(option)} className={`rounded-full px-3 py-1.5 text-sm ${duration === option ? "bg-[#1f1a14] text-white" : "bg-white border border-[var(--line)]"}`}>{option}</button>)}</div>
+            <div className="mt-4 flex flex-wrap gap-2">{curiosityOptions.map((option) => <button key={option} onClick={() => setCuriosity(option)} className={`rounded-full px-3 py-1.5 text-sm capitalize ${curiosity === option ? "bg-[#f1e7d8] border border-[#9b7b4e]" : "bg-white border border-[var(--line)]"}`}>{option}</button>)}</div>
+            <button onClick={runFindJourneys} className="mt-5 w-full rounded-xl bg-[#1f1a14] px-4 py-2.5 font-semibold text-white">{loading === "city" ? "finding..." : "find story-walks"}</button>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              ["pick a city", "start anywhere in india. we begin with places that still stand and can still be mapped."],
+              ["choose what pulls you in", "power, sacred life, markets, ruins, architecture, river, old city. the same city opens differently depending on what you follow."],
+              ["get a walk that makes sense", "we turn nearby surviving places into one clear route. not a list of pins, but a walk with shape."],
+              ["leave with a keepsake", "finish with a city token and a shareable story card. something to keep after the walk ends."],
+            ].map(([title, body]) => (
+              <article key={title} className="panel-surface rounded-3xl p-5">
+                <h3 className="text-lg font-bold capitalize">{title}</h3>
+                <p className="mt-2 text-sm text-[#6f6557]">{body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {stage === "page-2" && cityContext ? (
+        <section>
+          <p className="mb-3 text-sm text-[#6f6557]">these are the strongest surviving threads this city can still tell on the ground.</p>
+          <div className="grid gap-3 lg:grid-cols-3">
+            {journeys.map((journey) => {
+              const stopCount = journey.candidateStopIds.length;
+              return (
+                <article key={journey.id} className="panel-surface rounded-3xl p-4">
+                  <h3 className="text-xl font-black capitalize">{journey.title}</h3>
+                  <p className="mt-1 text-sm text-[#6f6557]">{journey.hook}</p>
+                  <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
+                    <div className="rounded-lg bg-white p-2">{stopCount} stops</div>
+                    <div className="rounded-lg bg-white p-2">confidence {Math.round(journey.confidence * 100)}%</div>
+                  </div>
+                  <p className="mt-3 text-sm text-[#4e463c]">{journey.rationale}</p>
+                  <div className="mt-3 h-20 rounded-xl bg-[linear-gradient(180deg,#ede6da_0%,#f8f5ef_100%)]" />
+                  <button onClick={() => previewJourney(journey)} className="mt-3 w-full rounded-xl bg-[#1f1a14] px-3 py-2 text-sm font-semibold text-white">preview walk</button>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      ) : null}
+
+      {stage === "page-3" && cityContext && selectedJourney && routeData && mapDestination ? (
+        <section className="grid gap-3 lg:grid-cols-[380px_1fr]">
+          <div className="panel-surface rounded-3xl p-5">
+            <p className="text-xs uppercase tracking-wide text-[#8a7e6f]">one route. one thread. only places that still stand.</p>
+            <h2 className="mt-2 text-2xl font-black capitalize">{selectedJourney.title}</h2>
+            <p className="mt-2 text-sm text-[#6f6557]">{selectedJourney.hook}</p>
+            <ol className="mt-4 space-y-2">{orderedStops.map((stop, index) => <li key={stop.id} className="rounded-xl bg-white p-3 text-sm"><span className="mr-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#f1e7d8]">{index + 1}</span>{stop.title}</li>)}</ol>
+            <div className="mt-4 grid grid-cols-3 gap-2 text-xs">
+              <div className="rounded-lg bg-white p-2">{routeData.totalDistanceKm} km</div>
+              <div className="rounded-lg bg-white p-2">{routeData.totalTimeMin} min walk</div>
+              <div className="rounded-lg bg-white p-2">{Math.max(6, orderedStops.length * 2)} min read/listen</div>
+            </div>
+            <button onClick={generateWalk} className="mt-4 w-full rounded-xl bg-[#1f1a14] px-3 py-2 text-sm font-semibold text-white">{loading === "story" ? "generating..." : "generate walk"}</button>
+          </div>
+          <div className="panel-surface h-[60dvh] min-h-[420px] rounded-3xl p-2">
+            <MapCanvas destination={mapDestination} places={asPlaces(orderedStops)} activePlaceId={orderedStops[0]?.id} routeCoordinates={routeData.routeCoordinates} showRoute showMarkers showLabels compact={false} enableFocusFly />
+          </div>
+        </section>
+      ) : null}
+
+      {stage === "page-4" && cityContext && selectedJourney && routeData && storyPack && mapDestination ? (
+        <section className="grid gap-3 lg:grid-cols-[420px_1fr]">
+          <div className="panel-surface order-2 max-h-[65dvh] overflow-auto rounded-3xl p-4 lg:order-1">
+            <h2 className="text-2xl font-black capitalize">{storyPack.walkTitle}</h2>
+            <p className="mt-2 text-sm text-[#6f6557]">{storyPack.walkIntro}</p>
+            {currentStop && currentNarrative ? (
+              <article className="mt-4 rounded-2xl bg-white p-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={currentStop.image.thumbUrl} alt={currentStop.title} className="h-40 w-full rounded-xl object-cover" />
+                <h3 className="mt-3 text-lg font-bold">{currentStop.title}</h3>
+                <p className="mt-2 text-sm"><strong>why this stop matters:</strong> {currentNarrative.whyThisStopMatters}</p>
+                <p className="mt-2 text-sm"><strong>what to notice now:</strong> {currentNarrative.whatToNoticeNow}</p>
+                <p className="mt-2 text-sm"><strong>how it connects:</strong> {currentNarrative.threadConnection}</p>
+                <p className="mt-2 text-xs text-[#6f6557]">sources: {currentStop.evidenceUrls.join(" · ")}</p>
+                <p className="mt-2 text-sm text-[#4e463c]">{currentNarrative.transitionToNext}</p>
+              </article>
+            ) : null}
+
+            <div className="mt-4 grid grid-cols-2 gap-2">
+              <button onClick={() => setActiveStopIndex((index) => Math.max(0, index - 1))} className="rounded-xl border border-[var(--line)] bg-white px-3 py-2">previous</button>
+              <button onClick={() => setActiveStopIndex((index) => Math.min(orderedStops.length - 1, index + 1))} className="rounded-xl border border-[var(--line)] bg-white px-3 py-2">next</button>
+              <button onClick={async () => walkContext && setTrivia((await postJson<{ cards: Array<{ type: string; text: string }> }>("/api/walk/trivia", { walkContext })).cards)} className="rounded-xl border border-[var(--line)] bg-white px-3 py-2">trivia</button>
+              <button onClick={async () => walkContext && setToken(await postJson("/api/walk/token", { city: cityContext.city, journey: selectedJourney }))} className="rounded-xl border border-[var(--line)] bg-white px-3 py-2">unlock city token</button>
+              <button onClick={async () => walkContext && setStoryCard(await postJson("/api/walk/story-card", { walkContext }))} className="rounded-xl border border-[var(--line)] bg-white px-3 py-2">save story card</button>
+              <button onClick={async () => walkContext && setNarration((await postJson<{ script: string }>("/api/walk/narration", { walkContext })).script)} className="rounded-xl border border-[var(--line)] bg-white px-3 py-2">listen</button>
+            </div>
+
+            <div className="mt-3 rounded-xl bg-white p-3">
+              <input value={askInput} onChange={(e) => setAskInput(e.target.value)} placeholder="ask this walk" className="w-full rounded-lg border border-[var(--line)] px-2 py-1.5" />
+              <button onClick={async () => {
+                if (!walkContext || !currentStop || !askInput.trim()) return;
+                const answer = await postJson<{ answer: string }>("/api/walk/ask", { question: askInput, walkContext, currentStop: currentStop.id });
+                setAskAnswer(answer.answer);
+              }} className="mt-2 rounded-lg bg-[#1f1a14] px-3 py-1.5 text-xs text-white">ask this walk</button>
+              {askAnswer ? <p className="mt-2 text-sm">{askAnswer}</p> : null}
+            </div>
+
+            {trivia.length > 0 ? <div className="mt-3 space-y-2">{trivia.map((card) => <div key={card.type} className="rounded-xl bg-white p-2 text-sm"><strong>{card.type}:</strong> {card.text}</div>)}</div> : null}
+            {token ? <p className="mt-3 rounded-xl bg-[#f1e7d8] p-2 text-sm font-semibold">{token.tokenTitle} — {token.unlockLine}</p> : null}
+            {storyCard ? <p className="mt-2 rounded-xl bg-white p-2 text-sm">{storyCard.hook} / {storyCard.closingLine}</p> : null}
+            {narration ? <p className="mt-2 rounded-xl bg-white p-2 text-sm">{narration}</p> : null}
+          </div>
+
+          <div className="panel-surface order-1 h-[58dvh] min-h-[380px] rounded-3xl p-2 lg:order-2 lg:h-[78dvh]">
+            <MapCanvas destination={mapDestination} places={asPlaces(orderedStops)} activePlaceId={currentStop?.id} routeCoordinates={routeData.routeCoordinates} showRoute showMarkers showLabels enableFocusFly compact={false} />
+          </div>
+        </section>
+      ) : null}
     </main>
   );
 }

@@ -140,13 +140,14 @@ export default function MapCanvas({
     latestSelectRef.current = onMarkerSelect;
   }, [onMarkerSelect]);
 
-  // Keep data refs current every render
-  currentPlacesRef.current = places;
-  currentRouteRef.current = routeCoordinates;
-  currentActivePlaceIdRef.current = activePlaceId;
-  currentShowMarkersRef.current = showMarkers;
-  currentShowRouteRef.current = showRoute;
-  currentShowLabelsRef.current = showLabels;
+  useEffect(() => {
+    currentPlacesRef.current = places;
+    currentRouteRef.current = routeCoordinates;
+    currentActivePlaceIdRef.current = activePlaceId;
+    currentShowMarkersRef.current = showMarkers;
+    currentShowRouteRef.current = showRoute;
+    currentShowLabelsRef.current = showLabels;
+  }, [activePlaceId, places, routeCoordinates, showLabels, showMarkers, showRoute]);
 
   // Map initialization
   useEffect(() => {

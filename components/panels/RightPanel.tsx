@@ -42,6 +42,7 @@ function useCyclingLine(lines: readonly string[], active: boolean, interval = 22
 
   useEffect(() => {
     if (!active) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIndex(0);
       return;
     }
