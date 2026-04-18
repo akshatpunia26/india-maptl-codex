@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 
 import {
@@ -19,6 +19,8 @@ import { MapDestination } from "@/lib/journey/types";
 import { Place } from "@/lib/mock/types";
 import { getLiveMapStyleUrl, hasMapboxToken, mapboxToken } from "@/lib/utils/map";
 
+const SATELLITE_STYLE = "mapbox://styles/mapbox/satellite-streets-v12";
+
 interface MapCanvasProps {
   destination: MapDestination;
   activePlaceId?: string;
@@ -30,35 +32,74 @@ interface MapCanvasProps {
   showMarkers?: boolean;
   enableFocusFly?: boolean;
   compact?: boolean;
+  showSatellite?: boolean;
 }
 
 function configureBasemap(map: mapboxgl.Map) {
-  map.setConfigProperty("basemap", "lightPreset", "day");
-  map.setConfigProperty("basemap", "showPointOfInterestLabels", false);
+  try {
+    map.setConfigProperty("basemap", "lightPreset", "day");
+    map.setConfigProperty("basemap", "showPointOfInterestLabels", false);
+  } catch {
+    // basemap config only available on Mapbox Standard style
+  }
 
   if ("setFog" in map) {
-    map.setFog({
-      color: "rgb(233, 238, 244)",
-      "high-color": "rgb(239, 243, 247)",
-      "space-color": "rgb(244, 246, 248)",
-      range: [-1, 3],
-      "horizon-blend": 0.08,
-    });
+    try {
+      map.setFog({
+        color: "rgb(233, 238, 244)",
+        "high-color": "rgb(239, 243, 247)",
+        "space-color": "rgb(244, 246, 248)",
+        range: [-1, 3],
+        "horizon-blend": 0.08,
+      });
+    } catch {
+      // fog may not be supported on all styles
+    }
   }
 
   if (!map.getSource("mapbox-dem")) {
-    map.addSource("mapbox-dem", {
-      type: "raster-dem",
-      url: "mapbox://mapbox.mapbox-terrain-dem-v1",
-      tileSize: 512,
-      maxzoom: 14,
-    });
+    try {
+      map.addSource("mapbox-dem", {
+        type: "raster-dem",
+        url: "mapbox://mapbox.mapbox-terrain-dem-v1",
+        tileSize: 512,
+        maxzoom: 14,
+      });
+      map.setTerrain({
+        source: "mapbox-dem",
+        exaggeration: 1.03,
+      });
+    } catch {
+      // terrain unavailable on some styles
+    }
   }
+}
 
-  map.setTerrain({
-    source: "mapbox-dem",
-    exaggeration: 1.03,
-  });
+function attachMarkerEvents(
+  map: mapboxgl.Map,
+  latestSelectRef: React.MutableRefObject<((id: string) => void) | undefined>,
+) {
+  const markerClickHandler = (event: mapboxgl.MapLayerMouseEvent) => {
+    const feature = event.features?.[0];
+    const placeId = typeof feature?.properties?.id === "string" ? feature.properties.id : null;
+    if (placeId) {
+      latestSelectRef.current?.(placeId);
+    }
+  };
+
+  const setPointer = () => {
+    map.getCanvas().style.cursor = "pointer";
+  };
+
+  const clearPointer = () => {
+    map.getCanvas().style.cursor = "";
+  };
+
+  for (const layerId of stopLayerIds) {
+    map.on("click", layerId, markerClickHandler);
+    map.on("mouseenter", layerId, setPointer);
+    map.on("mouseleave", layerId, clearPointer);
+  }
 }
 
 export default function MapCanvas({
@@ -72,6 +113,7 @@ export default function MapCanvas({
   showMarkers = true,
   enableFocusFly = true,
   compact = false,
+  showSatellite = false,
 }: MapCanvasProps) {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
@@ -81,15 +123,32 @@ export default function MapCanvas({
   const previousDestinationKeyRef = useRef("");
   const previousActivePlaceRef = useRef("");
   const previousSceneRef = useRef("");
-  const initialViewRef = useRef({
-    destination,
-    compact,
-  });
+  const initialViewRef = useRef({ destination, compact });
+
+  // Refs for current data so satellite toggle can re-apply after style load
+  const currentPlacesRef = useRef(places);
+  const currentRouteRef = useRef(routeCoordinates);
+  const currentActivePlaceIdRef = useRef(activePlaceId);
+  const currentShowMarkersRef = useRef(showMarkers);
+  const currentShowRouteRef = useRef(showRoute);
+  const currentShowLabelsRef = useRef(showLabels);
+
+  // Increment to force data-update effect after satellite style loads
+  const [styleRevision, setStyleRevision] = useState(0);
 
   useEffect(() => {
     latestSelectRef.current = onMarkerSelect;
   }, [onMarkerSelect]);
 
+  // Keep data refs current every render
+  currentPlacesRef.current = places;
+  currentRouteRef.current = routeCoordinates;
+  currentActivePlaceIdRef.current = activePlaceId;
+  currentShowMarkersRef.current = showMarkers;
+  currentShowRouteRef.current = showRoute;
+  currentShowLabelsRef.current = showLabels;
+
+  // Map initialization
   useEffect(() => {
     if (!hasMapboxToken || !mapContainerRef.current || mapRef.current) {
       return;
@@ -116,33 +175,12 @@ export default function MapCanvas({
 
     mapRef.current = map;
 
-    const markerClickHandler = (event: mapboxgl.MapLayerMouseEvent) => {
-      const feature = event.features?.[0];
-      const placeId = typeof feature?.properties?.id === "string" ? feature.properties.id : null;
-      if (placeId) {
-        latestSelectRef.current?.(placeId);
-      }
-    };
-
-    const setPointer = () => {
-      map.getCanvas().style.cursor = "pointer";
-    };
-
-    const clearPointer = () => {
-      map.getCanvas().style.cursor = "";
-    };
-
     map.on("load", () => {
       readyRef.current = true;
       configureBasemap(map);
       ensureRouteLayers(map);
       ensureStopLayers(map);
-
-      for (const layerId of stopLayerIds) {
-        map.on("click", layerId, markerClickHandler);
-        map.on("mouseenter", layerId, setPointer);
-        map.on("mouseleave", layerId, clearPointer);
-      }
+      attachMarkerEvents(map, latestSelectRef);
 
       map.fitBounds(initialViewRef.current.destination.bounds, {
         padding: initialViewRef.current.compact ? 48 : 72,
@@ -164,6 +202,33 @@ export default function MapCanvas({
     };
   }, []);
 
+  // Satellite toggle — switch style and rebuild layers
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !readyRef.current) {
+      return;
+    }
+
+    const targetStyle = showSatellite ? SATELLITE_STYLE : getLiveMapStyleUrl();
+
+    readyRef.current = false;
+
+    map.once("style.load", () => {
+      if (!showSatellite) {
+        configureBasemap(map);
+      }
+      ensureRouteLayers(map);
+      ensureStopLayers(map);
+      attachMarkerEvents(map, latestSelectRef);
+      readyRef.current = true;
+      setStyleRevision((r) => r + 1);
+    });
+
+    map.setStyle(targetStyle);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showSatellite]);
+
+  // Data update — runs when any relevant prop or styleRevision changes
   useEffect(() => {
     const map = mapRef.current;
     if (!map || !readyRef.current) {
@@ -171,7 +236,7 @@ export default function MapCanvas({
     }
 
     const sceneKey = `${showMarkers ? "story" : "preview"}:${showRoute ? "route" : "no-route"}:${showLabels ? "labels" : "no-labels"}`;
-    const destinationKey = destination.mapboxId || destination.canonicalLabel;
+    const destinationKey = destination.canonicalLabel;
     const activeIndex = Math.max(
       0,
       places.findIndex((place) => place.id === activePlaceId),
@@ -214,7 +279,7 @@ export default function MapCanvas({
         zoom: Math.max(destination.zoom + 1.2, 13),
         pitch: compact ? 28 : 42,
         bearing: compact ? 4 : 8,
-        duration: 1000,
+        duration: 900,
         essential: true,
       });
     }
@@ -228,6 +293,7 @@ export default function MapCanvas({
     showLabels,
     showMarkers,
     showRoute,
+    styleRevision,
   ]);
 
   if (!hasMapboxToken) {
@@ -246,9 +312,9 @@ export default function MapCanvas({
   }
 
   return (
-    <div className="map-frame relative h-full overflow-hidden rounded-[28px] border border-[rgba(116,102,82,0.08)] bg-[#eef2f5]">
+    <div className="map-frame relative h-full overflow-hidden rounded-[26px] border border-[rgba(116,102,82,0.08)] bg-[#eef2f5]">
       <div ref={mapContainerRef} className="h-full w-full" />
-      <div className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_30%),linear-gradient(180deg,rgba(255,255,255,0.08),rgba(117,133,153,0.08))]" />
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.14),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(117,133,153,0.06))]" />
     </div>
   );
 }
