@@ -62,6 +62,20 @@ function dedupeJourneys(journeys: SavedJourney[]) {
   });
 }
 
+function SettingsIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+      <circle cx="8" cy="8" r="2.5" stroke="currentColor" strokeWidth="1.4" />
+      <path
+        d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.05 3.05l1.06 1.06M11.89 11.89l1.06 1.06M3.05 12.95l1.06-1.06M11.89 4.11l1.06-1.06"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export function AppShell() {
   const mapCaptureRef = useRef<HTMLDivElement | null>(null);
 
@@ -79,6 +93,7 @@ export function AppShell() {
   const [isSetupLoading, setIsSetupLoading] = useState(false);
   const [isStoryLoading, setIsStoryLoading] = useState(false);
   const [isMapFullscreen, setIsMapFullscreen] = useState(false);
+  const [showSatellite, setShowSatellite] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [exportMessage, setExportMessage] = useState<string | null>(null);
@@ -205,6 +220,7 @@ export function AppShell() {
     setActiveChapterIndex(0);
     setStoryTab("info");
     setIsMapFullscreen(false);
+    setShowSatellite(false);
     setExportMessage(null);
     setStatusMessage(journey.story.warnings[0] ?? null);
     setStage(journey.status === "ended" ? "summary" : "step-3");
@@ -221,6 +237,7 @@ export function AppShell() {
     setActiveChapterIndex(0);
     setStoryTab("info");
     setIsMapFullscreen(false);
+    setShowSatellite(false);
     setStatusMessage(null);
     setExportMessage(null);
   };
@@ -378,7 +395,10 @@ export function AppShell() {
           ]),
         );
         setSelectedJourneyId(nextJourney.id);
-        setDestination(story.destination);
+        // Preserve existing destination object to avoid spurious fitBounds on the map
+        setDestination((curr) =>
+          curr?.canonicalLabel === story.destination.canonicalLabel ? curr : story.destination,
+        );
         setActiveChapterIndex(0);
         setStoryTab("info");
         setStatusMessage(story.warnings[0] ?? null);
@@ -433,73 +453,81 @@ export function AppShell() {
   );
 
   return (
-    <main className="h-[100dvh] overflow-hidden px-5 py-5 text-foreground">
-      <div className="mx-auto flex h-full max-w-[1800px] flex-col gap-4">
-        <header className="panel-soft flex items-center gap-6 rounded-[26px] px-6 py-4">
+    <main className="h-[100dvh] overflow-hidden px-4 py-4 text-foreground">
+      <div className="mx-auto flex h-full max-w-[1800px] flex-col gap-3">
+        {/* Header */}
+        <header className="panel-soft flex items-center gap-4 rounded-[22px] px-5 py-3">
           <button
             type="button"
             onClick={() => resetDraft("intro")}
-            className="flex items-center gap-4 text-left"
+            className="flex items-center gap-3 text-left"
           >
             <Image
               src="/logo.png"
               alt="MapTL logo"
-              width={56}
-              height={56}
-              className="h-14 w-14 object-contain"
+              width={36}
+              height={36}
+              className="h-9 w-9 object-contain"
               priority
             />
             <div>
-              <p className="text-[2rem] font-extrabold leading-none tracking-[-0.07em] text-[#1f1a14]">
-                MapTL
+              <p className="text-[1.35rem] font-extrabold leading-none tracking-[-0.06em] text-[#1f1a14]">
+                maptl
               </p>
-              <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8f8374]">
-                Standing history for Indian cities
+              <p className="mt-0.5 text-[9.5px] font-semibold uppercase tracking-[0.18em] text-[#a89b8a]">
+                Walk through what still stands
               </p>
             </div>
           </button>
 
-          <div className="ml-auto flex items-center gap-3">
-            <div className="text-right">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8f8374]">
-                Journeys
-              </p>
-            </div>
-
-            <select
-              value={selectedJourneyId}
-              onChange={(event) => {
-                const journeyId = event.target.value;
-                const selected = savedJourneys.find((journey) => journey.id === journeyId);
-                if (selected) {
-                  applyJourneySelection(selected);
-                }
-              }}
-              className="min-w-[280px] rounded-[16px] border border-[rgba(116,102,82,0.08)] bg-white px-4 py-2.5 text-sm text-[#5f564a] outline-none transition-colors focus:border-[rgba(132,100,61,0.18)]"
-            >
-              {journeyOptions.length === 0 ? (
-                <option value="">No saved stories yet</option>
-              ) : selectedJourneyId === "" ? (
-                <option value="">Select a saved story</option>
-              ) : null}
-              {journeyOptions.map((journey) => (
-                <option key={journey.id} value={journey.id}>
-                  {journey.label}
-                </option>
-              ))}
-            </select>
+          <div className="ml-auto flex items-center gap-2.5">
+            {journeyOptions.length > 0 && (
+              <select
+                value={selectedJourneyId}
+                onChange={(event) => {
+                  const journeyId = event.target.value;
+                  const selected = savedJourneys.find((journey) => journey.id === journeyId);
+                  if (selected) {
+                    applyJourneySelection(selected);
+                  }
+                }}
+                className="min-w-[220px] rounded-[14px] border border-[rgba(116,102,82,0.1)] bg-white px-3.5 py-2 text-[13px] text-[#5f564a] outline-none transition-colors focus:border-[rgba(132,100,61,0.22)]"
+              >
+                {selectedJourneyId === "" ? (
+                  <option value="">Stories</option>
+                ) : null}
+                {journeyOptions.map((journey) => (
+                  <option key={journey.id} value={journey.id}>
+                    {journey.label}
+                  </option>
+                ))}
+              </select>
+            )}
 
             <button
               type="button"
               onClick={() => resetDraft("step-1")}
-              className="rounded-full bg-[#1f1a14] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#302921]"
+              className="rounded-full bg-[#1f1a14] px-4 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-[#302921]"
             >
               New
             </button>
+
+            <button
+              type="button"
+              aria-label="Settings"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(116,102,82,0.1)] bg-white text-[#6d6254] transition-colors hover:bg-[#faf7f2]"
+            >
+              <SettingsIcon />
+            </button>
+
+            {/* Avatar */}
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1f1a14] text-[11px] font-bold text-white select-none">
+              A
+            </div>
           </div>
         </header>
 
-        <div className="grid min-h-0 flex-1 grid-cols-[minmax(330px,30%)_minmax(0,70%)] gap-4">
+        <div className="grid min-h-0 flex-1 grid-cols-[minmax(300px,28%)_minmax(0,72%)] gap-3">
           <LeftRail
             stage={stage}
             setupState={setupState}
@@ -629,6 +657,7 @@ export function AppShell() {
             isSetupLoading={isSetupLoading}
             isStoryLoading={isStoryLoading}
             isMapFullscreen={isMapFullscreen}
+            showSatellite={showSatellite}
             captureRef={mapCaptureRef}
             onSelectPlace={(placeId) => {
               const nextIndex =
@@ -642,6 +671,7 @@ export function AppShell() {
             }}
             onSelectChapterIndex={setActiveChapterIndex}
             onToggleFullscreen={() => setIsMapFullscreen((current) => !current)}
+            onToggleSatellite={() => setShowSatellite((current) => !current)}
           />
         </div>
       </div>

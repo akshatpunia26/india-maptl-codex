@@ -10,6 +10,7 @@
   --line-strong: rgba(116, 102, 82, 0.2);
   --accent: #84643d;
   --accent-soft: #af8f67;
+  --accent-map: #4f46e5;
   --muted: #6f6557;
   --shadow: 0 14px 40px rgba(68, 55, 39, 0.06);
 }
@@ -112,6 +113,99 @@ select {
   display: none;
 }
 
+/* Custom timeline range slider */
+.timeline-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.timeline-slider::-webkit-slider-runnable-track {
+  height: 2px;
+  background: rgba(116, 102, 82, 0.18);
+  border-radius: 2px;
+}
+
+.timeline-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #1f1a14;
+  margin-top: -6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.timeline-slider:hover::-webkit-slider-thumb {
+  transform: scale(1.15);
+}
+
+.timeline-slider::-moz-range-track {
+  height: 2px;
+  background: rgba(116, 102, 82, 0.18);
+  border-radius: 2px;
+}
+
+.timeline-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #1f1a14;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.22);
+}
+
+/* Pace slider */
+.pace-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}
+
+.pace-slider::-webkit-slider-runnable-track {
+  height: 3px;
+  background: rgba(116, 102, 82, 0.18);
+  border-radius: 3px;
+}
+
+.pace-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #1f1a14;
+  margin-top: -7.5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease;
+}
+
+.pace-slider:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+.pace-slider::-moz-range-track {
+  height: 3px;
+  background: rgba(116, 102, 82, 0.18);
+  border-radius: 3px;
+}
+
+.pace-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #1f1a14;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+}
+
 @keyframes placeholderDrift {
   0%,
   100% {
@@ -137,6 +231,38 @@ select {
     transform: translateY(8%);
     opacity: 0;
   }
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(116, 102, 82, 0.06) 0%,
+    rgba(116, 102, 82, 0.12) 50%,
+    rgba(116, 102, 82, 0.06) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
 }
 
 .placeholder-grid {
@@ -176,4 +302,20 @@ select {
 
 .placeholder-scan.delay-2 {
   animation-delay: 1.8s;
+}
+
+/* Tooltip via group-hover */
+.info-tooltip {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.info-group:hover .info-tooltip,
+.info-group:focus-within .info-tooltip {
+  opacity: 1;
+  transform: translateY(0);
 }

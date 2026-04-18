@@ -73,7 +73,7 @@ export function ensureRouteLayers(map: mapboxgl.Map) {
         "line-join": "round",
       },
       paint: {
-        "line-color": "#f2a43b",
+        "line-color": "#4f46e5",
         "line-opacity": 0.96,
         "line-width": 5,
         "line-emissive-strength": 0.9,

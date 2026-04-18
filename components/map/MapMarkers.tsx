@@ -14,7 +14,7 @@ export function markerIconMeta() {
   return {
     completed: { fill: "#b7c8dd", stroke: "#ffffff" },
     upcoming: { fill: "#334f6f", stroke: "#ffffff" },
-    current: { fill: "#f2a43b", stroke: "#ffffff" },
+    current: { fill: "#4f46e5", stroke: "#ffffff" },
   };
 }
 
@@ -103,7 +103,7 @@ export function ensureStopLayers(map: mapboxgl.Map) {
       filter: ["==", ["get", "markerState"], "current"],
       paint: {
         "circle-radius": 11,
-        "circle-color": "#f2a43b",
+        "circle-color": "#4f46e5",
         "circle-stroke-color": "#ffffff",
         "circle-stroke-width": 2.8,
         "circle-opacity": 1,
