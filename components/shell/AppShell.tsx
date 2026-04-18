@@ -32,7 +32,6 @@ function getDefaultSetupState(): SetupState {
     tripLength: "1 day",
     selectedEra: null,
     selectedInterpretationLens: null,
-    pace: "Balanced",
   };
 }
 
@@ -82,13 +81,16 @@ export function AppShell() {
   const [savedJourneys, setSavedJourneys] = useState<SavedJourney[]>([]);
   const [selectedJourneyId, setSelectedJourneyId] = useState("");
   const [activeChapterIndex, setActiveChapterIndex] = useState(0);
-  const [storyTab, setStoryTab] = useState<StoryTab>("info");
+  const [storyTab, setStoryTab] = useState<StoryTab>("stops");
   const [isSuggestionsLoading, setIsSuggestionsLoading] = useState(false);
   const [isSetupLoading, setIsSetupLoading] = useState(false);
   const [isStoryLoading, setIsStoryLoading] = useState(false);
   const [isMapFullscreen, setIsMapFullscreen] = useState(false);
   const [showSatellite, setShowSatellite] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
+  const [isAskLoading, setIsAskLoading] = useState(false);
+  const [askQuestion, setAskQuestion] = useState("");
+  const [askAnswer, setAskAnswer] = useState<string | null>(null);
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [exportMessage, setExportMessage] = useState<string | null>(null);
   const [isHydrated, setIsHydrated] = useState(false);
@@ -124,7 +126,7 @@ export function AppShell() {
         setLensResult(persisted.lensResult ?? null);
         setSelectedJourneyId(selected?.id ?? "");
         setActiveChapterIndex(persisted.activeChapterIndex ?? 0);
-        setStoryTab(persisted.storyTab ?? "info");
+        setStoryTab(persisted.storyTab === "ask" ? "ask" : "stops");
         setStage(persisted.stage ?? "intro");
       }
 
@@ -186,7 +188,7 @@ export function AppShell() {
     }
 
     const persisted: PersistedJourneyState = {
-      version: 2,
+      version: 3,
       stage,
       setupState,
       destination,
@@ -219,7 +221,7 @@ export function AppShell() {
     setDossierKey(journey.dossierKey);
     setLensResult(journey.lensResult);
     setActiveChapterIndex(0);
-    setStoryTab("info");
+    setStoryTab("stops");
     setIsMapFullscreen(false);
     setShowSatellite(false);
     setExportMessage(null);
@@ -236,11 +238,13 @@ export function AppShell() {
     setLensResult(null);
     setSelectedJourneyId("");
     setActiveChapterIndex(0);
-    setStoryTab("info");
+    setStoryTab("stops");
     setIsMapFullscreen(false);
     setShowSatellite(false);
     setStatusMessage(null);
     setExportMessage(null);
+    setAskQuestion("");
+    setAskAnswer(null);
   };
 
   const handleContinueToLens = async () => {
@@ -361,7 +365,6 @@ export function AppShell() {
           selectedEra: setupState.selectedEra,
           selectedInterpretationLens: setupState.selectedInterpretationLens,
           tripLength: setupState.tripLength,
-          pace: setupState.pace,
         }),
       });
 
@@ -401,8 +404,10 @@ export function AppShell() {
           curr?.canonicalLabel === story.destination.canonicalLabel ? curr : story.destination,
         );
         setActiveChapterIndex(0);
-        setStoryTab("info");
+        setStoryTab("stops");
         setStatusMessage(story.warnings[0] ?? null);
+        setAskQuestion("");
+        setAskAnswer(null);
         setStage("step-3");
       });
     } catch (error) {
@@ -456,6 +461,30 @@ export function AppShell() {
     URL.revokeObjectURL(url);
   };
 
+  const handleAskQuestion = async () => {
+    if (!currentJourney || askQuestion.trim().length < 8 || isAskLoading) {
+      return;
+    }
+    setIsAskLoading(true);
+    setAskAnswer(null);
+    try {
+      const response = await requestJson<{ answer: string }>("/api/story/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          question: askQuestion,
+          story: currentJourney.story,
+          activeChapterIndex: resolvedChapterIndex,
+        }),
+      });
+      setAskAnswer(response.answer);
+    } catch (error) {
+      setAskAnswer(error instanceof Error ? error.message : "Could not answer this question right now.");
+    } finally {
+      setIsAskLoading(false);
+    }
+  };
+
   const journeyOptions = useMemo(
     () =>
       dedupeJourneys(savedJourneys).map((journey) => ({
@@ -496,7 +525,7 @@ export function AppShell() {
           <div className="ml-auto flex items-center gap-2">
             {journeyOptions.length > 0 && (
               <div className="flex items-center gap-1.5 rounded-[14px] border border-[rgba(116,102,82,0.1)] bg-white px-3 py-1.5">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#a89b8a] whitespace-nowrap">
+                <span className="text-[9px] font-semibold uppercase tracking-[0.1em] text-[#a89b8a] whitespace-nowrap">
                   Journeys
                 </span>
                 <select
@@ -508,7 +537,7 @@ export function AppShell() {
                       applyJourneySelection(selected);
                     }
                   }}
-                  className="max-w-[160px] bg-transparent text-[12.5px] font-semibold text-[#2a251e] outline-none cursor-pointer"
+                  className="max-w-[128px] bg-transparent text-[10.5px] font-medium text-[#2a251e] outline-none cursor-pointer"
                 >
                   {selectedJourneyId === "" ? (
                     <option value="">Select…</option>
@@ -584,22 +613,23 @@ export function AppShell() {
               }))
             }
             onSelectEra={(selectedEra) =>
-              setSetupState((current) => ({
-                ...current,
-                selectedEra: selectedEra as SetupState["selectedEra"],
-              }))
+              setSetupState((current) => {
+                const eraId = selectedEra as SetupState["selectedEra"];
+                const firstLensForEra =
+                  (eraId && lensResult?.interpretationLensesByEra?.[eraId]?.[0]?.id) ?? null;
+                return {
+                  ...current,
+                  selectedEra: eraId,
+                  selectedInterpretationLens:
+                    firstLensForEra ?? current.selectedInterpretationLens,
+                };
+              })
             }
             onSelectInterpretationLens={(selectedInterpretationLens) =>
               setSetupState((current) => ({
                 ...current,
                 selectedInterpretationLens:
                   selectedInterpretationLens as SetupState["selectedInterpretationLens"],
-              }))
-            }
-            onSelectPace={(pace) =>
-              setSetupState((current) => ({
-                ...current,
-                pace,
               }))
             }
             onContinueToLens={handleContinueToLens}
@@ -610,26 +640,15 @@ export function AppShell() {
             }}
             onBackToLens={() => {
               setStage("step-2");
-              setStoryTab("info");
+              setStoryTab("stops");
               setIsMapFullscreen(false);
             }}
             onSelectStoryTab={setStoryTab}
-            onUpdateNotes={(notes) => {
-              if (!selectedJourneyId) {
-                return;
-              }
-
-              setSavedJourneys((current) =>
-                current.map((journey) =>
-                  journey.id === selectedJourneyId
-                    ? {
-                        ...journey,
-                        notes,
-                      }
-                    : journey,
-                ),
-              );
-            }}
+            askQuestion={askQuestion}
+            askAnswer={askAnswer}
+            isAskLoading={isAskLoading}
+            onChangeQuestion={setAskQuestion}
+            onAskQuestion={handleAskQuestion}
             onSelectChapterIndex={setActiveChapterIndex}
             onEndJourney={() => {
               if (!selectedJourneyId) {

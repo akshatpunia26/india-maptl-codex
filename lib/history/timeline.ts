@@ -12,25 +12,18 @@ import { openai, openaiModel } from "@/lib/history/openai";
 
 const JOURNEY_CACHE_TTL_MS = 1000 * 60 * 60 * 24 * 7;
 
-function stopLimitForTrip(tripLength: string, pace: string) {
-  const base =
-    tripLength === "Half day"
-      ? 4
-      : tripLength === "1 day"
-        ? 5
-        : tripLength === "Weekend"
-          ? 8
-          : 10;
-
-  if (pace === "Slow") {
-    return { min: Math.max(3, base - 1), max: base };
+function stopLimitForTrip(tripLength: string) {
+  switch (tripLength) {
+    case "Half day":
+      return { min: 5, max: 6 };
+    case "1 day":
+      return { min: 6, max: 8 };
+    case "Weekend":
+      return { min: 8, max: 10 };
+    case "Multi day":
+    default:
+      return { min: 10, max: 12 };
   }
-
-  if (pace === "Fast") {
-    return { min: base, max: base + 1 };
-  }
-
-  return { min: Math.max(3, base - 1), max: base };
 }
 
 function haversineKm(a: [number, number], b: [number, number]) {
@@ -131,7 +124,6 @@ function computeFeasibleStops(
   selectedEra: EraLensId,
   selectedInterpretationLens: InterpretationLensId,
   tripLength: string,
-  pace: string,
 ) {
   const filtered = dossier.candidateSites.filter(
     (site) =>
@@ -140,7 +132,7 @@ function computeFeasibleStops(
       site.interpretationTags.includes(selectedInterpretationLens),
   );
 
-  const { max } = stopLimitForTrip(tripLength, pace);
+  const { min, max } = stopLimitForTrip(tripLength);
   if (filtered.length === 0) {
     return [];
   }
@@ -175,7 +167,7 @@ function computeFeasibleStops(
   const chosenClusters = orderedClusters.slice(0, maxClusters);
   const chosenStops = chosenClusters.flatMap((cluster) => cluster.sites.map((entry) => entry.site));
 
-  const orderedStops = chosenStops
+  let orderedStops = chosenStops
     .sort((left, right) => {
       if (left.eraStart !== right.eraStart) {
         return left.eraStart - right.eraStart;
@@ -183,6 +175,19 @@ function computeFeasibleStops(
       return right.storyworthyScore - left.storyworthyScore;
     })
     .slice(0, max);
+
+  if (orderedStops.length < min) {
+    const fallbackPool = filtered
+      .filter((site) => !orderedStops.some((selected) => selected.id === site.id))
+      .sort((left, right) => {
+        if (left.eraStart !== right.eraStart) {
+          return left.eraStart - right.eraStart;
+        }
+        return right.storyworthyScore - left.storyworthyScore;
+      });
+
+    orderedStops = [...orderedStops, ...fallbackPool].slice(0, Math.min(max, filtered.length));
+  }
 
   return orderedStops.map((site, index) => ({
     id: site.id,
@@ -253,7 +258,6 @@ export async function generateTimelineFromDossier(input: TimelineRequestInput) {
     input.selectedEra,
     input.selectedInterpretationLens,
     input.tripLength,
-    input.pace,
   );
   const cached = await readCache<{
     timeline: TimelineGenerationResult;
@@ -272,7 +276,6 @@ export async function generateTimelineFromDossier(input: TimelineRequestInput) {
     input.selectedEra,
     input.selectedInterpretationLens,
     input.tripLength,
-    input.pace,
   );
 
   if (feasibleStops.length === 0) {
@@ -314,7 +317,6 @@ export async function generateTimelineFromDossier(input: TimelineRequestInput) {
                 selectedEra: input.selectedEra,
                 selectedInterpretationLens: input.selectedInterpretationLens,
                 tripLength: input.tripLength,
-                pace: input.pace,
                 feasibleStops,
               }),
             },

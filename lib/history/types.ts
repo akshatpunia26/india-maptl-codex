@@ -114,6 +114,7 @@ export interface CityDossier {
 export interface LensesGenerationResult {
   eligibleEras: LensScore[];
   eligibleInterpretationLenses: LensScore[];
+  interpretationLensesByEra?: Partial<Record<EraLensId, LensScore[]>>;
   recommendedDefaults: {
     era?: EraLensId;
     interpretationLens?: InterpretationLensId;
@@ -127,7 +128,6 @@ export interface TimelineRequestInput {
   selectedEra: EraLensId;
   selectedInterpretationLens: InterpretationLensId;
   tripLength: string;
-  pace: string;
 }
 
 export interface FeasibleStop {

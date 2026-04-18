@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, type Transition } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import {
   LensesGenerationResult,
@@ -36,13 +36,16 @@ interface LeftRailProps {
   onSelectTripLength: (length: string) => void;
   onSelectEra: (era: string) => void;
   onSelectInterpretationLens: (lens: string) => void;
-  onSelectPace: (pace: string) => void;
   onContinueToLens: () => void;
   onGenerateStory: () => void;
   onBackToDestination: () => void;
   onBackToLens: () => void;
   onSelectStoryTab: (tab: StoryTab) => void;
-  onUpdateNotes: (value: string) => void;
+  askQuestion: string;
+  askAnswer: string | null;
+  isAskLoading: boolean;
+  onChangeQuestion: (value: string) => void;
+  onAskQuestion: () => void;
   onSelectChapterIndex: (index: number) => void;
   onEndJourney: () => void;
   onExportMap: () => void;
@@ -51,13 +54,11 @@ interface LeftRailProps {
 }
 
 const tripLengths = ["Half day", "1 day", "Weekend", "Multi day"];
-const paceOptions = ["Slow", "Balanced", "Fast"] as const;
 
 const stepEnter = { opacity: 0, y: 10 };
 const stepAnimate = { opacity: 1, y: 0 };
 const stepExit = { opacity: 0, y: -8 };
 const stepTransition: Transition = { duration: 0.22, ease: "easeOut" };
-const stepExitTransition: Transition = { duration: 0.16, ease: "easeIn" };
 
 function Breadcrumbs({ stage }: { stage: AppStage }) {
   const steps = [
@@ -180,13 +181,16 @@ export function LeftRail({
   onSelectTripLength,
   onSelectEra,
   onSelectInterpretationLens,
-  onSelectPace,
   onContinueToLens,
   onGenerateStory,
   onBackToDestination,
   onBackToLens,
   onSelectStoryTab,
-  onUpdateNotes,
+  askQuestion,
+  askAnswer,
+  isAskLoading,
+  onChangeQuestion,
+  onAskQuestion,
   onSelectChapterIndex,
   onEndJourney,
   onExportMap,
@@ -195,20 +199,13 @@ export function LeftRail({
 }: LeftRailProps) {
   const [lensSubStep, setLensSubStep] = useState<"era" | "interpretation">("era");
 
-  useEffect(() => {
-    if (stage !== "step-2") setLensSubStep("era");
-  }, [stage]);
-
   const story = currentJourney?.story ?? null;
   const narrative = story?.narrative ?? null;
-  const activeChapter = narrative?.chapters[activeChapterIndex] ?? narrative?.chapters[0] ?? null;
-  const activePlace =
-    activeChapter && story
-      ? story.places.find((place) => place.id === activeChapter.placeId) ?? null
-      : null;
   const hasMultipleDays = Boolean(story?.places.some((place) => place.day > 1));
-
-  const paceIndex = paceOptions.indexOf(setupState.pace as typeof paceOptions[number]);
+  const eraInterpretationOptions =
+    (setupState.selectedEra && lensResult?.interpretationLensesByEra?.[setupState.selectedEra]) ||
+    lensResult?.eligibleInterpretationLenses ||
+    [];
 
   return (
     <aside className="panel-surface min-h-0 rounded-[28px]">
@@ -232,6 +229,10 @@ export function LeftRail({
                 <h1 className="mt-3 text-[2.4rem] font-extrabold leading-[0.95] tracking-[-0.07em] text-[#1f1a14]">
                   Start with a city.
                 </h1>
+                <div
+                  className="mt-4 h-32 w-full rounded-[20px] border border-[rgba(116,102,82,0.1)] bg-cover bg-center"
+                  style={{ backgroundImage: "linear-gradient(180deg, rgba(20,18,16,0.06), rgba(20,18,16,0.25)), url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80')" }}
+                />
                 <p className="mt-4 text-[14px] leading-[1.75] text-[#6d6254]">
                   Pick any Indian city. We surface only the surviving historical layers, then generate a walking route grounded in what still stands.
                 </p>
@@ -460,7 +461,7 @@ export function LeftRail({
                     Interpretation
                   </SectionLabel>
                   <div className="mt-2.5 grid gap-2">
-                    {lensResult.eligibleInterpretationLenses.map((lens) => (
+                    {eraInterpretationOptions.map((lens) => (
                       <SelectionChip
                         key={lens.id}
                         active={setupState.selectedInterpretationLens === lens.id}
@@ -469,31 +470,6 @@ export function LeftRail({
                         onClick={() => onSelectInterpretationLens(lens.id)}
                       />
                     ))}
-                  </div>
-                </div>
-
-                {/* Pace */}
-                <div className="mt-5">
-                  <SectionLabel tooltip="Controls how many stops are included. Slow = deep dives, Fast = quick overview.">
-                    Pace
-                  </SectionLabel>
-                  <div className="mt-3 rounded-[16px] border border-[rgba(116,102,82,0.09)] bg-white px-4 py-3.5">
-                    <div className="flex items-center justify-between text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#b0a898]">
-                      <span>Slow</span>
-                      <span className="text-[13px] normal-case tracking-normal font-semibold text-[#1f1a14]">
-                        {setupState.pace}
-                      </span>
-                      <span>Fast</span>
-                    </div>
-                    <input
-                      type="range"
-                      min={0}
-                      max={2}
-                      step={1}
-                      value={paceIndex >= 0 ? paceIndex : 1}
-                      onChange={(e) => onSelectPace(paceOptions[Number(e.target.value)])}
-                      className="pace-slider mt-2 w-full"
-                    />
                   </div>
                 </div>
 
@@ -560,7 +536,7 @@ export function LeftRail({
 
                 {/* Tabs */}
                 <div className="mt-4 flex gap-1.5">
-                  {(["info", "stops", "notes"] as StoryTab[]).map((tab) => (
+                  {(["stops", "ask"] as StoryTab[]).map((tab) => (
                     <button
                       key={tab}
                       type="button"
@@ -575,56 +551,6 @@ export function LeftRail({
                     </button>
                   ))}
                 </div>
-
-                {/* Info tab */}
-                {storyTab === "info" && activeChapter ? (
-                  <div className="mt-4 rounded-[22px] border border-[rgba(116,102,82,0.08)] bg-white px-4 py-4">
-                    <div className="flex items-start justify-between gap-3">
-                      <div>
-                        <p className="text-[16px] font-extrabold leading-tight tracking-[-0.025em] text-[#1f1a14]">
-                          {activeChapter.title}
-                        </p>
-                        <p className="mt-1 text-[10.5px] uppercase tracking-[0.16em] text-[#8f8374]">
-                          {activeChapter.dateLabel}
-                        </p>
-                      </div>
-                      {hasMultipleDays && activePlace ? (
-                        <span className="shrink-0 rounded-full bg-[#f4ede2] px-2.5 py-1 text-[11px] font-semibold text-[#6f624f]">
-                          Day {activePlace.day}
-                        </span>
-                      ) : null}
-                    </div>
-                    {activePlace?.image ? (
-                      <div
-                        aria-label={activePlace.title}
-                        role="img"
-                        className="mt-3.5 h-36 w-full rounded-[16px] bg-cover bg-center"
-                        style={{
-                          backgroundImage: `linear-gradient(180deg, rgba(18, 24, 32, 0.06), rgba(18, 24, 32, 0.16)), url("${activePlace.image.thumbUrl}")`,
-                        }}
-                      />
-                    ) : null}
-                    <p className="mt-3.5 text-[13px] leading-[1.7] text-[#655b4e]">{activeChapter.summary}</p>
-                    {story.whyThisRouteWorks ? (
-                      <p className="mt-2.5 text-[12.5px] leading-[1.65] text-[#8a7e6f]">{story.whyThisRouteWorks}</p>
-                    ) : null}
-                    {activePlace?.evidenceUrls.length ? (
-                      <div className="mt-3 flex flex-wrap gap-1.5">
-                        {activePlace.evidenceUrls.slice(0, 3).map((url) => (
-                          <a
-                            key={url}
-                            href={url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="rounded-full bg-[#f7f3ec] px-2.5 py-1 text-[11px] font-semibold text-[#7c6f5f] transition-colors hover:bg-[#ede8de]"
-                          >
-                            Source ↗
-                          </a>
-                        ))}
-                      </div>
-                    ) : null}
-                  </div>
-                ) : null}
 
                 {/* Stops tab */}
                 {storyTab === "stops" ? (
@@ -665,15 +591,24 @@ export function LeftRail({
                   </div>
                 ) : null}
 
-                {/* Notes tab */}
-                {storyTab === "notes" ? (
-                  <div className="mt-4">
+                {storyTab === "ask" ? (
+                  <div className="mt-4 rounded-[20px] border border-[rgba(116,102,82,0.08)] bg-white px-4 py-4">
+                    <p className="text-[15px] font-bold tracking-[-0.02em] text-[#1f1a14]">Ask about this walk</p>
                     <textarea
-                      value={currentJourney?.notes ?? ""}
-                      onChange={(event) => onUpdateNotes(event.target.value)}
-                      placeholder="Add notes, curation edits, or observations…"
-                      className="min-h-[200px] w-full rounded-[18px] border border-[rgba(116,102,82,0.1)] bg-white px-4 py-3.5 text-[13px] text-[#221e18] outline-none placeholder:text-[#b0a898] focus:border-[rgba(132,100,61,0.22)]"
+                      value={askQuestion}
+                      onChange={(event) => onChangeQuestion(event.target.value)}
+                      placeholder="Ask about this place, this era, or this full route…"
+                      className="mt-3 min-h-[90px] w-full rounded-[14px] border border-[rgba(116,102,82,0.1)] bg-[#fcfaf7] px-3 py-2.5 text-[13px] text-[#221e18] outline-none placeholder:text-[#b0a898]"
                     />
+                    <button
+                      type="button"
+                      onClick={onAskQuestion}
+                      disabled={isAskLoading || askQuestion.trim().length < 8}
+                      className="mt-3 rounded-full bg-[#1f1a14] px-4 py-2 text-[12.5px] font-semibold text-white disabled:opacity-50"
+                    >
+                      {isAskLoading ? "Thinking…" : "Ask question"}
+                    </button>
+                    {askAnswer ? <p className="mt-3 text-[12.5px] leading-[1.7] text-[#655b4e]">{askAnswer}</p> : null}
                   </div>
                 ) : null}
 
@@ -761,6 +696,22 @@ export function LeftRail({
                 >
                   Home
                 </button>
+                <a
+                  href={`https://wa.me/?text=${encodeURIComponent(`Check out my MapTL narrative: ${currentJourney.label}`)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-[rgba(116,102,82,0.1)] bg-white px-4 py-2.5 text-[13px] font-semibold text-[#3e372d] transition-colors hover:bg-[#faf7f2]"
+                >
+                  Share WhatsApp
+                </a>
+                <a
+                  href={`https://www.instagram.com/`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-[rgba(116,102,82,0.1)] bg-white px-4 py-2.5 text-[13px] font-semibold text-[#3e372d] transition-colors hover:bg-[#faf7f2]"
+                >
+                  Share Instagram
+                </a>
               </div>
             </motion.div>
           ) : null}

@@ -1,36 +1,49 @@
 import "server-only";
 
 import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
 import path from "node:path";
 
-const CACHE_ROOT = path.join(process.cwd(), "data", "cache");
+const PRIMARY_CACHE_ROOT = path.join(process.cwd(), "data", "cache");
+const FALLBACK_CACHE_ROOT = path.join(tmpdir(), "maptl-cache");
+const CACHE_ROOTS = [PRIMARY_CACHE_ROOT, FALLBACK_CACHE_ROOT];
 
 async function ensureNamespace(namespace: string) {
-  const dir = path.join(CACHE_ROOT, namespace);
-  await mkdir(dir, { recursive: true });
-  return dir;
+  for (const root of CACHE_ROOTS) {
+    const dir = path.join(root, namespace);
+    try {
+      await mkdir(dir, { recursive: true });
+      return dir;
+    } catch {
+      continue;
+    }
+  }
+
+  throw new Error("No writable cache directory available.");
 }
 
 function filePath(namespace: string, key: string) {
-  return path.join(CACHE_ROOT, namespace, `${key}.json`);
+  return CACHE_ROOTS.map((root) => path.join(root, namespace, `${key}.json`));
 }
 
 export async function readCache<T>(namespace: string, key: string, maxAgeMs: number) {
-  const target = filePath(namespace, key);
+  for (const target of filePath(namespace, key)) {
+    try {
+      const raw = await readFile(target, "utf8");
+      const parsed = JSON.parse(raw) as { updatedAt: string; data: T };
+      const age = Date.now() - new Date(parsed.updatedAt).getTime();
 
-  try {
-    const raw = await readFile(target, "utf8");
-    const parsed = JSON.parse(raw) as { updatedAt: string; data: T };
-    const age = Date.now() - new Date(parsed.updatedAt).getTime();
+      if (Number.isNaN(age) || age > maxAgeMs) {
+        continue;
+      }
 
-    if (Number.isNaN(age) || age > maxAgeMs) {
-      return null;
+      return parsed.data;
+    } catch {
+      continue;
     }
-
-    return parsed.data;
-  } catch {
-    return null;
   }
+
+  return null;
 }
 
 export async function writeCache<T>(namespace: string, key: string, data: T) {
@@ -41,5 +54,9 @@ export async function writeCache<T>(namespace: string, key: string, data: T) {
     data,
   };
 
-  await writeFile(target, JSON.stringify(payload, null, 2), "utf8");
+  try {
+    await writeFile(target, JSON.stringify(payload, null, 2), "utf8");
+  } catch {
+    // Ignore write failures on read-only deployments.
+  }
 }
