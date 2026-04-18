@@ -125,6 +125,23 @@ export function computeLensEligibility(dossier: Pick<CityDossier, "candidateSite
     .sort((left, right) => right.score - left.score)
     .slice(0, 6);
 
+  const interpretationLensesByEra = Object.fromEntries(
+    ERA_LENS_IDS.map((eraId) => {
+      const eraSites = standingSites.filter((site) => site.eraLabels.includes(eraId));
+      const scoredLenses = INTERPRETATION_LENS_IDS.map((lensId) =>
+        buildLensScore(
+          lensId,
+          INTERPRETATION_LENS_META[lensId].label,
+          eraSites.filter((site) => site.interpretationTags.includes(lensId)),
+        ),
+      )
+        .filter((score): score is LensScore => Boolean(score))
+        .sort((left, right) => right.score - left.score)
+        .slice(0, 6);
+      return [eraId, scoredLenses];
+    }),
+  ) as Partial<Record<EraLensId, LensScore[]>>;
+
   const warnings: string[] = [];
   if (standingSites.length < 3) {
     warnings.push(
@@ -140,9 +157,13 @@ export function computeLensEligibility(dossier: Pick<CityDossier, "candidateSite
   return {
     eligibleEras,
     eligibleInterpretationLenses,
+    interpretationLensesByEra,
     recommendedDefaults: {
       era: eligibleEras[0]?.id as EraLensId | undefined,
-      interpretationLens: eligibleInterpretationLenses[0]?.id as InterpretationLensId | undefined,
+      interpretationLens:
+        (interpretationLensesByEra[eligibleEras[0]?.id as EraLensId]?.[0]?.id as
+          | InterpretationLensId
+          | undefined) ?? (eligibleInterpretationLenses[0]?.id as InterpretationLensId | undefined),
     },
     coverageConfidence: dossier.coverageConfidence,
     warnings,

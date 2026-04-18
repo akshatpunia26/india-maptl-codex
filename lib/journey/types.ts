@@ -7,7 +7,7 @@ import { EraLensId, InterpretationLensId } from "@/lib/history/taxonomy";
 import { MarkerIconKey, NarrativeResult, Place } from "@/lib/mock/types";
 
 export type AppStage = "intro" | "step-1" | "step-2" | "step-3" | "summary";
-export type StoryTab = "info" | "stops" | "notes";
+export type StoryTab = "stops" | "ask";
 
 export interface SetupState {
   destinationInput: string;
@@ -15,7 +15,6 @@ export interface SetupState {
   tripLength: string;
   selectedEra: EraLensId | null;
   selectedInterpretationLens: InterpretationLensId | null;
-  pace: string;
 }
 
 export interface MapDestination extends NormalizedPlaceCandidate {

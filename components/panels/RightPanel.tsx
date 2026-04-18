@@ -42,7 +42,8 @@ function useCyclingLine(lines: readonly string[], active: boolean, interval = 22
 
   useEffect(() => {
     if (!active) {
-      setIndex(0);
+      if (timerRef.current) clearInterval(timerRef.current);
+      timerRef.current = null;
       return;
     }
     timerRef.current = setInterval(() => setIndex((i) => (i + 1) % lines.length), interval);
@@ -51,7 +52,7 @@ function useCyclingLine(lines: readonly string[], active: boolean, interval = 22
     };
   }, [active, lines.length, interval]);
 
-  return lines[index];
+  return lines[active ? index : 0];
 }
 
 function ExpandIcon({ fullscreen }: { fullscreen: boolean }) {
@@ -81,20 +82,19 @@ function SatelliteIcon({ active }: { active: boolean }) {
 
 function IntroPlaceholder() {
   return (
-    <div className="relative flex h-full min-h-0 items-center justify-center overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#fcfaf5_0%,#f5efe4_100%)]">
-      <div className="placeholder-rings pointer-events-none absolute inset-0">
-        <div className="placeholder-ring left-[20%] top-[16%] h-56 w-56" />
-        <div className="placeholder-ring delay-1 left-[58%] top-[18%] h-72 w-72" />
-        <div className="placeholder-ring delay-2 left-[34%] top-[48%] h-64 w-64" />
-      </div>
-      <div className="placeholder-grid pointer-events-none absolute inset-6 rounded-[26px]" />
+    <div className="relative flex h-full min-h-0 items-center justify-center overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#f7f3ec_0%,#ece3d4_100%)]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_20%,rgba(132,100,61,0.25),transparent_35%),radial-gradient(circle_at_85%_80%,rgba(31,26,20,0.18),transparent_40%)]" />
+      <div className="absolute inset-x-10 bottom-7 h-32 rounded-[20px] border border-white/40 bg-[linear-gradient(120deg,rgba(255,255,255,0.38),rgba(255,255,255,0.08))] backdrop-blur-sm" />
+      <div className="absolute inset-x-16 bottom-14 h-24 rounded-[18px] border border-white/35 bg-[linear-gradient(120deg,rgba(255,255,255,0.32),rgba(255,255,255,0.08))] backdrop-blur-sm" />
+      <div className="absolute inset-x-24 bottom-20 h-16 rounded-[14px] border border-white/35 bg-[linear-gradient(120deg,rgba(255,255,255,0.3),rgba(255,255,255,0.08))] backdrop-blur-sm" />
+      <div className="placeholder-grid pointer-events-none absolute inset-6 rounded-[26px] opacity-40" />
       <div className="relative z-10 max-w-[36rem] px-8 text-center">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#a89b8a]">maptl</p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#7e705d]">maptl</p>
         <h2 className="mt-3 text-[2.2rem] font-extrabold leading-[0.96] tracking-[-0.07em] text-[#1f1a14]">
-          A map opens here.
+          A narrative map opens here.
         </h2>
         <p className="mx-auto mt-3 max-w-[28rem] text-[14px] leading-[1.8] text-[#6d6254]">
-          Search a city on the left. The timeline stays tied to surviving sites that can be mapped.
+          Build a story with grounded stops, then move through centuries with cinematic map transitions.
         </p>
       </div>
     </div>
@@ -122,43 +122,50 @@ function Step1Content({ isLoading, setupInput }: { isLoading: boolean; setupInpu
     );
   }
 
-  const useCases = ["Travelers", "Teachers", "Students", "Heritage walks", "Architecture lovers", "Local institutions"];
+  const useCases = ["Evidence-backed stops", "5–10 stop routes", "Era-aware interpretation", "Shareable story maps"];
 
   return (
     <div className="flex h-full min-h-0 flex-col gap-3 overflow-y-auto rounded-[28px] bg-[#f9f6f0] p-5">
-      {/* Hero banner */}
-      <div className="rounded-[22px] bg-[#1f1a14] px-6 py-5 text-white">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[rgba(255,255,255,0.45)]">
-          maptl
-        </p>
-        <h2 className="mt-2 text-[1.6rem] font-extrabold leading-[1.05] tracking-[-0.05em]">
-          A new interface for place, culture, and discovery.
-        </h2>
-        <p className="mt-2.5 text-[13px] leading-[1.7] text-[rgba(255,255,255,0.65)]">
-          Not an itinerary maker. A timeline engine for place — turning any city into centuries of surviving history you can actually walk.
-        </p>
+      <div className="grid grid-cols-2 gap-3">
+        <div className="rounded-[22px] bg-[#1f1a14] px-6 py-5 text-white">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[rgba(255,255,255,0.45)]">
+            maptl
+          </p>
+          <h2 className="mt-2 text-[1.8rem] font-extrabold leading-[1.05] tracking-[-0.05em]">
+            Place, timeline, narrative.
+          </h2>
+          <p className="mt-2.5 text-[13px] leading-[1.7] text-[rgba(255,255,255,0.65)]">
+            Generate a city story from real surviving sites and move through it as a map-first experience.
+          </p>
+        </div>
+        <div className="relative overflow-hidden rounded-[22px] border border-[rgba(116,102,82,0.1)] bg-[linear-gradient(160deg,#f3e8d5,#c9bca7)]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,255,255,0.45),transparent_36%)]" />
+          <div className="relative grid h-full gap-2 p-4">
+            {["Old Delhi", "Jaipur", "Varanasi"].map((city) => (
+              <div key={city} className="rounded-[12px] border border-white/40 bg-white/45 px-3 py-2 text-[12px] font-semibold text-[#2f281f] backdrop-blur-sm">
+                {city} · city card
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Two col cards */}
       <div className="grid grid-cols-2 gap-3">
         <div className="rounded-[20px] border border-[rgba(116,102,82,0.1)] bg-white px-4 py-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a89b8a]">The gap</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a89b8a]">Why this helps</p>
           <p className="mt-2 text-[14px] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#1f1a14]">
-            Maps tell you where.
+            Not just route planning.
           </p>
           <p className="mt-2 text-[12.5px] leading-[1.65] text-[#6d6254]">
-            History is buried across articles, archives, and memory. There&apos;s no easy interface for layered place understanding — until now.
+            You get a coherent historical narrative, context, and visual map progression, all grounded in documented sites.
           </p>
         </div>
 
         <div className="rounded-[20px] border border-[rgba(116,102,82,0.1)] bg-white px-4 py-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a89b8a]">What unlocks</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a89b8a]">Usefulness</p>
           <ul className="mt-2 space-y-1.5">
-            {[
-              "Era-based narratives of what mattered, when, why",
-              "Stand in one place, understand centuries of change",
-              "Instant, spatial, and intuitive — not a research task",
-            ].map((item) => (
+            {useCases.map((item) => (
               <li key={item} className="flex items-start gap-2 text-[12px] leading-[1.55] text-[#3a342b]">
                 <span className="mt-[3px] block h-[5px] w-[5px] shrink-0 rounded-full bg-[#84643d]" />
                 {item}
@@ -168,22 +175,15 @@ function Step1Content({ isLoading, setupInput }: { isLoading: boolean; setupInpu
         </div>
       </div>
 
-      {/* Use cases */}
       <div className="rounded-[20px] border border-[rgba(116,102,82,0.1)] bg-white px-4 py-4">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a89b8a]">Who uses it</p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {useCases.map((uc) => (
-            <span
-              key={uc}
-              className="rounded-full border border-[rgba(116,102,82,0.1)] bg-[#faf7f2] px-3 py-1.5 text-[12px] font-semibold text-[#3a342b]"
-            >
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a89b8a]">How it works</p>
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          {["Pick a city", "Pick an era", "Generate route", "Explore + share"].map((uc) => (
+            <span key={uc} className="rounded-[12px] border border-[rgba(116,102,82,0.1)] bg-[#faf7f2] px-3 py-2 text-[12px] font-semibold text-[#3a342b]">
               {uc}
             </span>
           ))}
         </div>
-        <p className="mt-3 text-[12px] leading-[1.6] text-[#8a7e6f]">
-          One simple flow. Many high-value outputs. Useful for tourism, education, heritage, culture, and local storytelling.
-        </p>
       </div>
     </div>
   );
@@ -213,6 +213,8 @@ export function RightPanel({
   const storyLine = useCyclingLine(STORY_LINES, isStoryLoading);
 
   const chapterCount = story?.narrative.chapters.length ?? 0;
+  const [showExpandedCard, setShowExpandedCard] = useState(false);
+  const activePlace = story?.places.find((place) => place.id === activePlaceId) ?? null;
 
   return (
     <section
@@ -240,6 +242,7 @@ export function RightPanel({
             enableFocusFly={stage === "step-3"}
             compact={stage === "step-2"}
             showSatellite={showSatellite}
+            overviewMode={stage === "summary"}
           />
 
           {/* Top overlay bar */}
@@ -320,10 +323,26 @@ export function RightPanel({
             ) : null}
           </AnimatePresence>
 
+          {isStoryStage && activePlace ? (
+            <div className="absolute right-4 top-16 z-10 w-[340px] max-w-[45%] rounded-[18px] border border-[rgba(116,102,82,0.1)] bg-[rgba(255,255,255,0.95)] p-3 backdrop-blur-md shadow-[0_8px_28px_rgba(58,44,28,0.18)]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#8f8374]">{activePlace.chronologyLabel}</p>
+              <h3 className="mt-1 text-[1.1rem] font-extrabold leading-tight text-[#1f1a14]">{activePlace.title}</h3>
+              <p className="mt-2 text-[12px] leading-[1.6] text-[#5f5446]">
+                {showExpandedCard ? activePlace.whyItMatters : activePlace.blurb}
+              </p>
+              {showExpandedCard && activePlace.image ? (
+                <div aria-label={activePlace.title} role="img" className="mt-2 h-28 rounded-[12px] bg-cover bg-center" style={{ backgroundImage: `url("${activePlace.image.thumbUrl}")` }} />
+              ) : null}
+              <button type="button" onClick={() => setShowExpandedCard((current) => !current)} className="mt-2 text-[11px] font-semibold text-[#84643d]">
+                {showExpandedCard ? "Show less" : "Expand details"}
+              </button>
+            </div>
+          ) : null}
+
           {/* Stop nav card — step-3 only */}
           {isStoryStage && stage !== "summary" && chapterCount > 0 ? (
-            <div className="absolute inset-x-4 bottom-4 z-10">
-              <div className="flex items-center gap-2 rounded-[20px] border border-[rgba(116,102,82,0.1)] bg-[rgba(255,255,255,0.96)] px-3 py-2.5 backdrop-blur-md shadow-[0_4px_20px_rgba(68,55,39,0.1)]">
+            <div className="absolute left-1/2 bottom-4 z-10 -translate-x-1/2">
+              <div className="flex items-center gap-2 rounded-full border border-[rgba(116,102,82,0.1)] bg-[rgba(255,255,255,0.96)] px-2.5 py-2 backdrop-blur-md shadow-[0_4px_20px_rgba(68,55,39,0.1)]">
                 <button
                   type="button"
                   onClick={() => onSelectChapterIndex(Math.max(0, activeChapterIndex - 1))}
@@ -336,14 +355,7 @@ export function RightPanel({
                   </svg>
                 </button>
 
-                <div className="min-w-0 flex-1 text-center">
-                  <p className="truncate text-[12.5px] font-semibold text-[#1f1a14]">
-                    {activeChapter?.title}
-                  </p>
-                  <p className="text-[10px] uppercase tracking-[0.13em] text-[#8f8374]">
-                    {activeChapter?.dateLabel} · {activeChapterIndex + 1}/{chapterCount}
-                  </p>
-                </div>
+                <p className="px-2 text-[10px] font-semibold uppercase tracking-[0.13em] text-[#8f8374]">{activeChapterIndex + 1}/{chapterCount}</p>
 
                 <button
                   type="button"
