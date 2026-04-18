@@ -62,16 +62,10 @@ function dedupeJourneys(journeys: SavedJourney[]) {
   });
 }
 
-function SettingsIcon() {
+function PlusIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-      <circle cx="8" cy="8" r="2.5" stroke="currentColor" strokeWidth="1.4" />
-      <path
-        d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.05 3.05l1.06 1.06M11.89 11.89l1.06 1.06M3.05 12.95l1.06-1.06M11.89 4.11l1.06-1.06"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-      />
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+      <path d="M7 1v12M1 7h12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   );
 }
@@ -142,6 +136,8 @@ export function AppShell() {
     };
   }, []);
 
+  const selectedPlace = setupState.selectedPlace;
+
   useEffect(() => {
     if (!isHydrated || stage !== "step-1") {
       return;
@@ -149,6 +145,11 @@ export function AppShell() {
 
     const query = destinationQuery;
     if (query.length < 2) {
+      return;
+    }
+
+    // Skip search when the input reflects a confirmed place selection
+    if (selectedPlace?.canonicalLabel === query) {
       return;
     }
 
@@ -177,7 +178,7 @@ export function AppShell() {
       cancelled = true;
       window.clearTimeout(timeout);
     };
-  }, [destinationQuery, isHydrated, stage]);
+  }, [destinationQuery, isHydrated, stage, selectedPlace]);
 
   useEffect(() => {
     if (!isHydrated) {
@@ -443,6 +444,18 @@ export function AppShell() {
     }
   };
 
+  const handleDownloadStory = () => {
+    if (!currentJourney) return;
+    const payload = JSON.stringify(currentJourney, null, 2);
+    const blob = new Blob([payload], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${currentJourney.story.exportTitle}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+  };
+
   const journeyOptions = useMemo(
     () =>
       dedupeJourneys(savedJourneys).map((journey) => ({
@@ -480,50 +493,43 @@ export function AppShell() {
             </div>
           </button>
 
-          <div className="ml-auto flex items-center gap-2.5">
+          <div className="ml-auto flex items-center gap-2">
             {journeyOptions.length > 0 && (
-              <select
-                value={selectedJourneyId}
-                onChange={(event) => {
-                  const journeyId = event.target.value;
-                  const selected = savedJourneys.find((journey) => journey.id === journeyId);
-                  if (selected) {
-                    applyJourneySelection(selected);
-                  }
-                }}
-                className="min-w-[220px] rounded-[14px] border border-[rgba(116,102,82,0.1)] bg-white px-3.5 py-2 text-[13px] text-[#5f564a] outline-none transition-colors focus:border-[rgba(132,100,61,0.22)]"
-              >
-                {selectedJourneyId === "" ? (
-                  <option value="">Stories</option>
-                ) : null}
-                {journeyOptions.map((journey) => (
-                  <option key={journey.id} value={journey.id}>
-                    {journey.label}
-                  </option>
-                ))}
-              </select>
+              <div className="flex items-center gap-1.5 rounded-[14px] border border-[rgba(116,102,82,0.1)] bg-white px-3 py-1.5">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-[#a89b8a] whitespace-nowrap">
+                  Journeys
+                </span>
+                <select
+                  value={selectedJourneyId}
+                  onChange={(event) => {
+                    const journeyId = event.target.value;
+                    const selected = savedJourneys.find((journey) => journey.id === journeyId);
+                    if (selected) {
+                      applyJourneySelection(selected);
+                    }
+                  }}
+                  className="max-w-[160px] bg-transparent text-[12.5px] font-semibold text-[#2a251e] outline-none cursor-pointer"
+                >
+                  {selectedJourneyId === "" ? (
+                    <option value="">Select…</option>
+                  ) : null}
+                  {journeyOptions.map((journey) => (
+                    <option key={journey.id} value={journey.id}>
+                      {journey.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
             )}
 
             <button
               type="button"
               onClick={() => resetDraft("step-1")}
-              className="rounded-full bg-[#1f1a14] px-4 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-[#302921]"
+              aria-label="New journey"
+              className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1f1a14] text-white transition-colors hover:bg-[#302921]"
             >
-              New
+              <PlusIcon />
             </button>
-
-            <button
-              type="button"
-              aria-label="Settings"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-[rgba(116,102,82,0.1)] bg-white text-[#6d6254] transition-colors hover:bg-[#faf7f2]"
-            >
-              <SettingsIcon />
-            </button>
-
-            {/* Avatar */}
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1f1a14] text-[11px] font-bold text-white select-none">
-              A
-            </div>
           </div>
         </header>
 
@@ -645,6 +651,7 @@ export function AppShell() {
               setStage("summary");
             }}
             onExportMap={handleExportMap}
+            onDownloadStory={handleDownloadStory}
             onGoHome={() => resetDraft("intro")}
           />
 

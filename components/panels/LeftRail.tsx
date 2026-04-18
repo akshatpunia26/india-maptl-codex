@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, type Transition } from "framer-motion";
+import { useEffect, useState } from "react";
 
 import {
   LensesGenerationResult,
@@ -45,6 +46,7 @@ interface LeftRailProps {
   onSelectChapterIndex: (index: number) => void;
   onEndJourney: () => void;
   onExportMap: () => void;
+  onDownloadStory: () => void;
   onGoHome: () => void;
 }
 
@@ -120,11 +122,11 @@ function SelectionChip({
   );
 }
 
-function MetricCard({ value, label }: { value: string; label: string }) {
+function StatPill({ value, label }: { value: string; label: string }) {
   return (
-    <div className="rounded-[18px] border border-[rgba(116,102,82,0.08)] bg-[#fbf8f3] px-3.5 py-3.5">
-      <p className="text-[1.5rem] font-extrabold tracking-[-0.04em] text-[#201d17]">{value}</p>
-      <p className="mt-0.5 text-[10px] uppercase tracking-[0.14em] text-[#8c7f6e]">{label}</p>
+    <div className="flex flex-1 flex-col items-center rounded-[14px] border border-[rgba(116,102,82,0.08)] bg-[#fbf8f3] px-2.5 py-2">
+      <p className="text-[1rem] font-extrabold tracking-[-0.03em] text-[#201d17] leading-none">{value}</p>
+      <p className="mt-1 text-[9px] uppercase tracking-[0.13em] text-[#8c7f6e]">{label}</p>
     </div>
   );
 }
@@ -188,8 +190,15 @@ export function LeftRail({
   onSelectChapterIndex,
   onEndJourney,
   onExportMap,
+  onDownloadStory,
   onGoHome,
 }: LeftRailProps) {
+  const [lensSubStep, setLensSubStep] = useState<"era" | "interpretation">("era");
+
+  useEffect(() => {
+    if (stage !== "step-2") setLensSubStep("era");
+  }, [stage]);
+
   const story = currentJourney?.story ?? null;
   const narrative = story?.narrative ?? null;
   const activeChapter = narrative?.chapters[activeChapterIndex] ?? narrative?.chapters[0] ?? null;
@@ -351,10 +360,10 @@ export function LeftRail({
             </motion.div>
           ) : null}
 
-          {/* ── Step 2 · Lens ── */}
-          {stage === "step-2" && lensResult ? (
+          {/* ── Step 2a · Era ── */}
+          {stage === "step-2" && lensResult && lensSubStep === "era" ? (
             <motion.div
-              key="step-2"
+              key="step-2-era"
               initial={stepEnter}
               animate={stepAnimate}
               exit={stepExit}
@@ -366,10 +375,10 @@ export function LeftRail({
               <div className="mx-auto flex w-full flex-1 flex-col justify-center pt-4">
                 <div>
                   <h2 className="text-[1.9rem] font-extrabold leading-[0.97] tracking-[-0.06em] text-[#1f1a14]">
-                    Choose the lens.
+                    Choose an era.
                   </h2>
                   <p className="mt-2.5 text-[13.5px] leading-[1.75] text-[#6d6254]">
-                    Only evidence-backed eras appear here.{" "}
+                    Only eras with surviving evidence appear.{" "}
                     <span className="font-semibold text-[#84643d]">
                       {Math.round(lensResult.coverageConfidence * 100)}% coverage
                     </span>{" "}
@@ -377,7 +386,6 @@ export function LeftRail({
                   </p>
                 </div>
 
-                {/* Era lens */}
                 <div className="mt-6">
                   <SectionLabel tooltip="Historical periods with documented surviving structures in this city. Eras with weak evidence are excluded.">
                     Era
@@ -395,7 +403,58 @@ export function LeftRail({
                   </div>
                 </div>
 
-                {/* Interpretation lens */}
+                {lensResult.warnings.length > 0 || statusMessage ? (
+                  <div className="mt-4 rounded-[14px] border border-[rgba(132,100,61,0.12)] bg-[#faf4ea] px-4 py-3 text-[12.5px] leading-[1.65] text-[#6f624f]">
+                    {statusMessage ?? lensResult.warnings[0]}
+                  </div>
+                ) : null}
+              </div>
+
+              <div className="mt-6 flex items-center justify-between gap-3 border-t border-[rgba(116,102,82,0.07)] pt-4">
+                <button
+                  type="button"
+                  onClick={onBackToDestination}
+                  className="rounded-full border border-[rgba(116,102,82,0.1)] bg-white px-4 py-2.5 text-[13px] font-semibold text-[#3e372d] transition-colors hover:bg-[#faf7f2]"
+                >
+                  ← Back
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLensSubStep("interpretation")}
+                  disabled={!setupState.selectedEra}
+                  className="rounded-full bg-[#1f1a14] px-5 py-2.5 text-[13px] font-semibold text-white transition-colors hover:bg-[#302921] disabled:opacity-50"
+                >
+                  Continue →
+                </button>
+              </div>
+            </motion.div>
+          ) : null}
+
+          {/* ── Step 2b · Interpretation ── */}
+          {stage === "step-2" && lensResult && lensSubStep === "interpretation" ? (
+            <motion.div
+              key="step-2-interpretation"
+              initial={stepEnter}
+              animate={stepAnimate}
+              exit={stepExit}
+              transition={stepTransition}
+              className="flex min-h-full flex-col"
+            >
+              <Breadcrumbs stage={stage} />
+
+              <div className="mx-auto flex w-full flex-1 flex-col justify-center pt-4">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a89b8a]">
+                    {setupState.selectedEra ? ERA_LENS_META[setupState.selectedEra as keyof typeof ERA_LENS_META]?.label : "Selected era"}
+                  </p>
+                  <h2 className="mt-1.5 text-[1.9rem] font-extrabold leading-[0.97] tracking-[-0.06em] text-[#1f1a14]">
+                    How to explore it.
+                  </h2>
+                  <p className="mt-2.5 text-[13.5px] leading-[1.75] text-[#6d6254]">
+                    Each lens focuses on a different surviving thread from this era.
+                  </p>
+                </div>
+
                 <div className="mt-5">
                   <SectionLabel tooltip="The thematic angle applied to site selection and narrative. Determines which surviving structures qualify as stops.">
                     Interpretation
@@ -413,9 +472,9 @@ export function LeftRail({
                   </div>
                 </div>
 
-                {/* Pace — redesigned as slider */}
+                {/* Pace */}
                 <div className="mt-5">
-                  <SectionLabel tooltip="Controls how many stops are included and how long each visit is. Slow = deep dives, Fast = quick overview.">
+                  <SectionLabel tooltip="Controls how many stops are included. Slow = deep dives, Fast = quick overview.">
                     Pace
                   </SectionLabel>
                   <div className="mt-3 rounded-[16px] border border-[rgba(116,102,82,0.09)] bg-white px-4 py-3.5">
@@ -438,9 +497,9 @@ export function LeftRail({
                   </div>
                 </div>
 
-                {lensResult.warnings.length > 0 || statusMessage ? (
+                {statusMessage ? (
                   <div className="mt-4 rounded-[14px] border border-[rgba(132,100,61,0.12)] bg-[#faf4ea] px-4 py-3 text-[12.5px] leading-[1.65] text-[#6f624f]">
-                    {statusMessage ?? lensResult.warnings[0]}
+                    {statusMessage}
                   </div>
                 ) : null}
               </div>
@@ -448,20 +507,15 @@ export function LeftRail({
               <div className="mt-6 flex items-center justify-between gap-3 border-t border-[rgba(116,102,82,0.07)] pt-4">
                 <button
                   type="button"
-                  onClick={onBackToDestination}
+                  onClick={() => setLensSubStep("era")}
                   className="rounded-full border border-[rgba(116,102,82,0.1)] bg-white px-4 py-2.5 text-[13px] font-semibold text-[#3e372d] transition-colors hover:bg-[#faf7f2]"
                 >
                   ← Back
                 </button>
-
                 <button
                   type="button"
                   onClick={onGenerateStory}
-                  disabled={
-                    isStoryLoading ||
-                    !setupState.selectedEra ||
-                    !setupState.selectedInterpretationLens
-                  }
+                  disabled={isStoryLoading || !setupState.selectedInterpretationLens}
                   className="relative overflow-hidden rounded-full bg-[#1f1a14] px-5 py-2.5 text-[13px] font-semibold text-white transition-all hover:bg-[#302921] disabled:opacity-50"
                 >
                   {isStoryLoading ? (
@@ -497,11 +551,11 @@ export function LeftRail({
                   <p className="mt-2 text-[13.5px] leading-[1.7] text-[#6d6254]">{narrative.subtitle}</p>
                 </div>
 
-                <div className="mt-4 grid grid-cols-2 gap-2">
-                  <MetricCard value={String(narrative.chapters.length).padStart(2, "0")} label="Stops" />
-                  <MetricCard value={narrative.spanLabel ?? "—"} label="Span" />
-                  <MetricCard value={`${narrative.readMinutes ?? 8} min`} label="Read" />
-                  <MetricCard value={`${narrative.walkKilometers ?? 8} km`} label="Walk" />
+                <div className="mt-3 flex gap-2">
+                  <StatPill value={String(narrative.chapters.length).padStart(2, "0")} label="Stops" />
+                  <StatPill value={narrative.spanLabel ?? "—"} label="Span" />
+                  <StatPill value={`${narrative.readMinutes ?? 8}m`} label="Read" />
+                  <StatPill value={`${narrative.walkKilometers ?? 8}km`} label="Walk" />
                 </div>
 
                 {/* Tabs */}
@@ -671,21 +725,20 @@ export function LeftRail({
                 </p>
               </div>
 
-              <div className="mt-5 grid grid-cols-2 gap-2">
-                <MetricCard value={currentJourney.destination.canonicalLabel} label="Place" />
-                <MetricCard
+              <div className="mt-4 flex gap-2">
+                <StatPill
                   value={String(currentJourney.story.narrative.chapters.length).padStart(2, "0")}
                   label="Stops"
                 />
-                <MetricCard value={currentJourney.story.narrative.spanLabel ?? "—"} label="Span" />
-                <MetricCard value={currentJourney.setup.tripLength} label="Length" />
+                <StatPill value={currentJourney.story.narrative.spanLabel ?? "—"} label="Span" />
+                <StatPill value={currentJourney.setup.tripLength} label="Length" />
               </div>
 
               {exportMessage ? (
                 <p className="mt-4 text-[12.5px] leading-[1.65] text-[#7b6f5f]">{exportMessage}</p>
               ) : null}
 
-              <div className="mt-6 flex items-center gap-2.5">
+              <div className="mt-6 flex flex-wrap items-center gap-2">
                 <button
                   type="button"
                   onClick={onExportMap}
@@ -693,6 +746,13 @@ export function LeftRail({
                   className="rounded-full bg-[#1f1a14] px-4 py-2.5 text-[13px] font-semibold text-white transition-colors hover:bg-[#302921] disabled:opacity-50"
                 >
                   {isExporting ? "Exporting…" : "Export map"}
+                </button>
+                <button
+                  type="button"
+                  onClick={onDownloadStory}
+                  className="rounded-full border border-[rgba(116,102,82,0.1)] bg-white px-4 py-2.5 text-[13px] font-semibold text-[#3e372d] transition-colors hover:bg-[#faf7f2]"
+                >
+                  Download
                 </button>
                 <button
                   type="button"

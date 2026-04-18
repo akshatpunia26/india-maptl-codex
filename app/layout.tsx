@@ -9,8 +9,8 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Maptl India Story Maps",
-  description: "A light, modern prototype for historical story maps across India.",
+  title: "maptl - Codex Delhi",
+  description: "A new interface for place, culture, and discovery. Understand any city through its surviving historical layers.",
 };
 
 export default function RootLayout({
