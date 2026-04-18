@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import type { RefObject } from "react";
 import { useEffect, useRef, useState } from "react";
 
-import { extractYear } from "@/lib/journey/helpers";
 import { AppStage, MapDestination, StoryPayload } from "@/lib/journey/types";
 
 const MapCanvas = dynamic(() => import("@/components/map/MapCanvas"), {
@@ -28,13 +27,6 @@ interface RightPanelProps {
   onToggleFullscreen: () => void;
   onToggleSatellite: () => void;
 }
-
-const DOSSIER_LINES = [
-  "Reading the city's bones…",
-  "Surfacing what still stands…",
-  "Filtering to surviving layers…",
-  "Mapping the living archive…",
-];
 
 const STORY_LINES = [
   "Threading the route…",
@@ -87,15 +79,7 @@ function SatelliteIcon({ active }: { active: boolean }) {
   );
 }
 
-function PlaceholderStage({
-  title,
-  body,
-  eyebrow,
-}: {
-  title: string;
-  body: string;
-  eyebrow: string;
-}) {
+function IntroPlaceholder() {
   return (
     <div className="relative flex h-full min-h-0 items-center justify-center overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#fcfaf5_0%,#f5efe4_100%)]">
       <div className="placeholder-rings pointer-events-none absolute inset-0">
@@ -104,17 +88,102 @@ function PlaceholderStage({
         <div className="placeholder-ring delay-2 left-[34%] top-[48%] h-64 w-64" />
       </div>
       <div className="placeholder-grid pointer-events-none absolute inset-6 rounded-[26px]" />
-      <div className="placeholder-scan pointer-events-none absolute inset-y-8 left-[18%] w-px bg-[linear-gradient(180deg,transparent,rgba(132,100,61,0.28),transparent)]" />
-      <div className="placeholder-scan delay-2 pointer-events-none absolute inset-y-10 right-[24%] w-px bg-[linear-gradient(180deg,transparent,rgba(132,100,61,0.18),transparent)]" />
-
       <div className="relative z-10 max-w-[36rem] px-8 text-center">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#a89b8a]">
-          {eyebrow}
-        </p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#a89b8a]">maptl</p>
         <h2 className="mt-3 text-[2.2rem] font-extrabold leading-[0.96] tracking-[-0.07em] text-[#1f1a14]">
-          {title}
+          A map opens here.
         </h2>
-        <p className="mx-auto mt-3 max-w-[28rem] text-[14px] leading-[1.8] text-[#6d6254]">{body}</p>
+        <p className="mx-auto mt-3 max-w-[28rem] text-[14px] leading-[1.8] text-[#6d6254]">
+          Search a city on the left. The timeline stays tied to surviving sites that can be mapped.
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function Step1Content({ isLoading, setupInput }: { isLoading: boolean; setupInput: string }) {
+  if (isLoading) {
+    return (
+      <div className="relative flex h-full min-h-0 items-center justify-center overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#fcfaf5_0%,#f5efe4_100%)]">
+        <div className="placeholder-rings pointer-events-none absolute inset-0">
+          <div className="placeholder-ring left-[20%] top-[16%] h-56 w-56" />
+          <div className="placeholder-ring delay-1 left-[58%] top-[18%] h-72 w-72" />
+        </div>
+        <div className="relative z-10 max-w-[36rem] px-8 text-center">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#a89b8a]">Resolving…</p>
+          <h2 className="mt-3 text-[2rem] font-extrabold leading-[0.96] tracking-[-0.07em] text-[#1f1a14]">
+            Reading the city&apos;s bones…
+          </h2>
+          <p className="mx-auto mt-3 max-w-[28rem] text-[14px] leading-[1.8] text-[#6d6254]">
+            Building a standing-history dossier for {setupInput || "your city"}.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  const useCases = ["Travelers", "Teachers", "Students", "Heritage walks", "Architecture lovers", "Local institutions"];
+
+  return (
+    <div className="flex h-full min-h-0 flex-col gap-3 overflow-y-auto rounded-[28px] bg-[#f9f6f0] p-5">
+      {/* Hero banner */}
+      <div className="rounded-[22px] bg-[#1f1a14] px-6 py-5 text-white">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[rgba(255,255,255,0.45)]">
+          maptl
+        </p>
+        <h2 className="mt-2 text-[1.6rem] font-extrabold leading-[1.05] tracking-[-0.05em]">
+          A new interface for place, culture, and discovery.
+        </h2>
+        <p className="mt-2.5 text-[13px] leading-[1.7] text-[rgba(255,255,255,0.65)]">
+          Not an itinerary maker. A timeline engine for place — turning any city into centuries of surviving history you can actually walk.
+        </p>
+      </div>
+
+      {/* Two col cards */}
+      <div className="grid grid-cols-2 gap-3">
+        <div className="rounded-[20px] border border-[rgba(116,102,82,0.1)] bg-white px-4 py-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a89b8a]">The gap</p>
+          <p className="mt-2 text-[14px] font-extrabold leading-[1.1] tracking-[-0.03em] text-[#1f1a14]">
+            Maps tell you where.
+          </p>
+          <p className="mt-2 text-[12.5px] leading-[1.65] text-[#6d6254]">
+            History is buried across articles, archives, and memory. There&apos;s no easy interface for layered place understanding — until now.
+          </p>
+        </div>
+
+        <div className="rounded-[20px] border border-[rgba(116,102,82,0.1)] bg-white px-4 py-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a89b8a]">What unlocks</p>
+          <ul className="mt-2 space-y-1.5">
+            {[
+              "Era-based narratives of what mattered, when, why",
+              "Stand in one place, understand centuries of change",
+              "Instant, spatial, and intuitive — not a research task",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-[12px] leading-[1.55] text-[#3a342b]">
+                <span className="mt-[3px] block h-[5px] w-[5px] shrink-0 rounded-full bg-[#84643d]" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Use cases */}
+      <div className="rounded-[20px] border border-[rgba(116,102,82,0.1)] bg-white px-4 py-4">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a89b8a]">Who uses it</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {useCases.map((uc) => (
+            <span
+              key={uc}
+              className="rounded-full border border-[rgba(116,102,82,0.1)] bg-[#faf7f2] px-3 py-1.5 text-[12px] font-semibold text-[#3a342b]"
+            >
+              {uc}
+            </span>
+          ))}
+        </div>
+        <p className="mt-3 text-[12px] leading-[1.6] text-[#8a7e6f]">
+          One simple flow. Many high-value outputs. Useful for tourism, education, heritage, culture, and local storytelling.
+        </p>
       </div>
     </div>
   );
@@ -138,16 +207,9 @@ export function RightPanel({
 }: RightPanelProps) {
   const activeChapter = story?.narrative.chapters[activeChapterIndex] ?? story?.narrative.chapters[0] ?? null;
   const activePlaceId = activeChapter?.placeId ?? "";
-  const activeYear = activeChapter ? extractYear(activeChapter.dateLabel) : null;
   const mapVisible = Boolean(destination && stage !== "intro" && stage !== "step-1");
   const isStoryStage = Boolean(destination && story && (stage === "step-3" || stage === "summary"));
-  const timelineEnabled =
-    isStoryStage &&
-    stage !== "summary" &&
-    story!.narrative.chapters.length > 1 &&
-    story!.narrative.chapters.some((chapter) => extractYear(chapter.dateLabel) !== null);
 
-  const dossierLine = useCyclingLine(DOSSIER_LINES, isSetupLoading);
   const storyLine = useCyclingLine(STORY_LINES, isStoryLoading);
 
   const chapterCount = story?.narrative.chapters.length ?? 0;
@@ -158,24 +220,10 @@ export function RightPanel({
         isMapFullscreen ? "fixed inset-3 z-50" : "h-full"
       }`}
     >
-      {stage === "intro" ? (
-        <PlaceholderStage
-          eyebrow="maptl"
-          title="A map opens here."
-          body="Search a city on the left. The timeline stays tied to surviving sites and urban traces that can be mapped."
-        />
-      ) : null}
+      {stage === "intro" ? <IntroPlaceholder /> : null}
 
       {stage === "step-1" ? (
-        <PlaceholderStage
-          eyebrow={isSetupLoading ? "Resolving…" : "Step 1"}
-          title={isSetupLoading ? dossierLine : "The map waits for a place."}
-          body={
-            isSetupLoading
-              ? `Building a standing-history dossier for ${setupInput || "your city"}.`
-              : "Type a place in India. Step 2 surfaces only eras supported by evidence."
-          }
-        />
+        <Step1Content isLoading={isSetupLoading} setupInput={setupInput} />
       ) : null}
 
       {mapVisible && destination ? (
@@ -272,95 +320,42 @@ export function RightPanel({
             ) : null}
           </AnimatePresence>
 
-          {/* Timeline — step-3 only */}
-          {timelineEnabled ? (
+          {/* Stop nav card — step-3 only */}
+          {isStoryStage && stage !== "summary" && chapterCount > 0 ? (
             <div className="absolute inset-x-4 bottom-4 z-10">
-              <div className="rounded-[20px] border border-[rgba(116,102,82,0.1)] bg-[rgba(255,255,255,0.94)] px-4 py-3.5 backdrop-blur-md shadow-[0_4px_20px_rgba(68,55,39,0.1)]">
-                {/* Chapter info row */}
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <p className="truncate text-[13px] font-semibold text-[#1f1a14]">
-                      {String(activeChapterIndex + 1).padStart(2, "0")} · {activeChapter?.title}
-                    </p>
-                    <p className="mt-0.5 text-[10.5px] uppercase tracking-[0.14em] text-[#8f8374]">
-                      {activeChapter?.dateLabel}
-                    </p>
-                  </div>
-                  <div className="flex shrink-0 items-center gap-2">
-                    {activeYear ? (
-                      <span className="rounded-full bg-[#f0ebe3] px-2.5 py-1 text-[11px] font-semibold text-[#5d5448]">
-                        {activeYear}
-                      </span>
-                    ) : null}
-                    <span className="text-[11px] font-semibold text-[#a89b8a]">
-                      {activeChapterIndex + 1}/{chapterCount}
-                    </span>
-                  </div>
+              <div className="flex items-center gap-2 rounded-[20px] border border-[rgba(116,102,82,0.1)] bg-[rgba(255,255,255,0.96)] px-3 py-2.5 backdrop-blur-md shadow-[0_4px_20px_rgba(68,55,39,0.1)]">
+                <button
+                  type="button"
+                  onClick={() => onSelectChapterIndex(Math.max(0, activeChapterIndex - 1))}
+                  disabled={activeChapterIndex === 0}
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f0ebe3] text-[#3a342b] transition-colors hover:bg-[#e7dfd5] disabled:opacity-30"
+                  aria-label="Previous stop"
+                >
+                  <svg width="7" height="10" viewBox="0 0 8 11" fill="none" aria-hidden>
+                    <path d="M6.5 1L1.5 5.5L6.5 10" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+                  </svg>
+                </button>
+
+                <div className="min-w-0 flex-1 text-center">
+                  <p className="truncate text-[12.5px] font-semibold text-[#1f1a14]">
+                    {activeChapter?.title}
+                  </p>
+                  <p className="text-[10px] uppercase tracking-[0.13em] text-[#8f8374]">
+                    {activeChapter?.dateLabel} · {activeChapterIndex + 1}/{chapterCount}
+                  </p>
                 </div>
 
-                {/* Slider row */}
-                <div className="mt-3 flex items-center gap-2.5">
-                  <button
-                    type="button"
-                    onClick={() => onSelectChapterIndex(Math.max(0, activeChapterIndex - 1))}
-                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f0ebe3] text-[#3a342b] transition-colors hover:bg-[#e7dfd5] disabled:opacity-40"
-                    disabled={activeChapterIndex === 0}
-                  >
-                    <svg width="8" height="11" viewBox="0 0 8 11" fill="currentColor" aria-hidden>
-                      <path d="M6.5 1L1.5 5.5L6.5 10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" fill="none" />
-                    </svg>
-                  </button>
-
-                  <div className="relative flex-1">
-                    {/* Progress track */}
-                    <div className="h-0.5 w-full rounded-full bg-[rgba(116,102,82,0.15)]">
-                      <div
-                        className="h-full rounded-full bg-[#1f1a14] transition-all duration-300"
-                        style={{
-                          width: chapterCount > 1
-                            ? `${(activeChapterIndex / (chapterCount - 1)) * 100}%`
-                            : "0%",
-                        }}
-                      />
-                    </div>
-                    <input
-                      type="range"
-                      min={0}
-                      max={chapterCount - 1}
-                      value={activeChapterIndex}
-                      onChange={(event) => onSelectChapterIndex(Number(event.target.value))}
-                      className="timeline-slider absolute inset-y-0 -top-[7px] w-full opacity-0 cursor-pointer"
-                      aria-label="Chapter progress"
-                    />
-                    {/* Tick dots */}
-                    <div className="pointer-events-none absolute inset-y-0 -top-[3px] flex w-full items-center justify-between px-[0px]">
-                      {Array.from({ length: Math.min(chapterCount, 12) }).map((_, i) => {
-                        const mappedIndex = Math.round((i / (Math.min(chapterCount, 12) - 1)) * (chapterCount - 1));
-                        return (
-                          <span
-                            key={i}
-                            className={`block h-[5px] w-[5px] rounded-full transition-colors ${
-                              mappedIndex <= activeChapterIndex
-                                ? "bg-[#1f1a14]"
-                                : "bg-[rgba(116,102,82,0.2)]"
-                            }`}
-                          />
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => onSelectChapterIndex(Math.min(chapterCount - 1, activeChapterIndex + 1))}
-                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f0ebe3] text-[#3a342b] transition-colors hover:bg-[#e7dfd5] disabled:opacity-40"
-                    disabled={activeChapterIndex === chapterCount - 1}
-                  >
-                    <svg width="8" height="11" viewBox="0 0 8 11" fill="currentColor" aria-hidden>
-                      <path d="M1.5 1L6.5 5.5L1.5 10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" fill="none" />
-                    </svg>
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => onSelectChapterIndex(Math.min(chapterCount - 1, activeChapterIndex + 1))}
+                  disabled={activeChapterIndex === chapterCount - 1}
+                  className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#f0ebe3] text-[#3a342b] transition-colors hover:bg-[#e7dfd5] disabled:opacity-30"
+                  aria-label="Next stop"
+                >
+                  <svg width="7" height="10" viewBox="0 0 8 11" fill="none" aria-hidden>
+                    <path d="M1.5 1L6.5 5.5L1.5 10" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+                  </svg>
+                </button>
               </div>
             </div>
           ) : null}
