@@ -1,0 +1,251 @@
+{
+  "updatedAt": "2026-04-18T09:03:27.322Z",
+  "data": {
+    "timeline": {
+      "title": "Jaipur, Rajasthan, India: Standing history in sequence",
+      "overview": "A route through surviving sites, ordered from the oldest standing layer to the newest urban memory still visible today.",
+      "whyThisRouteWorks": "The route keeps to sites that still exist, stay mappable on the ground, and form a coherent chronological walk through the city.",
+      "transitionLogic": "Each stop advances the city through a visible change in patronage, form, or civic memory.",
+      "chapterOrder": [
+        "dxjuom1iehbsyzpbuxfjyxc-amer-fort-d6ab34c5fa37",
+        "dxjuom1iehbsyzpbuxfjyxc-johri-bazaar-93b3b167a3ff",
+        "dxjuom1iehbsyzpbuxfjyxc-jantar-mantar-jaipur-9631770f3b11",
+        "dxjuom1iehbsyzpbuxfjyxc-city-palace-jaipur-671a5fc40a6e",
+        "dxjuom1iehbsyzpbuxfjyxc-govind-dev-ji-temple-79db62768c88"
+      ],
+      "chapters": [
+        {
+          "stopId": "dxjuom1iehbsyzpbuxfjyxc-amer-fort-d6ab34c5fa37",
+          "summary": "Provides the pre-Jaipur power landscape that shaped the city’s siting and defense.",
+          "kicker": "Amer, Jaipur urban fringe",
+          "dateLabel": "1592"
+        },
+        {
+          "stopId": "dxjuom1iehbsyzpbuxfjyxc-johri-bazaar-93b3b167a3ff",
+          "summary": "A direct survivor of Jaipur’s mercantile urbanism and street-based craft economy.",
+          "kicker": "Walled City",
+          "dateLabel": "1727"
+        },
+        {
+          "stopId": "dxjuom1iehbsyzpbuxfjyxc-jantar-mantar-jaipur-9631770f3b11",
+          "summary": "It anchors Jaipur’s courtly-scientific identity and is one of the city’s strongest intact imperial-era monuments.",
+          "kicker": "Old City core",
+          "dateLabel": "1728–1734"
+        },
+        {
+          "stopId": "dxjuom1iehbsyzpbuxfjyxc-city-palace-jaipur-671a5fc40a6e",
+          "summary": "A core expression of Jaipur’s princely urban order and living royal heritage.",
+          "kicker": "Old City core",
+          "dateLabel": "1729–1732"
+        },
+        {
+          "stopId": "dxjuom1iehbsyzpbuxfjyxc-govind-dev-ji-temple-79db62768c88",
+          "summary": "Connects Jaipur’s planned city to enduring devotional life and temple patronage.",
+          "kicker": "City Palace precinct",
+          "dateLabel": "1735"
+        }
+      ],
+      "feasibleStopIds": [
+        "dxjuom1iehbsyzpbuxfjyxc-amer-fort-d6ab34c5fa37",
+        "dxjuom1iehbsyzpbuxfjyxc-johri-bazaar-93b3b167a3ff",
+        "dxjuom1iehbsyzpbuxfjyxc-jantar-mantar-jaipur-9631770f3b11",
+        "dxjuom1iehbsyzpbuxfjyxc-city-palace-jaipur-671a5fc40a6e",
+        "dxjuom1iehbsyzpbuxfjyxc-govind-dev-ji-temple-79db62768c88"
+      ],
+      "readMinutes": 7,
+      "walkKilometers": 11.3,
+      "warnings": []
+    },
+    "feasibleStops": [
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-amer-fort-d6ab34c5fa37",
+        "title": "Amer Fort",
+        "shortLabel": "Amber Fort",
+        "lat": 26.9859,
+        "lng": 75.8507,
+        "areaLabel": "Amer, Jaipur urban fringe",
+        "day": 1,
+        "visitEstimateMin": 120,
+        "siteType": "fort",
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "water-and-survival",
+          "craft-and-patronage"
+        ],
+        "historicalSummary": "A hill fort-palace complex predating Jaipur city, later incorporated into the wider defensive landscape that protected the new capital; part of the Hill Forts of Rajasthan World Heritage property.",
+        "whyItMatters": "Provides the pre-Jaipur power landscape that shaped the city’s siting and defense.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/247/",
+          "https://www.wikidata.org/wiki/Q4741286"
+        ],
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Jaipur_03-2016_04_Amber_Fort.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Jaipur_03-2016_04_Amber_Fort.jpg/1280px-Jaipur_03-2016_04_Amber_Fort.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AJaipur_03-2016_04_Amber_Fort.jpg",
+          "attribution": "A.Savin",
+          "license": "FAL",
+          "width": 5317,
+          "height": 3323,
+          "imageConfidence": 0.9
+        },
+        "chronologyLabel": "1592",
+        "standingStatus": "standing",
+        "score": 0.94
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-johri-bazaar-93b3b167a3ff",
+        "title": "Johri Bazaar",
+        "shortLabel": "Johari Bazaar",
+        "lat": 26.908204,
+        "lng": 75.83259,
+        "areaLabel": "Walled City",
+        "day": 1,
+        "visitEstimateMin": 40,
+        "siteType": "bazaar",
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "trade-and-movement",
+          "urban-form-and-everyday-life",
+          "craft-and-patronage"
+        ],
+        "historicalSummary": "One of Jaipur’s historic market streets, part of the planned city’s commercial grid and still a lived trade corridor.",
+        "whyItMatters": "A direct survivor of Jaipur’s mercantile urbanism and street-based craft economy.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1605"
+        ],
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Diafarab%C3%A9.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Diafarab%C3%A9.jpg/1280px-Diafarab%C3%A9.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADiafarab%C3%A9.jpg",
+          "attribution": "Jacques Taberlet",
+          "license": "CC BY 3.0",
+          "width": 1920,
+          "height": 1080,
+          "imageConfidence": 0.9
+        },
+        "chronologyLabel": "1727",
+        "standingStatus": "standing",
+        "score": 0.91
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-jantar-mantar-jaipur-9631770f3b11",
+        "title": "Jantar Mantar, Jaipur",
+        "shortLabel": "Jantar Mantar",
+        "lat": 26.908204,
+        "lng": 75.83259,
+        "areaLabel": "Old City core",
+        "day": 1,
+        "visitEstimateMin": 60,
+        "siteType": "civic-building",
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "craft-and-patronage",
+          "urban-form-and-everyday-life"
+        ],
+        "historicalSummary": "An early-18th-century astronomical observatory of monumental masonry instruments commissioned by Sawai Jai Singh II; UNESCO notes it as the best preserved of India’s historic observatories.",
+        "whyItMatters": "It anchors Jaipur’s courtly-scientific identity and is one of the city’s strongest intact imperial-era monuments.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1338",
+          "https://asi.nic.in/jantar-mantar-jaipur/"
+        ],
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Lil_Boosie.png",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/1/11/Lil_Boosie.png",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3ALil_Boosie.png",
+          "attribution": "TrillEntCMG",
+          "license": "CC BY-SA 3.0",
+          "width": 540,
+          "height": 960,
+          "imageConfidence": 0.9
+        },
+        "chronologyLabel": "1728–1734",
+        "standingStatus": "standing",
+        "score": 0.91
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-city-palace-jaipur-671a5fc40a6e",
+        "title": "City Palace, Jaipur",
+        "shortLabel": "City Palace",
+        "lat": 26.9255,
+        "lng": 75.8236,
+        "areaLabel": "Old City core",
+        "day": 1,
+        "visitEstimateMin": 75,
+        "siteType": "palace",
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "memory-and-identity",
+          "craft-and-patronage"
+        ],
+        "historicalSummary": "The principal royal palace complex of Jaipur, part of the planned city’s ceremonial and administrative heart; UNESCO identifies it as one of Jaipur’s iconic monuments.",
+        "whyItMatters": "A core expression of Jaipur’s princely urban order and living royal heritage.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1605",
+          "https://www.wikidata.org/wiki/Q2723395"
+        ],
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Jaipur_03-2016_22_City_Palace_complex.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jaipur_03-2016_22_City_Palace_complex.jpg/1280px-Jaipur_03-2016_22_City_Palace_complex.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AJaipur_03-2016_22_City_Palace_complex.jpg",
+          "attribution": "A.Savin",
+          "license": "FAL",
+          "width": 5300,
+          "height": 2650,
+          "imageConfidence": 0.9
+        },
+        "chronologyLabel": "1729–1732",
+        "standingStatus": "standing",
+        "score": 0.95
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-govind-dev-ji-temple-79db62768c88",
+        "title": "Govind Dev Ji Temple",
+        "shortLabel": "Govind Dev Ji Temple",
+        "lat": 26.92883,
+        "lng": 75.82403,
+        "areaLabel": "City Palace precinct",
+        "day": 1,
+        "visitEstimateMin": 45,
+        "siteType": "temple",
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "memory-and-identity",
+          "craft-and-patronage"
+        ],
+        "historicalSummary": "A major Vaishnava temple within Jaipur’s royal urban fabric; UNESCO cites it as one of the city’s iconic monuments, linking sacred practice with courtly patronage.",
+        "whyItMatters": "Connects Jaipur’s planned city to enduring devotional life and temple patronage.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1605",
+          "https://www.wikidata.org/wiki/Q5589834"
+        ],
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Govind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Govind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg/1280px-Govind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AGovind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg",
+          "attribution": "Jakub Hałun",
+          "license": "CC BY-SA 4.0",
+          "width": 5532,
+          "height": 3680,
+          "imageConfidence": 0.9
+        },
+        "chronologyLabel": "1735",
+        "standingStatus": "standing",
+        "score": 0.95
+      }
+    ]
+  }
+}

@@ -1,0 +1,550 @@
+{
+  "updatedAt": "2026-04-18T08:41:51.967Z",
+  "data": {
+    "key": "dossier-dxjuom1iehbsyzpbzu1vyxc-new-delhi-delhi-india-2a70f6dd19d2",
+    "builtAt": "2026-04-18T08:41:51.966Z",
+    "place": {
+      "label": "New Delhi, Delhi, India",
+      "canonicalLabel": "New Delhi, Delhi, India",
+      "center": [
+        77.20877,
+        28.613928
+      ],
+      "bbox": [
+        76.942051,
+        28.404263,
+        77.347105,
+        28.883588
+      ],
+      "placeType": "place",
+      "mapboxId": "dXJuOm1ieHBsYzpBZU1vYXc",
+      "displayContext": "New Delhi, New Delhi, Delhi, India"
+    },
+    "coverageConfidence": 0.9,
+    "candidateSites": [
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-qutb-minar-and-its-monuments-1cd97d0cdb3c",
+        "title": "Qutb Minar and its Monuments",
+        "altNames": [
+          "Qutub Minar",
+          "Qutb Complex"
+        ],
+        "shortLabel": "Qutb Minar",
+        "lat": 28.648568,
+        "lng": 77.21787,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "temple",
+        "areaLabel": "Mehrauli, South Delhi",
+        "eraStart": 1200,
+        "eraEnd": 1325,
+        "eraLabels": [
+          "sultanate-and-regional-capitals"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "sacred-landscapes",
+          "ruins-and-afterlives"
+        ],
+        "visitEstimateMin": 90,
+        "historicalSummary": "A surviving early-13th-century monumental complex anchored by the 72.5 m Qutb Minar, with associated mosque, tombs, gateways, and the Iron Pillar. UNESCO and ASI describe it as a key early Delhi Sultanate ensemble.",
+        "whyItMatters": "It is one of the strongest physical survivals of Delhi’s Sultanate-era political and religious transformation.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/233",
+          "https://whc.unesco.org/en/list/233"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.94
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-red-fort-complex-3881497a6714",
+        "title": "Red Fort Complex",
+        "altNames": [
+          "Lal Qila"
+        ],
+        "shortLabel": "Red Fort",
+        "lat": 28.657139,
+        "lng": 77.235959,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "fort",
+        "areaLabel": "Old Delhi / Shahjahanabad",
+        "eraStart": 1639,
+        "eraEnd": 1658,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "urban-form-and-everyday-life",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 120,
+        "historicalSummary": "A major surviving Mughal palace-fort founded by Shah Jahan for Shahjahanabad, with pavilions, gates, and planning that influenced later architecture. UNESCO notes its enduring historical and architectural significance; ASI manages the site.",
+        "whyItMatters": "It is the most iconic surviving imperial core of Shahjahanabad and a defining Mughal urban landmark in Delhi.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/231",
+          "https://asi.nic.in/pages/WorldHeritageRedFort"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.91
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-humayun-s-tomb-b4c47a35fce8",
+        "title": "Humayun's Tomb",
+        "altNames": [
+          "Humayun ka Maqbara"
+        ],
+        "shortLabel": "Humayun's Tomb",
+        "lat": 28.592999,
+        "lng": 77.24399,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "tomb",
+        "areaLabel": "Nizamuddin, South Delhi",
+        "eraStart": 1560,
+        "eraEnd": 1572,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "craft-and-patronage",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 120,
+        "historicalSummary": "A 16th-century Mughal garden-tomb and UNESCO World Heritage Site, described as the first major garden-tomb on the Indian subcontinent. The complex includes related tombs, gateways, and the Arab Serai.",
+        "whyItMatters": "It is a foundational Mughal funerary landscape and a strong surviving example of courtly patronage and garden planning.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/232/",
+          "https://asi.nic.in/pages/WorldHeritageHumayunTomb"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.93
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-purana-qila-99b454d2f2ef",
+        "title": "Purana Qila",
+        "altNames": [
+          "Old Fort",
+          "Dinpanah"
+        ],
+        "shortLabel": "Purana Qila",
+        "lat": 28.61226,
+        "lng": 77.24319,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "fort",
+        "areaLabel": "Mathura Road / near Delhi Zoo",
+        "eraStart": 1533,
+        "eraEnd": 1545,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "ruins-and-afterlives",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 90,
+        "historicalSummary": "A substantial surviving fortification associated with Humayun and Sher Shah Suri, standing on a site linked by tradition and excavation to earlier settlement layers. Delhi Tourism and the on-site museum describe long archaeological continuity.",
+        "whyItMatters": "It combines visible fort fabric with archaeological depth, making it important for both political history and deep urban stratigraphy.",
+        "evidenceUrls": [
+          "https://delhitourism.gov.in/tourist_place/purana_quila.html",
+          "https://delhitourism.gov.in/entertainment/purana_quila_museum.html"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.95
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-jama-masjid-f1ede0a8c214",
+        "title": "Jama Masjid",
+        "altNames": [
+          "Masjid-i-Jahan-Numa"
+        ],
+        "shortLabel": "Jama Masjid",
+        "lat": 28.649775,
+        "lng": 77.232589,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "mosque",
+        "areaLabel": "Old Delhi / Shahjahanabad",
+        "eraStart": 1650,
+        "eraEnd": 1656,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 60,
+        "historicalSummary": "Delhi Tourism identifies it as the largest mosque in India, a major surviving congregational mosque of Shahjahanabad and a central component of Mughal Delhi’s ritual and urban life.",
+        "whyItMatters": "It anchors the religious and civic geography of Old Delhi and remains one of the city’s most important living monuments.",
+        "evidenceUrls": [
+          "https://delhitourism.gov.in/tourist_place/jama_masjid.html"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.8,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.93
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-india-gate-f5962e46b3dd",
+        "title": "India Gate",
+        "altNames": [
+          "All India War Memorial"
+        ],
+        "shortLabel": "India Gate",
+        "lat": 28.602232,
+        "lng": 77.229385,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "memorial",
+        "areaLabel": "Central New Delhi / Kartavya Path",
+        "eraStart": 1921,
+        "eraEnd": 1933,
+        "eraLabels": [
+          "colonial-and-princely-modernity",
+          "postcolonial-civic-memory"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 45,
+        "historicalSummary": "A 42 m war memorial designed by Edwin Lutyens and dedicated in 1931/1933, commemorating soldiers who died in World War I and related campaigns. Delhi Tourism describes it as one of the city’s best-known monuments.",
+        "whyItMatters": "It is a key civic-memory landmark of New Delhi and a major public gathering space in the capital’s ceremonial axis.",
+        "evidenceUrls": [
+          "https://delhitourism.gov.in/tourist_place/india_gate.html",
+          "https://delhitourism.gov.in/dt/explore_the_city.html"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.82,
+        "routeFitScore": 0.96
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-sunder-nursery-986c181c2e4f",
+        "title": "Sunder Nursery",
+        "altNames": [
+          "Sunder Nursery Heritage Park"
+        ],
+        "shortLabel": "Sunder Nursery",
+        "lat": 28.6494,
+        "lng": 77.20644,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "garden",
+        "areaLabel": "Adjacent to Humayun's Tomb, Nizamuddin",
+        "eraStart": 2018,
+        "eraEnd": 2026,
+        "eraLabels": [
+          "postcolonial-civic-memory"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "water-and-survival",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 90,
+        "historicalSummary": "A restored heritage park opened to the public in 2018, described by Delhi Tourism as a site with monuments, gardens, and biodiversity next to Humayun’s Tomb. It functions as a contemporary conservation and public-realm layer in the same historic precinct.",
+        "whyItMatters": "It represents modern heritage-making and landscape recovery around one of Delhi’s richest Mughal zones.",
+        "evidenceUrls": [
+          "https://delhitourism.gov.in/entertainment/sunder_nursery.html"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.8,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.94
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-national-police-memorial-308cef10db4b",
+        "title": "National Police Memorial",
+        "altNames": [
+          "National Police Memorial and Museum"
+        ],
+        "shortLabel": "National Police Memorial",
+        "lat": 28.64062432,
+        "lng": 77.24945171,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "memorial",
+        "areaLabel": "Shantipath, Chanakyapuri",
+        "eraStart": 2018,
+        "eraEnd": 2026,
+        "eraLabels": [
+          "postcolonial-civic-memory"
+        ],
+        "interpretationTags": [
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 45,
+        "historicalSummary": "A contemporary memorial on Shantipath in Chanakyapuri, identified by Delhi Tourism as a dedicated police memorial campus in New Delhi.",
+        "whyItMatters": "It is a major recent civic-memory site in the diplomatic district of the capital.",
+        "evidenceUrls": [
+          "https://delhitourism.gov.in/tourist_place/national_police.html"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.73,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.92
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-jantar-mantar-9bf4338b7174",
+        "title": "Jantar Mantar",
+        "altNames": [
+          "Jantar Mantar, Delhi"
+        ],
+        "shortLabel": "Jantar Mantar",
+        "lat": 28.628984,
+        "lng": 77.21942,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "civic-building",
+        "areaLabel": "Connaught Place / central Delhi",
+        "eraStart": 1724,
+        "eraEnd": 1725,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "craft-and-patronage",
+          "urban-form-and-everyday-life",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 60,
+        "historicalSummary": "A surviving astronomical observatory complex in central Delhi, associated with Jai Singh II and still physically present as a major historic civic-scientific site.",
+        "whyItMatters": "It adds a rare scientific and measurement landscape to Delhi’s imperial-era urban heritage.",
+        "evidenceUrls": [
+          "https://delhitourism.gov.in/dt/explore_the_city.html",
+          "https://asi.nic.in/pdf/actRules1959.pdf"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.78,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.97
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-safdarjung-s-tomb-edba030f3d78",
+        "title": "Safdarjung's Tomb",
+        "altNames": [
+          "Safdarjung Tomb"
+        ],
+        "shortLabel": "Safdarjung's Tomb",
+        "lat": 28.59625,
+        "lng": 77.20194,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "tomb",
+        "areaLabel": "Safdarjung, South Delhi",
+        "eraStart": 1754,
+        "eraEnd": 1754,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "craft-and-patronage",
+          "ruins-and-afterlives"
+        ],
+        "visitEstimateMin": 75,
+        "historicalSummary": "A surviving late Mughal tomb in Delhi that reflects the city’s transition into early modern decline and continued elite patronage.",
+        "whyItMatters": "It helps bridge Shahjahanabad’s high Mughal phase to the city’s later precolonial transformations.",
+        "evidenceUrls": [
+          "https://delhitourism.gov.in/dt/explore_the_city.html"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.73,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.97
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-lodhi-garden-d2146d0550a3",
+        "title": "Lodhi Garden",
+        "altNames": [
+          "Lodi Gardens"
+        ],
+        "shortLabel": "Lodhi Garden",
+        "lat": 28.592196,
+        "lng": 77.22354,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "garden",
+        "areaLabel": "Lodhi Estate / central-south Delhi",
+        "eraStart": 1936,
+        "eraEnd": 2026,
+        "eraLabels": [
+          "colonial-and-princely-modernity",
+          "postcolonial-civic-memory"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "urban-form-and-everyday-life",
+          "ruins-and-afterlives"
+        ],
+        "visitEstimateMin": 75,
+        "historicalSummary": "A public garden landscape containing surviving tombs from the late premodern period, repurposed as a major civic-green space in modern Delhi.",
+        "whyItMatters": "It is a clear example of layered reoccupation where monument and park coexist in everyday urban use.",
+        "evidenceUrls": [
+          "https://delhitourism.gov.in/dt/explore_the_city.html"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.73,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.82,
+        "routeFitScore": 0.95
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "url": "https://whc.unesco.org/en/list/233",
+        "title": "Qutb Minar and its Monuments, Delhi - UNESCO World Heritage Centre",
+        "publisher": "UNESCO World Heritage Centre",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/231",
+        "title": "Red Fort Complex - UNESCO World Heritage Centre",
+        "publisher": "UNESCO World Heritage Centre",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/232/",
+        "title": "Humayun's Tomb, Delhi - UNESCO World Heritage Centre",
+        "publisher": "UNESCO World Heritage Centre",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://asi.nic.in/pages/WorldHeritageRedFort",
+        "title": "World Heritage Site – Red Fort, Delhi",
+        "publisher": "Archaeological Survey of India",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://asi.nic.in/pages/WorldHeritageHumayunTomb",
+        "title": "Humayun’s Tomb (1993), Delhi",
+        "publisher": "Archaeological Survey of India",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://delhitourism.gov.in/tourist_place/purana_quila.html",
+        "title": "Purana Quila",
+        "publisher": "Delhi Tourism",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://delhitourism.gov.in/tourist_place/india_gate.html",
+        "title": "India Gate",
+        "publisher": "Delhi Tourism",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://delhitourism.gov.in/tourist_place/jama_masjid.html",
+        "title": "Jama Masjid",
+        "publisher": "Delhi Tourism",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://delhitourism.gov.in/tourist_place/spritual_delhi.html",
+        "title": "Spiritual Delhi",
+        "publisher": "Delhi Tourism",
+        "kind": "official",
+        "quality": "medium"
+      },
+      {
+        "url": "https://delhitourism.gov.in/entertainment/purana_quila_museum.html",
+        "title": "Purana Quila Museum",
+        "publisher": "Delhi Tourism",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://delhitourism.gov.in/entertainment/sunder_nursery.html",
+        "title": "Sunder Nursery",
+        "publisher": "Delhi Tourism",
+        "kind": "official",
+        "quality": "high"
+      }
+    ],
+    "eligibleEraScores": {
+      "early-foundations": 0,
+      "temple-and-courtly-citymaking": 0,
+      "sultanate-and-regional-capitals": 0,
+      "mughal-and-early-modern-urbanism": 0.89,
+      "colonial-and-princely-modernity": 0.88,
+      "postcolonial-civic-memory": 0.87
+    },
+    "eligibleInterpretationLensScores": {
+      "sacred-landscapes": 0.89,
+      "power-and-defense": 0.9,
+      "water-and-survival": 0,
+      "trade-and-movement": 0,
+      "craft-and-patronage": 0.88,
+      "ruins-and-afterlives": 0.88,
+      "memory-and-identity": 0.88,
+      "urban-form-and-everyday-life": 0.88
+    },
+    "imageCandidates": [],
+    "warnings": []
+  }
+}

@@ -1,0 +1,1087 @@
+{
+  "updatedAt": "2026-04-18T09:03:15.285Z",
+  "data": {
+    "pageid": 2453995,
+    "ns": 0,
+    "title": "Q2542789",
+    "lastrevid": 2456318947,
+    "modified": "2026-01-20T13:22:29Z",
+    "type": "item",
+    "id": "Q2542789",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "St. Georg Walldürn"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "building in Walldürn, Karlsruhe Government Region, Bade-Württemberg, Germany"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Basilica of St. George and of the Most Precious Blood"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "5538051defe8e9fa5722dffc9d4a7d5060d87267",
+            "datavalue": {
+              "value": "St. Georg Walldürn",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q2542789$A7D3685A-CE4C-47DC-81A9-C901DD91DC3C",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "45dff2a6853006e163695699659d3eba808a2161",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 503285,
+                "id": "Q503285"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q2542789$CA455054-2E32-4327-98CE-5B831509BD85",
+          "rank": "normal"
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "ef7247b704f4ec0a7df39e83306bb388fea17d5f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 183,
+                "id": "Q183"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q2542789$48A90F23-FDC5-43BF-94F8-ABE5D485F592",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "76715dd863e7f5c8ef0e70436138dd92e0e6a1b1",
+            "datavalue": {
+              "value": {
+                "latitude": 49.5845,
+                "longitude": 9.36624,
+                "altitude": null,
+                "precision": 0.0001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2542789$D7AE1C6B-6EB9-4CE4-B413-E37BEB40EDFF",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1612": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1612",
+            "hash": "9fa324ba99fcc993a80c5007d396815e771e39fb",
+            "datavalue": {
+              "value": "St. Georg, Walldürn",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2542789$B2296784-25BE-47ED-BF86-52836D294CEA",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "e71a7903858496c67eea189a7084d5559f788edb",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5d3b16d350189b0a81818758208505444c86c127",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 565,
+                        "id": "Q565"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "530caa411cf5e5b55e20acb21e27cffcce3c31dd",
+            "datavalue": {
+              "value": "Walldürn, Wallfahrtsbasilika St Georg (101).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2542789$B295F914-A58F-4AD7-84EB-CFD223601F80",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "e71a7903858496c67eea189a7084d5559f788edb",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5d3b16d350189b0a81818758208505444c86c127",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 565,
+                        "id": "Q565"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "eb3b9152ab6cb89b3098cde95e52d44257f564b1",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11691318,
+                "id": "Q11691318"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2542789$A811EC82-7595-4DF0-AD0E-ED9009F9195D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9a24f7c0208b05d6be97077d855671d1dfdbc0dd",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "d38375ffe6fe142663ff55cd783aa4df4301d83d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48183,
+                        "id": "Q48183"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "f4f0a021cf8360eaf75d432458c093c161d051c5",
+            "datavalue": {
+              "value": "http://www.wallfahrt-wallduern.de",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P407": [
+              {
+                "snaktype": "value",
+                "property": "P407",
+                "hash": "46bfd327b830f66f7061ea92d1be430c135fa91f",
+                "datavalue": {
+                  "value": {
+                    "entity-type": "item",
+                    "numeric-id": 188,
+                    "id": "Q188"
+                  },
+                  "type": "wikibase-entityid"
+                },
+                "datatype": "wikibase-item"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P407"
+          ],
+          "id": "Q2542789$614CE4A8-D56B-489D-A773-034D488485E4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "be526bbde0cfdf507da6b0de6df64304248a1a7e",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f036f87c7560506006ea68af2a385d0df073093a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 48552277,
+                        "id": "Q48552277"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "71798096bea815082e5212ff955f2ea7486e2083",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-02-14T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P5383": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5383",
+            "hash": "4f568756db42ebba7376129e18a7098afec49347",
+            "datavalue": {
+              "value": "22182",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$0AAC03BD-DCA7-449C-B5E5-41290DF8B683",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f484c6f757eb0bf6b8294702df7352db110e4f6d",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "bb385bc908e4615b60c060310f5723f66c443109",
+                    "datavalue": {
+                      "value": "https://www.archinform.net/service/wd_aipro.php",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 265049,
+                        "id": "Q265049"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "fe5629878c4528b9d24398b9a675f7de064ed88a",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-08-23T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "6d94139fe4b65a6b1ca3cedc1743f2821b247c42",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 317557,
+                "id": "Q317557"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2542789$83FB2E7D-1461-4D1B-984C-6F9312A6FDA4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "437c413704f1c495b4c071a39537e71e13e2ca12",
+              "snaks": {
+                "P5383": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5383",
+                    "hash": "4f568756db42ebba7376129e18a7098afec49347",
+                    "datavalue": {
+                      "value": "22182",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 265049,
+                        "id": "Q265049"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "fe5629878c4528b9d24398b9a675f7de064ed88a",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-08-23T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P5383",
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "f10d85ab29d7f962de199d2a41de0c3f0b86ace2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 120560,
+                "id": "Q120560"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2542789$6a34d2ed-42b6-dd3c-c5b8-1906f16c4d63",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "0925476c074eea7048fde35604bc57dc227e245f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 10631691,
+                "id": "Q10631691"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2542789$872cb130-4f50-0648-2a45-1d1870ec1a31",
+          "rank": "normal"
+        }
+      ],
+      "P2971": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2971",
+            "hash": "a81d384a285e421ea8a988d1e2335cbd4197fe2a",
+            "datavalue": {
+              "value": "878",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$01691d63-b48b-47a6-bd25-fa3c58520ca5",
+          "rank": "normal"
+        }
+      ],
+      "P7561": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7561",
+            "hash": "cbe66778191789a663daa39b3382fc819ced7804",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 104590749,
+                "id": "Q104590749"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2542789$691295bb-0ef8-4323-9261-c8b38e8138d2",
+          "rank": "normal"
+        }
+      ],
+      "P2671": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2671",
+            "hash": "01e719480ea45aaa6b768b786e5327d211054cad",
+            "datavalue": {
+              "value": "/g/1211j04h",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$CD213BFA-DD52-46B3-8ADE-DC5F01AF6DCB",
+          "rank": "normal"
+        }
+      ],
+      "P140": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P140",
+            "hash": "1d37cef459ae3310e8856a343b4f5d0ceaee71e2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1841,
+                "id": "Q1841"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2542789$0A4C394A-2475-4308-83EB-0D4647CF35B3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "0b340e80cc5b052396119d04ebe2e2428995cade",
+              "snaks": {
+                "P3452": [
+                  {
+                    "snaktype": "value",
+                    "property": "P3452",
+                    "hash": "fba63fb38d5aa13b71763deb4f9205edc12dc7a0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 25932135,
+                        "id": "Q25932135"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "5fcd183c78a48ec040c8b9b729b4fbc07c8091e8",
+                    "datavalue": {
+                      "value": "https://www.wikidata.org/wiki/Q2542789#P2971",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  },
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "aad8ea9157af3147381d5272b069ed449e9aaa21",
+                    "datavalue": {
+                      "value": "https://www.wikidata.org/wiki/Property:P2971#P2302",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P3452",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "a6ab10c76dd060fcf0d3f39effa2cb9d0fade334",
+            "datavalue": {
+              "value": "4237766-3",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$6dc8b75d-4fcf-b1df-e95b-471b9f3f25e2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c79bc7252c116f23ee29b85f629986b55ef01a5f",
+              "snaks": {
+                "P5383": [
+                  {
+                    "snaktype": "value",
+                    "property": "P5383",
+                    "hash": "4f568756db42ebba7376129e18a7098afec49347",
+                    "datavalue": {
+                      "value": "22182",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "c619cc6e0e5fe3733a8c4a47939343e5970e0e9d",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 265049,
+                        "id": "Q265049"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c5de51aaae23363da9626b4eb6edf3246428e248",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-01-24T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P5383",
+                "P248",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1448": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1448",
+            "hash": "35f3692ef346f4443554aba416f9b00c9fb9cd84",
+            "datavalue": {
+              "value": {
+                "text": "Basilika St. Georg und Hl. Blut",
+                "language": "de"
+              },
+              "type": "monolingualtext"
+            },
+            "datatype": "monolingualtext"
+          },
+          "type": "statement",
+          "id": "Q2542789$4bb9465f-4fb7-cdaf-0a43-5b741b2e34ea",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "20276d61662e71a5b2c901e387dd6e1e2a08e479",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "fa33cd0b4adef61696c9674bd1b93afb0d1a88ac",
+                    "datavalue": {
+                      "value": "http://www.gcatholic.org/churches/europe/0878.htm",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P3501": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3501",
+            "hash": "6625c2116039d72e46b1665c05bcffde3a0b1a36",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 730757,
+                "id": "Q730757"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2542789$efeebe76-4087-e9ce-7210-f5b11b9899df",
+          "rank": "normal"
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "343155e3ba55d215bdd027f3478f16f6d4c77cbf",
+            "datavalue": {
+              "value": "239980684",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$df3ebc18-4911-457a-7dd9-973874cbd143",
+          "rank": "normal"
+        }
+      ],
+      "P5775": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5775",
+            "hash": "2fd8f54e54562725dd86cf4f6f34293cb8a4f435",
+            "datavalue": {
+              "value": "198708Wallduern06.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2542789$74ffe954-4f7b-f73b-74e9-1764fafc044c",
+          "rank": "normal"
+        }
+      ],
+      "P3134": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3134",
+            "hash": "d7992404b4c19f50b5da5407e5a9b8457dd14918",
+            "datavalue": {
+              "value": "8857255",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$a5ae25c9-4ba8-9bb6-5539-17d7bbd6b112",
+          "rank": "normal"
+        }
+      ],
+      "P3108": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3108",
+            "hash": "3ddef3ee1a6f241acddfc29caff07d1f0195e933",
+            "datavalue": {
+              "value": "basilika-st-georg-walldürn",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$621d869d-4da6-09dd-3159-789464580ed5",
+          "rank": "normal"
+        }
+      ],
+      "P1566": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1566",
+            "hash": "2816624a803505b2394c70445e34ee5f961da4a2",
+            "datavalue": {
+              "value": "12493604",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$0032d9b3-4d9b-2431-4237-00999f47f343",
+          "rank": "normal"
+        }
+      ],
+      "P2503": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2503",
+            "hash": "0067d3012cff6755249900240df80b7268360e98",
+            "datavalue": {
+              "value": "object_288275",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$9035805a-44b9-7afc-4850-af185556d49d",
+          "rank": "normal"
+        }
+      ],
+      "P708": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P708",
+            "hash": "538cfad0cb3a7d0cb542fa903bb43a9488927e9f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 260287,
+                "id": "Q260287"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2542789$b5c21265-9204-4689-a0ce-aa06dfca5e21",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "288ab581e7d2d02995a26dfa8b091d96e78457fc",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 206855,
+                        "id": "Q206855"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P5504": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5504",
+            "hash": "d444cb6366f7489764b058c85d5ac54520890f04",
+            "datavalue": {
+              "value": "institutions/51002618",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$53c74ff3-489f-f255-932f-fdf131511d33",
+          "rank": "normal"
+        }
+      ],
+      "P10832": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P10832",
+            "hash": "cd7beaa63847da37ba473aa87b7cac31b39976da",
+            "datavalue": {
+              "value": "E39PCGqqGGDTGhj49f6KkxpRYX",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$63e6d245-48c3-354e-7c3c-591f615c7174",
+          "rank": "normal"
+        }
+      ],
+      "P10862": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P10862",
+            "hash": "3221082d4b4b85c7bb588470ebc9001a83949fc7",
+            "datavalue": {
+              "value": "highlight/2958401",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$c0151d17-4b96-6e0b-8a70-a19237b44a3f",
+          "rank": "normal"
+        }
+      ],
+      "P12966": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P12966",
+            "hash": "0a371edef71744222ba591c4472adc2705dc7508",
+            "datavalue": {
+              "value": "37332886",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2542789$33280562-4b43-bb59-0258-3ca9ebf72488",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:St. Georg Walldürn",
+        "badges": []
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Wallfahrtsbasilika St. Georg",
+        "badges": []
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Basilika Santo Georgius dan Darah Yang Paling Berharga, Walldürn",
+        "badges": []
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Bazylika św. Jerzego w Walldürn",
+        "badges": []
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Базилика Святого Георга (Вальдюрн)",
+        "badges": []
+      }
+    }
+  }
+}

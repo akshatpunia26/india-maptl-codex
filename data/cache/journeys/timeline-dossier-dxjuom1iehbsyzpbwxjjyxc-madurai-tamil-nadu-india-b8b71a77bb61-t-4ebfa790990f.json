@@ -1,0 +1,109 @@
+{
+  "updatedAt": "2026-04-18T08:47:34.210Z",
+  "data": {
+    "timeline": {
+      "title": "Madurai, Tamil Nadu, India: Standing history in sequence",
+      "overview": "A route through surviving sites, ordered from the oldest standing layer to the newest urban memory still visible today.",
+      "whyThisRouteWorks": "The route keeps to sites that still exist, stay mappable on the ground, and form a coherent chronological walk through the city.",
+      "transitionLogic": "Each stop advances the city through a visible change in patronage, form, or civic memory.",
+      "chapterOrder": [
+        "dxjuom1iehbsyzpbwxjjyxc-meenakshi-amman-temple-e8bfcf094808",
+        "dxjuom1iehbsyzpbwxjjyxc-azhagar-kovil-4602501137eb"
+      ],
+      "chapters": [
+        {
+          "stopId": "dxjuom1iehbsyzpbwxjjyxc-meenakshi-amman-temple-e8bfcf094808",
+          "summary": "It is the defining standing monument of Madurai and anchors the city’s historic temple-centered urban form.",
+          "kicker": "Core temple city, south of the Vaigai",
+          "dateLabel": "600"
+        },
+        {
+          "stopId": "dxjuom1iehbsyzpbwxjjyxc-azhagar-kovil-4602501137eb",
+          "summary": "It broadens the dossier beyond the Shaiva core and shows Madurai’s larger sacred geography.",
+          "kicker": "North-east of Madurai",
+          "dateLabel": "600"
+        }
+      ],
+      "feasibleStopIds": [
+        "dxjuom1iehbsyzpbwxjjyxc-meenakshi-amman-temple-e8bfcf094808",
+        "dxjuom1iehbsyzpbwxjjyxc-azhagar-kovil-4602501137eb"
+      ],
+      "readMinutes": 4,
+      "walkKilometers": 11.6,
+      "warnings": [
+        "Coverage is thinner for this exact lens, so this story uses a shorter validated route than usual."
+      ]
+    },
+    "feasibleStops": [
+      {
+        "id": "dxjuom1iehbsyzpbwxjjyxc-meenakshi-amman-temple-e8bfcf094808",
+        "title": "Meenakshi Amman Temple",
+        "shortLabel": "Meenakshi Temple",
+        "lat": 9.919722222222223,
+        "lng": 78.11944444444444,
+        "areaLabel": "Core temple city, south of the Vaigai",
+        "day": 1,
+        "visitEstimateMin": 120,
+        "siteType": "temple",
+        "eraLabels": [
+          "temple-and-courtly-citymaking",
+          "sultanate-and-regional-capitals",
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "urban-form-and-everyday-life",
+          "memory-and-identity"
+        ],
+        "historicalSummary": "Major surviving temple complex at the heart of Madurai’s sacred and urban identity; the present fabric reflects long building, rebuilding, and patronage across the medieval and early modern eras.",
+        "whyItMatters": "It is the defining standing monument of Madurai and anchors the city’s historic temple-centered urban form.",
+        "evidenceUrls": [
+          "https://www.wikidata.org/wiki/Q1424358",
+          "https://commons.wikimedia.org/wiki/File:S-TN-34_Meenakshi_Amman_Thirukovil_Madurai.jpg"
+        ],
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Madurai_Meenakshi_temple_2.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Madurai_Meenakshi_temple_2.jpg/1280px-Madurai_Meenakshi_temple_2.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AMadurai_Meenakshi_temple_2.jpg",
+          "attribution": "Kumar Appaiah",
+          "license": "CC BY-SA 2.5",
+          "width": 1920,
+          "height": 2560,
+          "imageConfidence": 0.9
+        },
+        "chronologyLabel": "600",
+        "standingStatus": "standing",
+        "score": 0.92
+      },
+      {
+        "id": "dxjuom1iehbsyzpbwxjjyxc-azhagar-kovil-4602501137eb",
+        "title": "Azhagar Kovil",
+        "shortLabel": "Azhagar Kovil",
+        "lat": 9.95327977,
+        "lng": 78.01953302,
+        "areaLabel": "North-east of Madurai",
+        "day": 1,
+        "visitEstimateMin": 75,
+        "siteType": "temple",
+        "eraLabels": [
+          "temple-and-courtly-citymaking",
+          "sultanate-and-regional-capitals",
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "memory-and-identity"
+        ],
+        "historicalSummary": "Standing Vishnu temple associated with the wider Madurai sacred landscape, surviving as an important regional pilgrimage site outside the core city center.",
+        "whyItMatters": "It broadens the dossier beyond the Shaiva core and shows Madurai’s larger sacred geography.",
+        "evidenceUrls": [
+          "https://madurai.nic.in/tourist-place/azhagar-kovil/"
+        ],
+        "image": null,
+        "chronologyLabel": "600",
+        "standingStatus": "standing",
+        "score": 0.72
+      }
+    ]
+  }
+}

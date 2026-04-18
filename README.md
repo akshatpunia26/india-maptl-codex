@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# India MapTL
 
-## Getting Started
+India MapTL is a Next.js 16 prototype for generating standing-history timelines for Indian cities. The app resolves a place, builds an evidence-backed city dossier, filters fixed era and interpretation lenses, and generates a stop-by-stop timeline only from validated candidate sites.
 
-First, run the development server:
+## Requirements
+
+- Node.js 20+
+- A Mapbox token for the live map and place resolution
+- An OpenAI API key for dossier and timeline generation
+
+## Environment Variables
+
+Create `.env.local` in the project root:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN=your_public_mapbox_token
+MAPBOX_SECRET_TOKEN=your_secret_mapbox_token
+OPENAI_API_KEY=your_openai_api_key
+OPENAI_MODEL=gpt-5.4-mini
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Notes:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN` powers the client-side Mapbox GL map.
+- `MAPBOX_SECRET_TOKEN` is used by the server routes for Search Box place resolution and any server-side map lookups.
+- `OPENAI_MODEL` is optional. If omitted, the app defaults to `gpt-5.4-mini`.
+- If the OpenAI key is missing, dossier and timeline generation will return honest low-confidence responses instead of fake city fallbacks.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Verification
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint
+npm run build
+```
 
-## Deploy on Vercel
+## Architecture Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The main data flow is:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. `/api/place/resolve`
+   - uses Mapbox Search Box `suggest` and `retrieve`
+   - returns normalized city/town candidates for India
+2. `/api/dossier/build`
+   - reads a cached dossier first
+   - otherwise uses OpenAI Responses API with web search to extract standing-history evidence
+   - enriches coordinates and imagery through Wikidata and Wikimedia Commons
+3. `/api/lenses/generate`
+   - applies the fixed taxonomy and eligibility thresholds in code
+4. `/api/timeline/generate`
+   - computes feasible stops in code
+   - asks OpenAI only to sequence and narrate the approved stop list
+
+## Cache
+
+Hackathon-speed persistence lives in `data/cache/`:
+
+- `data/cache/dossiers`
+- `data/cache/journeys`
+- `data/cache/images`
+
+These JSON files can be safely replaced later with a database or a curated editorial store.
+
+## Standing-History Rules
+
+The current implementation follows these product rules:
+
+- only physically extant monuments, sites, or urban traces can become primary stops
+- era lenses are chosen only from the fixed taxonomy
+- interpretation lenses are chosen only from the fixed taxonomy
+- lenses are surfaced only when the dossier has enough supporting evidence
+- the model never invents coordinates, sites, or images for stops
+
+## Manual Curation
+
+There is an explicit hook in [lib/history/dossier.ts](/Users/akshatpunia/Dev/india-maptl-codex/lib/history/dossier.ts) where manual editorial overrides can later merge into the cached dossier before it is saved.

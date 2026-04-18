@@ -1,0 +1,167 @@
+{
+  "updatedAt": "2026-04-18T08:40:11.586Z",
+  "data": {
+    "timeline": {
+      "title": "New Delhi, Delhi, India: Standing history in sequence",
+      "overview": "A route through surviving sites, ordered from the oldest standing layer to the newest urban memory still visible today.",
+      "whyThisRouteWorks": "The route keeps to sites that still exist, stay mappable on the ground, and form a coherent chronological walk through the city.",
+      "transitionLogic": "Each stop advances the city through a visible change in patronage, form, or civic memory.",
+      "chapterOrder": [
+        "dxjuom1iehbsyzpbzu1vyxc-purana-qila-99b454d2f2ef",
+        "dxjuom1iehbsyzpbzu1vyxc-humayun-s-tomb-b4c47a35fce8",
+        "dxjuom1iehbsyzpbzu1vyxc-red-fort-4fbbc4d9fd8e",
+        "dxjuom1iehbsyzpbzu1vyxc-safdarjung-s-tomb-edba030f3d78"
+      ],
+      "chapters": [
+        {
+          "stopId": "dxjuom1iehbsyzpbzu1vyxc-purana-qila-99b454d2f2ef",
+          "summary": "One of the most important fortified traces of early Mughal-era Delhi and a major urban ruin still physically present.",
+          "kicker": "Old Delhi / Mathura Road",
+          "dateLabel": "1533–1545"
+        },
+        {
+          "stopId": "dxjuom1iehbsyzpbzu1vyxc-humayun-s-tomb-b4c47a35fce8",
+          "summary": "A foundational Mughal monument and UNESCO World Heritage site that anchors the Nizamuddin historic landscape.",
+          "kicker": "Nizamuddin",
+          "dateLabel": "1569–1572"
+        },
+        {
+          "stopId": "dxjuom1iehbsyzpbzu1vyxc-red-fort-4fbbc4d9fd8e",
+          "summary": "One of Delhi’s strongest surviving power monuments and a UNESCO World Heritage site.",
+          "kicker": "Shahjahanabad / Old Delhi",
+          "dateLabel": "1638–1648"
+        },
+        {
+          "stopId": "dxjuom1iehbsyzpbzu1vyxc-safdarjung-s-tomb-edba030f3d78",
+          "summary": "Marks the transition from Mughal urban patronage to later city layers and remains a prominent protected monument.",
+          "kicker": "Lutyens' Delhi / Jor Bagh",
+          "dateLabel": "1754"
+        }
+      ],
+      "feasibleStopIds": [
+        "dxjuom1iehbsyzpbzu1vyxc-purana-qila-99b454d2f2ef",
+        "dxjuom1iehbsyzpbzu1vyxc-humayun-s-tomb-b4c47a35fce8",
+        "dxjuom1iehbsyzpbzu1vyxc-red-fort-4fbbc4d9fd8e",
+        "dxjuom1iehbsyzpbzu1vyxc-safdarjung-s-tomb-edba030f3d78"
+      ],
+      "readMinutes": 6,
+      "walkKilometers": 17.2,
+      "warnings": []
+    },
+    "feasibleStops": [
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-purana-qila-99b454d2f2ef",
+        "title": "Purana Qila",
+        "shortLabel": "Purana Qila",
+        "lat": 28.61226,
+        "lng": 77.24319,
+        "areaLabel": "Old Delhi / Mathura Road",
+        "day": 1,
+        "visitEstimateMin": 90,
+        "siteType": "fort",
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "ruins-and-afterlives"
+        ],
+        "historicalSummary": "A major surviving fortification complex associated with Humayun’s Dinpanah and later reworked under Sher Shah Suri.",
+        "whyItMatters": "One of the most important fortified traces of early Mughal-era Delhi and a major urban ruin still physically present.",
+        "evidenceUrls": [
+          "https://en.wikipedia.org/wiki/Purana_Qila",
+          "https://whc.unesco.org/en/tentativelists/5743"
+        ],
+        "image": null,
+        "chronologyLabel": "1533–1545",
+        "standingStatus": "standing",
+        "score": 0.79
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-humayun-s-tomb-b4c47a35fce8",
+        "title": "Humayun's Tomb",
+        "shortLabel": "Humayun's Tomb",
+        "lat": 28.593264,
+        "lng": 77.250602,
+        "areaLabel": "Nizamuddin",
+        "day": 1,
+        "visitEstimateMin": 90,
+        "siteType": "tomb",
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "ruins-and-afterlives",
+          "memory-and-identity"
+        ],
+        "historicalSummary": "A pioneering Mughal garden-tomb commissioned for Emperor Humayun and a key precedent for later imperial funerary architecture.",
+        "whyItMatters": "A foundational Mughal monument and UNESCO World Heritage site that anchors the Nizamuddin historic landscape.",
+        "evidenceUrls": [
+          "https://asi.nic.in/pages/WorldHeritageHumayunTomb",
+          "https://www.wikidata.org/wiki/Q189648"
+        ],
+        "image": null,
+        "chronologyLabel": "1569–1572",
+        "standingStatus": "standing",
+        "score": 0.83
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-red-fort-4fbbc4d9fd8e",
+        "title": "Red Fort",
+        "shortLabel": "Red Fort",
+        "lat": 28.655833333333334,
+        "lng": 77.24027777777778,
+        "areaLabel": "Shahjahanabad / Old Delhi",
+        "day": 1,
+        "visitEstimateMin": 120,
+        "siteType": "fort",
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "memory-and-identity"
+        ],
+        "historicalSummary": "Mughal imperial fort begun under Shah Jahan and preserved as a major surviving symbol of Shahjahanabad and later Indian state memory.",
+        "whyItMatters": "One of Delhi’s strongest surviving power monuments and a UNESCO World Heritage site.",
+        "evidenceUrls": [
+          "https://asi.nic.in/pages/WorldHeritageRedFort",
+          "https://www.wikidata.org/wiki/Q45957"
+        ],
+        "image": null,
+        "chronologyLabel": "1638–1648",
+        "standingStatus": "standing",
+        "score": 0.83
+      },
+      {
+        "id": "dxjuom1iehbsyzpbzu1vyxc-safdarjung-s-tomb-edba030f3d78",
+        "title": "Safdarjung's Tomb",
+        "shortLabel": "Safdarjung's Tomb",
+        "lat": 28.58929,
+        "lng": 77.21061,
+        "areaLabel": "Lutyens' Delhi / Jor Bagh",
+        "day": 1,
+        "visitEstimateMin": 60,
+        "siteType": "tomb",
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "ruins-and-afterlives"
+        ],
+        "historicalSummary": "A late Mughal mausoleum in Delhi that preserves a major imperial funerary form on the eve of colonial modernity.",
+        "whyItMatters": "Marks the transition from Mughal urban patronage to later city layers and remains a prominent protected monument.",
+        "evidenceUrls": [
+          "https://www.wikidata.org/wiki/Q375624",
+          "https://asi.nic.in/admin/tender/download/608"
+        ],
+        "image": null,
+        "chronologyLabel": "1754",
+        "standingStatus": "standing",
+        "score": 0.83
+      }
+    ]
+  }
+}

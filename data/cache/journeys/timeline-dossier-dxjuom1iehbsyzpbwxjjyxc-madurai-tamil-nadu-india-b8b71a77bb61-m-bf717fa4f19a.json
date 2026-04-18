@@ -1,0 +1,144 @@
+{
+  "updatedAt": "2026-04-18T08:46:04.208Z",
+  "data": {
+    "timeline": {
+      "title": "Madurai’s Sacred Landscape in the Early Modern City",
+      "overview": "This one-day route follows Madurai as a temple-centered city shaped by worship, pilgrimage, water, and royal-era urbanism. Beginning at the core of Meenakshi Temple, it expands to Azhagar Kovil to show the wider sacred geography, then closes at Vandiyur Mariamman Teppakulam, a N⁠",
+      "whyThisRouteWorks": "The stops trace a coherent sacred landscape from the city’s defining temple core to an important regional pilgrimage shrine and then to a Nayak-period tank that still structures ritual life. Together they show how early modern Madurai linked worship, water, and urban form.",
+      "transitionLogic": "Start at the city’s central monument, Meenakshi Temple, where the temple-city model is most visible. Move northwest to Azhagar Kovil to widen the lens from urban core to surrounding pilgrimage terrain. End at Vandiyur Mariamman Teppakulam, ",
+      "readMinutes": 10,
+      "walkKilometers": 0,
+      "chapterOrder": [
+        "dxjuom1iehbsyzpbwxjjyxc-meenakshi-amman-temple-e8bfcf094808",
+        "dxjuom1iehbsyzpbwxjjyxc-azhagar-kovil-4602501137eb",
+        "dxjuom1iehbsyzpbwxjjyxc-vandiyur-mariamman-teppakulam-05b99bb7822a"
+      ],
+      "chapters": [
+        {
+          "stopId": "dxjuom1iehbsyzpbwxjjyxc-meenakshi-amman-temple-e8bfcf094808",
+          "summary": "Madurai’s defining standing monument and the clearest expression of a temple-centered city. Its long rebuilding history across medieval and early modern centuries makes it the anchor of the urban sacred landscape.",
+          "kicker": "The city begins here.",
+          "dateLabel": "c. 600 onward"
+        },
+        {
+          "stopId": "dxjuom1iehbsyzpbwxjjyxc-azhagar-kovil-4602501137eb",
+          "summary": "A major standing Vishnu temple that extends the story beyond the Shaiva core. It shows how Madurai’s sacred geography reached beyond the city center into a wider pilgrimage network.",
+          "kicker": "A broader sacred horizon.",
+          "dateLabel": "c. 600 onward"
+        },
+        {
+          "stopId": "dxjuom1iehbsyzpbwxjjyxc-vandiyur-mariamman-teppakulam-05b99bb7822a",
+          "summary": "A surviving Nayak-period temple tank tied to the float-festival tradition. It preserves the water infrastructure that supported ritual life and the early modern city’s ceremonial rhythms.",
+          "kicker": "Water made worship legible.",
+          "dateLabel": "1636"
+        }
+      ],
+      "feasibleStopIds": [
+        "dxjuom1iehbsyzpbwxjjyxc-meenakshi-amman-temple-e8bfcf094808",
+        "dxjuom1iehbsyzpbwxjjyxc-azhagar-kovil-4602501137eb",
+        "dxjuom1iehbsyzpbwxjjyxc-vandiyur-mariamman-teppakulam-05b99bb7822a"
+      ],
+      "warnings": []
+    },
+    "feasibleStops": [
+      {
+        "id": "dxjuom1iehbsyzpbwxjjyxc-meenakshi-amman-temple-e8bfcf094808",
+        "title": "Meenakshi Amman Temple",
+        "shortLabel": "Meenakshi Temple",
+        "lat": 9.919722222222223,
+        "lng": 78.11944444444444,
+        "areaLabel": "Core temple city, south of the Vaigai",
+        "day": 1,
+        "visitEstimateMin": 120,
+        "siteType": "temple",
+        "eraLabels": [
+          "temple-and-courtly-citymaking",
+          "sultanate-and-regional-capitals",
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "urban-form-and-everyday-life",
+          "memory-and-identity"
+        ],
+        "historicalSummary": "Major surviving temple complex at the heart of Madurai’s sacred and urban identity; the present fabric reflects long building, rebuilding, and patronage across the medieval and early modern eras.",
+        "whyItMatters": "It is the defining standing monument of Madurai and anchors the city’s historic temple-centered urban form.",
+        "evidenceUrls": [
+          "https://www.wikidata.org/wiki/Q1424358",
+          "https://commons.wikimedia.org/wiki/File:S-TN-34_Meenakshi_Amman_Thirukovil_Madurai.jpg"
+        ],
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Madurai_Meenakshi_temple_2.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Madurai_Meenakshi_temple_2.jpg/1280px-Madurai_Meenakshi_temple_2.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AMadurai_Meenakshi_temple_2.jpg",
+          "attribution": "Kumar Appaiah",
+          "license": "CC BY-SA 2.5",
+          "width": 1920,
+          "height": 2560,
+          "imageConfidence": 0.9
+        },
+        "chronologyLabel": "600",
+        "standingStatus": "standing",
+        "score": 0.92
+      },
+      {
+        "id": "dxjuom1iehbsyzpbwxjjyxc-azhagar-kovil-4602501137eb",
+        "title": "Azhagar Kovil",
+        "shortLabel": "Azhagar Kovil",
+        "lat": 9.95327977,
+        "lng": 78.01953302,
+        "areaLabel": "North-east of Madurai",
+        "day": 1,
+        "visitEstimateMin": 75,
+        "siteType": "temple",
+        "eraLabels": [
+          "temple-and-courtly-citymaking",
+          "sultanate-and-regional-capitals",
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "memory-and-identity"
+        ],
+        "historicalSummary": "Standing Vishnu temple associated with the wider Madurai sacred landscape, surviving as an important regional pilgrimage site outside the core city center.",
+        "whyItMatters": "It broadens the dossier beyond the Shaiva core and shows Madurai’s larger sacred geography.",
+        "evidenceUrls": [
+          "https://madurai.nic.in/tourist-place/azhagar-kovil/"
+        ],
+        "image": null,
+        "chronologyLabel": "600",
+        "standingStatus": "standing",
+        "score": 0.72
+      },
+      {
+        "id": "dxjuom1iehbsyzpbwxjjyxc-vandiyur-mariamman-teppakulam-05b99bb7822a",
+        "title": "Vandiyur Mariamman Teppakulam",
+        "shortLabel": "Temple tank",
+        "lat": 9.909378,
+        "lng": 78.15927,
+        "areaLabel": "Vandiyur, eastern Madurai",
+        "day": 1,
+        "visitEstimateMin": 40,
+        "siteType": "tank",
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "water-and-survival",
+          "sacred-landscapes",
+          "trade-and-movement"
+        ],
+        "historicalSummary": "Large surviving temple tank associated with the Madurai ritual landscape and the float-festival tradition; built in the Nayak period and still used today.",
+        "whyItMatters": "It preserves the hydraulic and ritual infrastructure of historic Madurai, linking water management with festival life.",
+        "evidenceUrls": [
+          "https://en.wikipedia.org/wiki/Vandiyur_Mariamman_Teppakulam",
+          "https://commons.wikimedia.org/wiki/Category:Mariamman_Teppakulam"
+        ],
+        "image": null,
+        "chronologyLabel": "1636",
+        "standingStatus": "standing",
+        "score": 0.78
+      }
+    ]
+  }
+}

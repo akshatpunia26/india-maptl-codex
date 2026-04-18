@@ -1,0 +1,245 @@
+{
+  "updatedAt": "2026-04-18T09:03:15.082Z",
+  "data": {
+    "pageid": 5350821,
+    "ns": 0,
+    "title": "Q5589834",
+    "lastrevid": 2470639340,
+    "modified": "2026-03-09T03:48:03Z",
+    "type": "item",
+    "id": "Q5589834",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Govind Dev Ji Temple"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "temple in India"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "18fb076bdc1c07e578546d1670ba193b768531ac",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 668,
+                "id": "Q668"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5589834$0B9821D1-760C-4E50-8456-84CB60559678",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a3804907951dad609bd31ac4531c3761df99615c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 842402,
+                "id": "Q842402"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5589834$bdcf4ea6-478a-6d1a-62d4-8cb51e5a6f37",
+          "rank": "normal"
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "1159a75772a9c3d4142647335fc463e58b548662",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2723395,
+                "id": "Q2723395"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q5589834$e4ab70e1-4bab-a254-f3df-60baeec1f725",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "535bce782a7be6b6fc25f64dfea1f6e500e70086",
+            "datavalue": {
+              "value": {
+                "latitude": 26.92883,
+                "longitude": 75.82403,
+                "altitude": null,
+                "precision": 1e-7,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q5589834$9E6D9033-2B29-4146-84A5-DBE2080ADDA9",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "12a1cdee0cf588464a016279676a68c70cdfbe48",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c60ff6958b296682e7d5f424dbec24ea1ca0a07b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 24237997,
+                        "id": "Q24237997"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "69ba9eeed8cfd23581e731a223b4f6713e8f78ed",
+                    "datavalue": {
+                      "value": "https://it.wikivoyage.org/wiki/Jaipur?oldid=776358",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "3d5657d2c43f74ef3800d300dcb0a137c2c192b9",
+            "datavalue": {
+              "value": "Govind Dev Ji Temple, Jaipur, 20191218 1059 9092.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q5589834$849a788c-4a57-fdff-7e9d-f0ccc8ac0ce7",
+          "rank": "normal"
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "864e0f8d2d5b17699fc44d2d2d542cce2e1afb3f",
+            "datavalue": {
+              "value": "Govind Dev Ji Temple",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q5589834$380e2674-4e7b-c6e0-1156-b49629cc7851",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "802269ea51c2b8846eb3b75e1dbafc3b327a098c",
+            "datavalue": {
+              "value": "/m/027048m",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q5589834$96E4A894-1291-410A-8A5E-E9B64977932E",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "arzwiki": {
+        "site": "arzwiki",
+        "title": "معبد جوفيند ديف جى",
+        "badges": []
+      },
+      "bnwiki": {
+        "site": "bnwiki",
+        "title": "গোবিন্দ দেব জী মন্দির",
+        "badges": []
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Govind Dev Ji Temple",
+        "badges": []
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Govind Dev Ji Temple",
+        "badges": []
+      },
+      "guwiki": {
+        "site": "guwiki",
+        "title": "ગોવિંદજી મંદિર, જયપુર",
+        "badges": []
+      },
+      "hiwiki": {
+        "site": "hiwiki",
+        "title": "गोविंद देवजी का मंदिर",
+        "badges": []
+      },
+      "pawiki": {
+        "site": "pawiki",
+        "title": "ਗੋਵਿੰਦ ਦੇਵ ਜੀ ਮੰਦਰ",
+        "badges": []
+      },
+      "tewiki": {
+        "site": "tewiki",
+        "title": "గోవింద్ దేవ్ జీ ఆలయం",
+        "badges": []
+      }
+    }
+  }
+}

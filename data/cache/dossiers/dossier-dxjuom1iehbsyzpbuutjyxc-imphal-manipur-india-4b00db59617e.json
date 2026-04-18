@@ -1,0 +1,392 @@
+{
+  "updatedAt": "2026-04-18T08:55:01.613Z",
+  "data": {
+    "key": "dossier-dxjuom1iehbsyzpbuutjyxc-imphal-manipur-india-4b00db59617e",
+    "builtAt": "2026-04-18T08:55:01.611Z",
+    "place": {
+      "label": "Imphal, Manipur, India",
+      "canonicalLabel": "Imphal, Manipur, India",
+      "center": [
+        93.936104,
+        24.807528
+      ],
+      "bbox": [
+        93.769913,
+        24.526249,
+        94.010475,
+        24.911245
+      ],
+      "placeType": "place",
+      "mapboxId": "dXJuOm1ieHBsYzpBUUtJYXc",
+      "displayContext": "Imphal, Imphal East, Manipur, India"
+    },
+    "coverageConfidence": 0.89,
+    "candidateSites": [
+      {
+        "id": "dxjuom1iehbsyzpbuutjyxc-kangla-fort-93c8e8d6c629",
+        "title": "Kangla Fort",
+        "altNames": [
+          "Kangla",
+          "Kangla Palace"
+        ],
+        "shortLabel": "Kangla Fort",
+        "lat": 24.81089494,
+        "lng": 93.93741221,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "fort",
+        "areaLabel": "Central Imphal",
+        "eraStart": 33,
+        "eraEnd": 1891,
+        "eraLabels": [
+          "early-foundations",
+          "temple-and-courtly-citymaking",
+          "sultanate-and-regional-capitals"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "sacred-landscapes",
+          "ruins-and-afterlives"
+        ],
+        "visitEstimateMin": 120,
+        "historicalSummary": "The former royal citadel and traditional seat of the Meitei kings, now a protected heritage complex with surviving walls, gates, moats, temples, museums, and ritual spaces.",
+        "whyItMatters": "This is Imphal’s core standing historic landscape and the strongest anchor for premodern royal memory in the city.",
+        "evidenceUrls": [
+          "https://www.incredibleindia.gov.in/en/manipur/imphal/kangla-fort",
+          "https://en.wikipedia.org/wiki/Kangla_fort"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.68,
+        "routeFitScore": 0.99,
+        "wikipediaTitle": "Kangla fort"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuutjyxc-shree-govindajee-temple-7ac920d979a0",
+        "title": "Shree Govindajee Temple",
+        "altNames": [
+          "Shree Shree Govindajee Temple",
+          "Govindaji Temple"
+        ],
+        "shortLabel": "Govindajee Temple",
+        "lat": 24.81089494,
+        "lng": 93.93741221,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "temple",
+        "areaLabel": "Near Kangla, Imphal East",
+        "eraStart": 1846,
+        "eraEnd": 1876,
+        "eraLabels": [
+          "colonial-and-princely-modernity"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "power-and-defense",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 45,
+        "historicalSummary": "A major Vaishnavite temple commissioned in 1846 and rebuilt in 1876, standing beside the old royal complex and tied to Manipuri court religion.",
+        "whyItMatters": "One of Imphal’s most important surviving sacred monuments, closely linked to the royal city and courtly patronage.",
+        "evidenceUrls": [
+          "https://www.incredibleindia.gov.in/en/manipur/imphal/shree-govindajee-temple",
+          "https://imphaleast.nic.in/tourist-place/shree-shree-govindajee-temple/",
+          "https://en.wikipedia.org/wiki/Shree_Govindajee_Temple"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.99,
+        "wikipediaTitle": "Shree Govindajee Temple"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuutjyxc-ima-keithel-d079ee29f2fe",
+        "title": "Ima Keithel",
+        "altNames": [
+          "Ima Market",
+          "Khwairamband Keithel",
+          "Nupi Keithel"
+        ],
+        "shortLabel": "Ima Keithel",
+        "lat": 24.81089494,
+        "lng": 93.93741221,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "bazaar",
+        "areaLabel": "Central Imphal",
+        "eraStart": 1600,
+        "eraEnd": 2026,
+        "eraLabels": [
+          "sultanate-and-regional-capitals",
+          "mughal-and-early-modern-urbanism",
+          "colonial-and-princely-modernity"
+        ],
+        "interpretationTags": [
+          "trade-and-movement",
+          "urban-form-and-everyday-life",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 60,
+        "historicalSummary": "A still-active women-run market complex in the city center, commonly described as having deep roots in the early modern period and rebuilt in its present bazaar form.",
+        "whyItMatters": "It is one of the clearest living urban institutions in Imphal, showing continuity of trade, social organization, and everyday city life.",
+        "evidenceUrls": [
+          "https://en.wikipedia.org/wiki/Ima_Market",
+          "https://www.incredibleindia.gov.in/en/manipur/imphal/imphal-travel-and-food-guide",
+          "https://www.incredibleindia.gov.in/en/manipur"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.78,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.68,
+        "routeFitScore": 0.99,
+        "wikipediaTitle": "Ima Market"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuutjyxc-manipur-state-museum-e94450d1ae9c",
+        "title": "Manipur State Museum",
+        "altNames": [
+          "State Museum, Imphal"
+        ],
+        "shortLabel": "Manipur State Museum",
+        "lat": 24.80521097,
+        "lng": 93.93710289,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "museum",
+        "areaLabel": "Imphal",
+        "eraStart": 1969,
+        "eraEnd": 2026,
+        "eraLabels": [
+          "postcolonial-civic-memory"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "craft-and-patronage",
+          "ruins-and-afterlives"
+        ],
+        "visitEstimateMin": 60,
+        "historicalSummary": "The state museum, inaugurated in 1969, preserves artefacts spanning Manipur’s historical, ethnographic, and archaeological collections.",
+        "whyItMatters": "A key postcolonial institution for interpreting Imphal’s past and the broader history of Manipur.",
+        "evidenceUrls": [
+          "https://artnculturemanipur.mn.gov.in/en/manipur-state-museum/",
+          "https://en.wikipedia.org/wiki/Manipur_State_Museum"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.99,
+        "wikipediaTitle": "Manipur State Museum"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuutjyxc-imphal-war-cemetery-92d99b3ac890",
+        "title": "Imphal War Cemetery",
+        "altNames": [
+          "Imphal Cemetery"
+        ],
+        "shortLabel": "Imphal War Cemetery",
+        "lat": 24.82255659,
+        "lng": 93.94575991,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "cemetery",
+        "areaLabel": "Imphal",
+        "eraStart": 1944,
+        "eraEnd": 2026,
+        "eraLabels": [
+          "postcolonial-civic-memory"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "ruins-and-afterlives"
+        ],
+        "visitEstimateMin": 30,
+        "historicalSummary": "A Commonwealth War Graves cemetery in Imphal commemorating those who died in the Battle of Imphal and related WWII operations.",
+        "whyItMatters": "It is a major standing memorial landscape for wartime memory in the city.",
+        "evidenceUrls": [
+          "https://www.incredibleindia.gov.in/en/manipur/imphal/imphal-war-cemetery"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.8,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.96
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuutjyxc-mapal-kangjeibung-6bad7b13bd66",
+        "title": "Mapal Kangjeibung",
+        "altNames": [
+          "Polo Ground"
+        ],
+        "shortLabel": "Mapal Kangjeibung",
+        "lat": 24.80666425,
+        "lng": 93.93620075,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "civic-building",
+        "areaLabel": "Imphal city core",
+        "eraStart": 1891,
+        "eraEnd": 2026,
+        "eraLabels": [
+          "colonial-and-princely-modernity",
+          "postcolonial-civic-memory"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "urban-form-and-everyday-life",
+          "power-and-defense"
+        ],
+        "visitEstimateMin": 30,
+        "historicalSummary": "The historic polo ground in central Imphal remains an active urban open space and ceremonial field associated with princely and postcolonial civic life.",
+        "whyItMatters": "A durable public ground that helps explain Imphal’s colonial and postcolonial city form and sporting memory.",
+        "evidenceUrls": [
+          "https://www.incredibleindia.gov.in/en/manipur/imphal"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.73,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.82,
+        "routeFitScore": 1
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuutjyxc-ina-museum-moirang-c25027f9a56c",
+        "title": "INA Museum, Moirang",
+        "altNames": [
+          "Indian National Army War Museum",
+          "INA Memorial Complex"
+        ],
+        "shortLabel": "INA Museum",
+        "lat": 24.81089494,
+        "lng": 93.93741221,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "museum",
+        "areaLabel": "Moirang, near Imphal region",
+        "eraStart": 2018,
+        "eraEnd": 2026,
+        "eraLabels": [
+          "postcolonial-civic-memory"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "ruins-and-afterlives"
+        ],
+        "visitEstimateMin": 60,
+        "historicalSummary": "An official museum at Moirang interpreting INA and WWII history in the Manipur region; it complements Imphal’s wartime memory circuit.",
+        "whyItMatters": "Included as a supporting regional memory site tied to the broader Imphal battle landscape and official heritage interpretation.",
+        "evidenceUrls": [
+          "https://inamuseum.mn.gov.in/"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.8,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.99
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "url": "https://www.incredibleindia.gov.in/en/manipur/imphal/kangla-fort",
+        "title": "Discover the Beauty of Kangla in Imphal",
+        "publisher": "Incredible India",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://www.incredibleindia.gov.in/en/manipur/imphal/shree-govindajee-temple",
+        "title": "Visit the Shree Govindajee Temple in Imphal",
+        "publisher": "Incredible India",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://www.incredibleindia.gov.in/en/manipur/imphal/imphal-war-cemetery",
+        "title": "Visit the Historic Imphal War Cemetery in Imphal",
+        "publisher": "Incredible India",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://artnculturemanipur.mn.gov.in/en/manipur-state-museum/",
+        "title": "Manipur State Museum",
+        "publisher": "Art & Culture Department, Government of Manipur",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Ima_Market",
+        "title": "Ima Market",
+        "publisher": "Wikipedia",
+        "kind": "encyclopedic",
+        "quality": "medium"
+      },
+      {
+        "url": "https://imphaleast.nic.in/tourist-place/shree-shree-govindajee-temple/",
+        "title": "Shree Shree Govindajee Temple",
+        "publisher": "Imphal East District, Government of Manipur",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://knowindia.india.gov.in/states-uts/manipur.php",
+        "title": "Manipur (Imphal)",
+        "publisher": "National Portal of India",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://inamuseum.mn.gov.in/",
+        "title": "INA Moirang – Official Website",
+        "publisher": "INA Museum",
+        "kind": "official",
+        "quality": "high"
+      }
+    ],
+    "eligibleEraScores": {
+      "early-foundations": 0,
+      "temple-and-courtly-citymaking": 0,
+      "sultanate-and-regional-capitals": 0.88,
+      "mughal-and-early-modern-urbanism": 0,
+      "colonial-and-princely-modernity": 0.88,
+      "postcolonial-civic-memory": 0.89
+    },
+    "eligibleInterpretationLensScores": {
+      "sacred-landscapes": 0.91,
+      "power-and-defense": 0.89,
+      "water-and-survival": 0,
+      "trade-and-movement": 0,
+      "craft-and-patronage": 0,
+      "ruins-and-afterlives": 0.9,
+      "memory-and-identity": 0.89,
+      "urban-form-and-everyday-life": 0.87
+    },
+    "imageCandidates": [],
+    "warnings": [
+      "Imphal’s best-documented historic layer is late premodern and colonial/princely; very early standing remains within the city core are limited in high-signal sources.",
+      "I included one out-of-core but closely tied standing site (INA Museum, Moirang) only because it is an official Manipur heritage reference and strongly supports the region’s memory landscape; it is not in Imphal proper."
+    ]
+  }
+}

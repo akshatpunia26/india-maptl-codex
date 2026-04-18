@@ -1,0 +1,721 @@
+{
+  "updatedAt": "2026-04-18T09:03:15.040Z",
+  "data": {
+    "pageid": 1697015,
+    "ns": 0,
+    "title": "Q1764757",
+    "lastrevid": 2445667123,
+    "modified": "2025-12-22T20:47:56Z",
+    "type": "item",
+    "id": "Q1764757",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Diafarabé"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "commune and village in Mopti Region, Mali"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Diafarabe"
+        }
+      ]
+    },
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "8df3ff7fea163c76567fb436cd79e9ad02e3f20f",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 912,
+                "id": "Q912"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1764757$4F09BC8B-8225-49D2-9C8E-6A4D13C7111B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P242": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P242",
+            "hash": "e33d648d507eeb0207bacc53cba9e7876973f26e",
+            "datavalue": {
+              "value": "Map commune Mali - DIAFARABE.svg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "q1764757$3F2AA39F-B474-44BF-9524-875D71AE84B5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "fb174f66df49afc9517ee202dd305d6625f6f16e",
+            "datavalue": {
+              "value": {
+                "latitude": 14.138056,
+                "longitude": -5.017778,
+                "altitude": null,
+                "precision": 0.001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "q1764757$4C3B9A4E-E06F-4636-B1F1-629EC2456C87",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "69f6e11ce492d8ebad372e1680070ac5fa917024",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 214155,
+                "id": "Q214155"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q1764757$B59ED0EF-CD63-4169-A046-4487103B0DC2",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "30953b7e35a6df18346528fe79191b4c5e2c97d8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2064101,
+                "id": "Q2064101"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1764757$F6F42CFC-6979-411E-8627-257F8F71ED83",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4d930f9e24af595fc0419dbab5902049cff9bb6",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "c6111470de7c71424897aff4f0fc8fc134bb0f0a",
+                    "datavalue": {
+                      "value": "https://fr.wikipedia.org/w/index.php?title=Diafarabé&oldid=225973111",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "c98fcb95c3f91ae08e4016bce43bb887ebe1a48c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1758856,
+                "id": "Q1758856"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q1764757$E1272217-552A-4C82-A234-2D4354C19DC2",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "e07a58293012a12b94818e0a26603ecb5ad5554f",
+            "datavalue": {
+              "value": "/m/05f54dh",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1764757$3515CF6C-E430-4C1C-A3C9-B1E4E77ED107",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1566": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1566",
+            "hash": "9062842a6d86ce878b02531a2273b4bebf26e6a0",
+            "datavalue": {
+              "value": "2459126",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1764757$DE90D6B6-97A3-4200-9B13-735EDF8B679A",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "88694a0f4d1486770c269f7db16a1982f74da69d",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 830106,
+                        "id": "Q830106"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "7137eb53658d394ae178f9ea1a4d120df83a307e",
+            "datavalue": {
+              "value": "Diafarabé",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q1764757$50B6E163-2E79-4798-A7F3-AEB4D97F20F4",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "dc92e45f6cc1f7d7efcb12253f66f4ad75d37be1",
+            "datavalue": {
+              "value": "Diafarabé.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q1764757$F908B27E-7709-46DE-A052-F8AC23DB81A4",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2044": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2044",
+            "hash": "777d9821dd752a00ade10091809fbdf32c542d8f",
+            "datavalue": {
+              "value": {
+                "amount": "+248",
+                "unit": "http://www.wikidata.org/entity/Q11573"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1764757$378E387C-9DB9-4017-9235-09BE446A06FE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P2046": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2046",
+            "hash": "e356ab815a571a6c6d0ede467513c967ce852a78",
+            "datavalue": {
+              "value": {
+                "amount": "+980",
+                "unit": "http://www.wikidata.org/entity/Q712226"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q1764757$BB8CA96E-1C78-4DFD-8EEC-063A398E350B",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b896cefbab7733fe81558c49d86156f477d661b0",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "5a35d927e0a4bec46c3d6633086ea4e3c0cb7f70",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Diafarabé&oldid=799814174",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P6766": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P6766",
+            "hash": "cd09db5ec91ef1f3526a977ccc8bcaeefbc464a3",
+            "datavalue": {
+              "value": "1209821709",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1764757$98815A9F-A3B9-4D54-8EAD-5B129AF875CC",
+          "rank": "normal"
+        }
+      ],
+      "P227": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P227",
+            "hash": "5647f9d753ff8ab08cb1eb63c5ced0f754bf5a7a",
+            "datavalue": {
+              "value": "1049914953",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1764757$6A888DBF-9A0C-4D60-8544-A97C8DB7FE62",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ced024eb12b5fe38ed87cb5720ea18f3c54229a9",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "019a50b7de741e0068bde41c9d9955b22a5de47b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 36578,
+                        "id": "Q36578"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P9957": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9957",
+            "hash": "9e5a7a323cb877ba7e53ee4fcd86182d0c4abfd1",
+            "datavalue": {
+              "value": "34289",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1764757$3A56ABDE-DB4C-4939-92E8-F3223DCCE368",
+          "rank": "normal"
+        }
+      ],
+      "P2326": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P2326",
+            "hash": "9a0ef4d09caed1ab90a18d262608d514f07f47e5",
+            "datavalue": {
+              "value": "-1066180",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q1764757$A5D488CD-C54F-4143-B9C3-D8AC55C8CFAE",
+          "rank": "normal"
+        }
+      ]
+    },
+    "sitelinks": {
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Diafarabé",
+        "badges": []
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Diafarabé",
+        "badges": []
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Diafarabé",
+        "badges": []
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Diafarabé",
+        "badges": []
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Diafarabé",
+        "badges": []
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Diafarabé",
+        "badges": []
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Diafarabé",
+        "badges": []
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Diafarabé",
+        "badges": []
+      },
+      "uzwiki": {
+        "site": "uzwiki",
+        "title": "Diafarabé",
+        "badges": []
+      },
+      "zh_min_nanwiki": {
+        "site": "zh_min_nanwiki",
+        "title": "Diafarabé",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "迪亞法拉貝",
+        "badges": []
+      }
+    }
+  }
+}

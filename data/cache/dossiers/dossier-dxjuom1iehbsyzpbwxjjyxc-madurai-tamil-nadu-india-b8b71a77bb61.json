@@ -1,0 +1,285 @@
+{
+  "updatedAt": "2026-04-18T08:43:30.214Z",
+  "data": {
+    "key": "dossier-dxjuom1iehbsyzpbwxjjyxc-madurai-tamil-nadu-india-b8b71a77bb61",
+    "builtAt": "2026-04-18T08:43:30.213Z",
+    "place": {
+      "label": "Madurai, Tamil Nadu, India",
+      "canonicalLabel": "Madurai, Tamil Nadu, India",
+      "center": [
+        78.11834,
+        9.918035
+      ],
+      "bbox": [
+        77.984008,
+        9.76229,
+        78.289453,
+        10.098544
+      ],
+      "placeType": "place",
+      "mapboxId": "dXJuOm1ieHBsYzpBWXJJYXc",
+      "displayContext": "Madurai, Madurai, Tamil Nadu, India"
+    },
+    "coverageConfidence": 0.8,
+    "candidateSites": [
+      {
+        "id": "dxjuom1iehbsyzpbwxjjyxc-meenakshi-amman-temple-e8bfcf094808",
+        "title": "Meenakshi Amman Temple",
+        "altNames": [
+          "Meenakshi Sundareswarar Temple",
+          "Tiru-alavai",
+          "Arulmigu Meenakshi Amman Thirukkovil",
+          "Meenakshi Amman Temple",
+          "Arulmigu Meenakshi Sundaraswarar Temple",
+          "Sri Meenakshi Temple"
+        ],
+        "shortLabel": "Meenakshi Temple",
+        "lat": 9.919722222222223,
+        "lng": 78.11944444444444,
+        "coordSource": "wikidata",
+        "coordConfidence": 0.95,
+        "standingStatus": "standing",
+        "siteType": "temple",
+        "areaLabel": "Core temple city, south of the Vaigai",
+        "eraStart": 600,
+        "eraEnd": 1947,
+        "eraLabels": [
+          "temple-and-courtly-citymaking",
+          "sultanate-and-regional-capitals",
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "urban-form-and-everyday-life",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 120,
+        "historicalSummary": "Major surviving temple complex at the heart of Madurai’s sacred and urban identity; the present fabric reflects long building, rebuilding, and patronage across the medieval and early modern eras.",
+        "whyItMatters": "It is the defining standing monument of Madurai and anchors the city’s historic temple-centered urban form.",
+        "evidenceUrls": [
+          "https://www.wikidata.org/wiki/Q1424358",
+          "https://commons.wikimedia.org/wiki/File:S-TN-34_Meenakshi_Amman_Thirukovil_Madurai.jpg"
+        ],
+        "sourceQuality": 1,
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Madurai_Meenakshi_temple_2.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Madurai_Meenakshi_temple_2.jpg/1280px-Madurai_Meenakshi_temple_2.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AMadurai_Meenakshi_temple_2.jpg",
+          "attribution": "Kumar Appaiah",
+          "license": "CC BY-SA 2.5",
+          "width": 1920,
+          "height": 2560,
+          "imageConfidence": 0.9
+        },
+        "storyworthyScore": 0.93,
+        "mappableScore": 0.97,
+        "imageScore": 0.9,
+        "chronologyScore": 0.68,
+        "routeFitScore": 0.99,
+        "wikidataId": "Q1424358",
+        "wikipediaTitle": "Meenakshi Temple"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbwxjjyxc-thirumalai-nayakkar-mahal-8e349f9b17b8",
+        "title": "Thirumalai Nayakkar Mahal",
+        "altNames": [
+          "Thirumalai Nayak Palace",
+          "Thirumalai Nayakkar Palace"
+        ],
+        "shortLabel": "Nayak Palace",
+        "lat": 9.92053819,
+        "lng": 78.1126192,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "palace",
+        "areaLabel": "Central Madurai, near Meenakshi Temple",
+        "eraStart": 1636,
+        "eraEnd": 1800,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 45,
+        "historicalSummary": "Surviving royal palace of the Madurai Nayaks, built in 1636; today it is one of the clearest extant courtly monuments from Madurai’s early modern phase.",
+        "whyItMatters": "It represents the city’s royal/courtly layer beyond the temple core and is among Madurai’s best-known standing heritage structures.",
+        "evidenceUrls": [
+          "https://madurai.nic.in/tourist-place/thirumalai-nayak-palace/"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.8,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.98,
+        "wikipediaTitle": "Thirumalai Nayakkar Mahal"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbwxjjyxc-vandiyur-mariamman-teppakulam-05b99bb7822a",
+        "title": "Vandiyur Mariamman Teppakulam",
+        "altNames": [
+          "Mariamman Teppakulam",
+          "Vandiyur Teppakulam"
+        ],
+        "shortLabel": "Temple tank",
+        "lat": 9.909378,
+        "lng": 78.15927,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "tank",
+        "areaLabel": "Vandiyur, eastern Madurai",
+        "eraStart": 1636,
+        "eraEnd": 1800,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "water-and-survival",
+          "sacred-landscapes",
+          "trade-and-movement"
+        ],
+        "visitEstimateMin": 40,
+        "historicalSummary": "Large surviving temple tank associated with the Madurai ritual landscape and the float-festival tradition; built in the Nayak period and still used today.",
+        "whyItMatters": "It preserves the hydraulic and ritual infrastructure of historic Madurai, linking water management with festival life.",
+        "evidenceUrls": [
+          "https://en.wikipedia.org/wiki/Vandiyur_Mariamman_Teppakulam",
+          "https://commons.wikimedia.org/wiki/Category:Mariamman_Teppakulam"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.78,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.9,
+        "wikipediaTitle": "Vandiyur Mariamman Teppakulam"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbwxjjyxc-azhagar-kovil-4602501137eb",
+        "title": "Azhagar Kovil",
+        "altNames": [
+          "Thirumalirunsolai",
+          "Azhagar Temple"
+        ],
+        "shortLabel": "Azhagar Kovil",
+        "lat": 9.95327977,
+        "lng": 78.01953302,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "temple",
+        "areaLabel": "North-east of Madurai",
+        "eraStart": 600,
+        "eraEnd": 1800,
+        "eraLabels": [
+          "temple-and-courtly-citymaking",
+          "sultanate-and-regional-capitals",
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 75,
+        "historicalSummary": "Standing Vishnu temple associated with the wider Madurai sacred landscape, surviving as an important regional pilgrimage site outside the core city center.",
+        "whyItMatters": "It broadens the dossier beyond the Shaiva core and shows Madurai’s larger sacred geography.",
+        "evidenceUrls": [
+          "https://madurai.nic.in/tourist-place/azhagar-kovil/"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.8,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.68,
+        "routeFitScore": 0.74
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "url": "https://madurai.nic.in/tourist-place/thirumalai-nayak-palace/",
+        "title": "Thirumalai Nayak Palace | Madurai District, Government of Tamilnadu | India",
+        "publisher": "Madurai District, Government of Tamil Nadu",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q1424358",
+        "title": "Meenakshi Temple - Wikidata",
+        "publisher": "Wikidata",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/File:S-TN-34_Meenakshi_Amman_Thirukovil_Madurai.jpg",
+        "title": "S-TN-34 Meenakshi Amman Thirukovil Madurai.jpg - Wikimedia Commons",
+        "publisher": "Wikimedia Commons",
+        "kind": "wikimedia",
+        "quality": "medium"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Vandiyur_Mariamman_Teppakulam",
+        "title": "Vandiyur Mariamman Teppakulam",
+        "publisher": "Wikipedia",
+        "kind": "encyclopedic",
+        "quality": "medium"
+      },
+      {
+        "url": "https://madurai.nic.in/tourist-place/azhagar-kovil/",
+        "title": "Azhagar Kovil | Madurai District, Government of Tamilnadu | India",
+        "publisher": "Madurai District, Government of Tamil Nadu",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Category:Mariamman_Teppakulam",
+        "title": "Category:Mariamman Teppakulam - Wikimedia Commons",
+        "publisher": "Wikimedia Commons",
+        "kind": "wikimedia",
+        "quality": "medium"
+      }
+    ],
+    "eligibleEraScores": {
+      "early-foundations": 0,
+      "temple-and-courtly-citymaking": 0.88,
+      "sultanate-and-regional-capitals": 0.88,
+      "mughal-and-early-modern-urbanism": 0.88,
+      "colonial-and-princely-modernity": 0,
+      "postcolonial-civic-memory": 0
+    },
+    "eligibleInterpretationLensScores": {
+      "sacred-landscapes": 0.87,
+      "power-and-defense": 0,
+      "water-and-survival": 0,
+      "trade-and-movement": 0,
+      "craft-and-patronage": 0,
+      "ruins-and-afterlives": 0,
+      "memory-and-identity": 0.89,
+      "urban-form-and-everyday-life": 0
+    },
+    "imageCandidates": [
+      {
+        "siteId": "dxjuom1iehbsyzpbwxjjyxc-meenakshi-amman-temple-e8bfcf094808",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Madurai_Meenakshi_temple_2.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Madurai_Meenakshi_temple_2.jpg/1280px-Madurai_Meenakshi_temple_2.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AMadurai_Meenakshi_temple_2.jpg",
+          "attribution": "Kumar Appaiah",
+          "license": "CC BY-SA 2.5",
+          "width": 1920,
+          "height": 2560,
+          "imageConfidence": 0.9
+        }
+      }
+    ],
+    "warnings": [
+      "Madurai has many surviving sacred sites; this dossier prioritizes the strongest standing layers with high-signal evidence and keeps the list concise.",
+      "UNESCO inscription is not used here because no directly matching UNESCO World Heritage source for the core Madurai monuments was surfaced in this search."
+    ]
+  }
+}

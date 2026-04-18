@@ -1,0 +1,806 @@
+{
+  "updatedAt": "2026-04-18T09:03:15.026Z",
+  "data": {
+    "pageid": 2616908,
+    "ns": 0,
+    "title": "Q2723395",
+    "lastrevid": 2473476348,
+    "modified": "2026-03-19T04:46:31Z",
+    "type": "item",
+    "id": "Q2723395",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "City Palace"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "palace complex in Jaipur, India"
+      }
+    },
+    "aliases": {},
+    "claims": {
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "18fb076bdc1c07e578546d1670ba193b768531ac",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 668,
+                "id": "Q668"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "q2723395$2CC65AB6-B407-4267-9FE6-7F08CB660490",
+          "rank": "normal"
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "a02aaaceb4e5dce52c9cee804d2479e3f2adb7b0",
+            "datavalue": {
+              "value": {
+                "latitude": 26.9255,
+                "longitude": 75.8236,
+                "altitude": null,
+                "precision": 0.00000277777777778,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q2723395$DE0460C5-22A8-4130-8446-1CFB6BFB3AF8",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "3265757bc090d9cf5e24517cfde06b8917b9948b",
+            "datavalue": {
+              "value": "/m/07kctys",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2723395$B30A9182-B71E-49B1-8CF6-6D0EED953441",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "4cb858cccdb4e3c1fbe0aac4e40c2715bed4b17c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 33506,
+                "id": "Q33506"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2723395$023A492D-9180-4382-B0F2-5E2BBF045D83",
+          "rank": "normal"
+        }
+      ],
+      "P1566": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1566",
+            "hash": "333fcd0cfc42935624cde3917fa80cb0ac3205a1",
+            "datavalue": {
+              "value": "7303255",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2723395$2DF2C173-D6BD-4D77-B855-CB0114FC70EB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "88694a0f4d1486770c269f7db16a1982f74da69d",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 830106,
+                        "id": "Q830106"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "963f3e27f5342aee557fdb39baf36eeb4169ac90",
+            "datavalue": {
+              "value": "City Palace (Jaipur)",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2723395$A520F79F-8475-4388-8CB5-0A6476032C25",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b3fd5e254143d8b52cd96cff43af9af5e3a82358",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f13c99a16441677ec69fcea23f221d866f1fc98f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 199693,
+                        "id": "Q199693"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P84": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P84",
+            "hash": "ecbb4e538145c60855f8052b16a11f42b5e944c4",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7928193,
+                "id": "Q7928193"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2723395$81D11056-73AB-4013-8A13-0D1BCA3D84B3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P935": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P935",
+            "hash": "f2226b0324a0f8c2c6987acdd2760034f5dc77e8",
+            "datavalue": {
+              "value": "सिटी पैलेस, जयपुर",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "Q2723395$31FF058D-0139-46E1-9E66-F7C4B232A4F7",
+          "rank": "normal"
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "91047cdddaf6b9c06a817bf579e0f465de2e599e",
+            "datavalue": {
+              "value": "Jaipur 03-2016 22 City Palace complex.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P2096": [
+              {
+                "snaktype": "value",
+                "property": "P2096",
+                "hash": "4118ec13fbd1c8f01d410858d8fba39bacb74397",
+                "datavalue": {
+                  "value": {
+                    "text": "Chandra Mahal",
+                    "language": "ca"
+                  },
+                  "type": "monolingualtext"
+                },
+                "datatype": "monolingualtext"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P2096"
+          ],
+          "id": "Q2723395$E1A85679-EBD8-41D4-97B0-494F275CA333",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "eb52e15c510cc2b6d775901cfaf721051007b37d",
+              "snaks": {
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "150a170535f8e81cd0b396bbd956e0f7fa278d75",
+                    "datavalue": {
+                      "value": "https://commons.wikimedia.org/wiki/File:Jaipur_03-2016_22_City_Palace_complex.jpg",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "ba76d3cfa4215b00f59aa3c7a6852298b09e2168",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 66485,
+                "id": "Q66485"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2723395$1B59B3CE-C522-434B-B39D-1CC4F142C0D3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P910": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P910",
+            "hash": "cc5c83a8053b59f30c88601dfc9d05e733c14c97",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 55291554,
+                "id": "Q55291554"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q2723395$F55ACC20-B26F-4C01-826E-70FC5A3B0CEF",
+          "rank": "normal"
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "b32057cc953e4bf2ca98be4611dab893e0c1430c",
+            "datavalue": {
+              "value": {
+                "time": "+1732-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q2723395$C864545B-118C-4275-AAF1-7E83324C1A38",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d8f10a7ca61f8df4d8db822b7545f938e70a923a",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "41bfdbd299d92ded279603250de05efb9e7bdd9b",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=City_Palace,_Jaipur&oldid=850100706",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P214": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P214",
+            "hash": "34b6746540289a987ab752d5e2fd6d4b87ed5a2b",
+            "datavalue": {
+              "value": "173516025",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2723395$85EEC94E-9A54-4A00-8155-4AC4D86C1B30",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "37bc8bf986df385b8a8cc7a71fb70de25c858464",
+            "datavalue": {
+              "value": "https://royaljaipur.in/",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q2723395$C2EBE067-3BB8-4767-99FF-B50ED8F085E3",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b733909bafb7c0c7170b0bbdd2832944e43eb09c",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c60ff6958b296682e7d5f424dbec24ea1ca0a07b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 24237997,
+                        "id": "Q24237997"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "44d7fb3172974d37146c7dc2a90376c9fb686ac5",
+                    "datavalue": {
+                      "value": "https://it.wikivoyage.org/wiki/Jaipur?oldid=776294",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P10689": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P10689",
+            "hash": "580f2411e46d4cf1fb85a3c379db630db9a335d6",
+            "datavalue": {
+              "value": "455720627",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2723395$C9BCB16E-9E76-4999-A5B1-40121146A353",
+          "rank": "normal"
+        }
+      ],
+      "P9721": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P9721",
+            "hash": "6e460b03e8425b31c3c5d58f525912b604f0adb8",
+            "datavalue": {
+              "value": "Jaipur 03-2016 16 Jaleb Chowk at City Palace.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q2723395$fd699d50-4052-99a9-ef7f-ac52aafbbe43",
+          "rank": "normal"
+        }
+      ],
+      "P10832": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P10832",
+            "hash": "7c16a3b5b011401435a00251ddaaef33e24f72d9",
+            "datavalue": {
+              "value": "E39PBJdWQyyF7rtBbQkxy4dRKd",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q2723395$387D615D-83EA-4F30-911C-E91FDE71F9A7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "f489611313792ec71c4fa4dfed5a4b751c2c4247",
+              "snaks": {
+                "P11797": [
+                  {
+                    "snaktype": "value",
+                    "property": "P11797",
+                    "hash": "3b992a8b1d7f5bfbb710fb1b091cc424c4e3e7db",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 54919,
+                        "id": "Q54919"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P214": [
+                  {
+                    "snaktype": "value",
+                    "property": "P214",
+                    "hash": "34b6746540289a987ab752d5e2fd6d4b87ed5a2b",
+                    "datavalue": {
+                      "value": "173516025",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "51fdf56b7e0fc7fa09a6d0f553960d0b1e3f3c3d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-06-07T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P11797",
+                "P214",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Palau de Jaipur",
+        "badges": []
+      },
+      "ckbwiki": {
+        "site": "ckbwiki",
+        "title": "کۆشکی شار، جائیپور",
+        "badges": []
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "सिटी पैलेस, जयपुर",
+        "badges": []
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "City Palace, Jaipur",
+        "badges": []
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Palacio de Jaipur",
+        "badges": []
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "City Palace de Jaipur",
+        "badges": []
+      },
+      "guwiki": {
+        "site": "guwiki",
+        "title": "સીટી પેલેસ, જયપુર",
+        "badges": []
+      },
+      "hiwiki": {
+        "site": "hiwiki",
+        "title": "सिटी पैलेस, जयपुर",
+        "badges": []
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Palazzo di Jaipur",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "シティ・パレス (ジャイプル)",
+        "badges": []
+      },
+      "knwiki": {
+        "site": "knwiki",
+        "title": "ಸಿಟಿ ಪ್ಯಾಲೇಸ್, ಜೈಪುರ್",
+        "badges": []
+      },
+      "mlwiki": {
+        "site": "mlwiki",
+        "title": "സിറ്റി പാലസ്, ജയ്പൂർ",
+        "badges": []
+      },
+      "mrwiki": {
+        "site": "mrwiki",
+        "title": "सिटी पॅलेस (जयपूर)",
+        "badges": []
+      },
+      "pawiki": {
+        "site": "pawiki",
+        "title": "ਸਿਟੀ ਪੈਲੇਸ, ਜੈਪੁਰ",
+        "badges": []
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Pałac Miejski (Jaipur)",
+        "badges": []
+      },
+      "pnbwiki": {
+        "site": "pnbwiki",
+        "title": "سٹی پیلس، جے پور",
+        "badges": []
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Mestna palača, Džaipur",
+        "badges": []
+      },
+      "tawiki": {
+        "site": "tawiki",
+        "title": "ஜெய்ப்பூர் நகர அரண்மனை",
+        "badges": []
+      },
+      "tewiki": {
+        "site": "tewiki",
+        "title": "సిటీ ప్యాలెస్, జైపూర్",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "斋浦尔城市皇宫",
+        "badges": []
+      }
+    }
+  }
+}

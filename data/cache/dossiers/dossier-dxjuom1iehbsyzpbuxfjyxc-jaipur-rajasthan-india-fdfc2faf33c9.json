@@ -1,0 +1,823 @@
+{
+  "updatedAt": "2026-04-18T09:03:16.485Z",
+  "data": {
+    "key": "dossier-dxjuom1iehbsyzpbuxfjyxc-jaipur-rajasthan-india-fdfc2faf33c9",
+    "builtAt": "2026-04-18T09:03:16.481Z",
+    "place": {
+      "label": "Jaipur, Rajasthan, India",
+      "canonicalLabel": "Jaipur, Rajasthan, India",
+      "center": [
+        75.81248,
+        26.920341
+      ],
+      "bbox": [
+        75.483815,
+        26.672453,
+        76.019619,
+        27.299387
+      ],
+      "placeType": "place",
+      "mapboxId": "dXJuOm1ieHBsYzpBUXFJYXc",
+      "displayContext": "Jaipur, Jaipur, Rajasthan, India"
+    },
+    "coverageConfidence": 0.89,
+    "candidateSites": [
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-jantar-mantar-jaipur-9631770f3b11",
+        "title": "Jantar Mantar, Jaipur",
+        "altNames": [
+          "The Jantar Mantar, Jaipur",
+          "Lil Boosie",
+          "Torrence Hatch",
+          "Torrence Ivy Hatch Jr"
+        ],
+        "shortLabel": "Jantar Mantar",
+        "lat": 26.908204,
+        "lng": 75.83259,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "civic-building",
+        "areaLabel": "Old City core",
+        "eraStart": 1728,
+        "eraEnd": 1734,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "craft-and-patronage",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 60,
+        "historicalSummary": "An early-18th-century astronomical observatory of monumental masonry instruments commissioned by Sawai Jai Singh II; UNESCO notes it as the best preserved of India’s historic observatories.",
+        "whyItMatters": "It anchors Jaipur’s courtly-scientific identity and is one of the city’s strongest intact imperial-era monuments.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1338",
+          "https://asi.nic.in/jantar-mantar-jaipur/"
+        ],
+        "sourceQuality": 1,
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Lil_Boosie.png",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/1/11/Lil_Boosie.png",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3ALil_Boosie.png",
+          "attribution": "TrillEntCMG",
+          "license": "CC BY-SA 3.0",
+          "width": 540,
+          "height": 960,
+          "imageConfidence": 0.9
+        },
+        "storyworthyScore": 0.93,
+        "mappableScore": 0.88,
+        "imageScore": 0.9,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.97,
+        "wikidataId": "Q166454",
+        "wikipediaTitle": "Jantar Mantar, Jaipur"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-city-palace-jaipur-671a5fc40a6e",
+        "title": "City Palace, Jaipur",
+        "altNames": [
+          "City Palace"
+        ],
+        "shortLabel": "City Palace",
+        "lat": 26.9255,
+        "lng": 75.8236,
+        "coordSource": "wikidata",
+        "coordConfidence": 0.95,
+        "standingStatus": "standing",
+        "siteType": "palace",
+        "areaLabel": "Old City core",
+        "eraStart": 1729,
+        "eraEnd": 1732,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "memory-and-identity",
+          "craft-and-patronage"
+        ],
+        "visitEstimateMin": 75,
+        "historicalSummary": "The principal royal palace complex of Jaipur, part of the planned city’s ceremonial and administrative heart; UNESCO identifies it as one of Jaipur’s iconic monuments.",
+        "whyItMatters": "A core expression of Jaipur’s princely urban order and living royal heritage.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1605",
+          "https://www.wikidata.org/wiki/Q2723395"
+        ],
+        "sourceQuality": 1,
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Jaipur_03-2016_22_City_Palace_complex.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jaipur_03-2016_22_City_Palace_complex.jpg/1280px-Jaipur_03-2016_22_City_Palace_complex.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AJaipur_03-2016_22_City_Palace_complex.jpg",
+          "attribution": "A.Savin",
+          "license": "FAL",
+          "width": 5300,
+          "height": 2650,
+          "imageConfidence": 0.9
+        },
+        "storyworthyScore": 0.93,
+        "mappableScore": 0.97,
+        "imageScore": 0.9,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.98,
+        "wikidataId": "Q2723395",
+        "wikipediaTitle": "City Palace, Jaipur"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-hawa-mahal-1b4f6a044742",
+        "title": "Hawa Mahal",
+        "altNames": [
+          "Palace of Winds",
+          "Hawa Mahal, Jaipur"
+        ],
+        "shortLabel": "Hawa Mahal",
+        "lat": 26.924,
+        "lng": 75.82672,
+        "coordSource": "wikidata",
+        "coordConfidence": 0.95,
+        "standingStatus": "standing",
+        "siteType": "palace",
+        "areaLabel": "Old City core",
+        "eraStart": 1799,
+        "eraEnd": 1799,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "urban-form-and-everyday-life",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 45,
+        "historicalSummary": "An iconic late-18th-century façade palace associated with Jaipur’s royal processional street and urban theatre; UNESCO lists it among the city’s emblematic monuments.",
+        "whyItMatters": "One of Jaipur’s most recognizable surviving symbols and a key marker of the walled city’s image.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1605",
+          "https://www.wikidata.org/wiki/Q836531"
+        ],
+        "sourceQuality": 1,
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/1280px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AEast_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg",
+          "attribution": "Chainwit.",
+          "license": "CC BY-SA 4.0",
+          "width": 3345,
+          "height": 2509,
+          "imageConfidence": 0.9
+        },
+        "storyworthyScore": 0.93,
+        "mappableScore": 0.97,
+        "imageScore": 0.9,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.98,
+        "wikidataId": "Q836531",
+        "wikipediaTitle": "Hawa Mahal"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-govind-dev-ji-temple-79db62768c88",
+        "title": "Govind Dev Ji Temple",
+        "altNames": [
+          "Govind Dev Temple"
+        ],
+        "shortLabel": "Govind Dev Ji Temple",
+        "lat": 26.92883,
+        "lng": 75.82403,
+        "coordSource": "wikidata",
+        "coordConfidence": 0.95,
+        "standingStatus": "standing",
+        "siteType": "temple",
+        "areaLabel": "City Palace precinct",
+        "eraStart": 1735,
+        "eraEnd": 1735,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "memory-and-identity",
+          "craft-and-patronage"
+        ],
+        "visitEstimateMin": 45,
+        "historicalSummary": "A major Vaishnava temple within Jaipur’s royal urban fabric; UNESCO cites it as one of the city’s iconic monuments, linking sacred practice with courtly patronage.",
+        "whyItMatters": "Connects Jaipur’s planned city to enduring devotional life and temple patronage.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1605",
+          "https://www.wikidata.org/wiki/Q5589834"
+        ],
+        "sourceQuality": 0.74,
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Govind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Govind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg/1280px-Govind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AGovind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg",
+          "attribution": "Jakub Hałun",
+          "license": "CC BY-SA 4.0",
+          "width": 5532,
+          "height": 3680,
+          "imageConfidence": 0.9
+        },
+        "storyworthyScore": 0.87,
+        "mappableScore": 0.97,
+        "imageScore": 0.9,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.98,
+        "wikidataId": "Q5589834",
+        "wikipediaTitle": "Govind Dev Ji Temple"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-amer-fort-d6ab34c5fa37",
+        "title": "Amer Fort",
+        "altNames": [
+          "Amber Fort",
+          "Amer Palace",
+          "Fort of Amer",
+          "Ambar Palace",
+          "Amber Palace on Hill, Amber",
+          "Amer Fort",
+          "Amber Palace"
+        ],
+        "shortLabel": "Amber Fort",
+        "lat": 26.9859,
+        "lng": 75.8507,
+        "coordSource": "wikidata",
+        "coordConfidence": 0.95,
+        "standingStatus": "standing",
+        "siteType": "fort",
+        "areaLabel": "Amer, Jaipur urban fringe",
+        "eraStart": 1592,
+        "eraEnd": 1727,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "water-and-survival",
+          "craft-and-patronage"
+        ],
+        "visitEstimateMin": 120,
+        "historicalSummary": "A hill fort-palace complex predating Jaipur city, later incorporated into the wider defensive landscape that protected the new capital; part of the Hill Forts of Rajasthan World Heritage property.",
+        "whyItMatters": "Provides the pre-Jaipur power landscape that shaped the city’s siting and defense.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/247/",
+          "https://www.wikidata.org/wiki/Q4741286"
+        ],
+        "sourceQuality": 1,
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Jaipur_03-2016_04_Amber_Fort.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Jaipur_03-2016_04_Amber_Fort.jpg/1280px-Jaipur_03-2016_04_Amber_Fort.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AJaipur_03-2016_04_Amber_Fort.jpg",
+          "attribution": "A.Savin",
+          "license": "FAL",
+          "width": 5317,
+          "height": 3323,
+          "imageConfidence": 0.9
+        },
+        "storyworthyScore": 0.93,
+        "mappableScore": 0.97,
+        "imageScore": 0.9,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.9,
+        "wikidataId": "Q4741286",
+        "wikipediaTitle": "Amber Fort"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-nahargarh-fort-cdba20daa2f6",
+        "title": "Nahargarh Fort",
+        "altNames": [],
+        "shortLabel": "Nahargarh Fort",
+        "lat": 26.982777777777777,
+        "lng": 75.84472222222222,
+        "coordSource": "wikidata",
+        "coordConfidence": 0.95,
+        "standingStatus": "standing",
+        "siteType": "fort",
+        "areaLabel": "Aravalli edge above Jaipur",
+        "eraStart": 1734,
+        "eraEnd": 1734,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 90,
+        "historicalSummary": "A hill fort overlooking Jaipur that formed part of the city’s defensive ring with Amber and Jaigarh, reinforcing the planned capital’s protected setting.",
+        "whyItMatters": "Important for reading Jaipur as a defended courtly city set within a wider fort landscape.",
+        "evidenceUrls": [
+          "https://www.wikidata.org/wiki/Q2722759",
+          "https://whc.unesco.org/en/list/1605"
+        ],
+        "sourceQuality": 0.74,
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Jaigarh_Fort_%284446103864%29.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Jaigarh_Fort_%284446103864%29.jpg/1280px-Jaigarh_Fort_%284446103864%29.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AJaigarh_Fort_(4446103864).jpg",
+          "attribution": "Ashwin Kumar from Bangalore, India",
+          "license": "CC BY-SA 2.0",
+          "width": 3264,
+          "height": 1840,
+          "imageConfidence": 0.9
+        },
+        "storyworthyScore": 0.87,
+        "mappableScore": 0.97,
+        "imageScore": 0.9,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.91,
+        "wikidataId": "Q2722759",
+        "wikipediaTitle": "Nahargarh Fort"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-jaigarh-fort-1c339b6e279f",
+        "title": "Jaigarh Fort",
+        "altNames": [],
+        "shortLabel": "Jaigarh Fort",
+        "lat": 26.982777777777777,
+        "lng": 75.84472222222222,
+        "coordSource": "wikidata",
+        "coordConfidence": 0.95,
+        "standingStatus": "standing",
+        "siteType": "fort",
+        "areaLabel": "Aravalli edge above Jaipur",
+        "eraStart": 1726,
+        "eraEnd": 1726,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense"
+        ],
+        "visitEstimateMin": 90,
+        "historicalSummary": "A major fortification in the Amber-Jaipur defensive complex, associated with artillery and military control over the hill route above the capital.",
+        "whyItMatters": "Complements Amber and Nahargarh as part of Jaipur’s protected strategic hinterland.",
+        "evidenceUrls": [
+          "https://www.wikidata.org/wiki/Q2722759",
+          "https://whc.unesco.org/en/list/1605"
+        ],
+        "sourceQuality": 0.74,
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Jaigarh_Fort_%284446103864%29.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Jaigarh_Fort_%284446103864%29.jpg/1280px-Jaigarh_Fort_%284446103864%29.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AJaigarh_Fort_(4446103864).jpg",
+          "attribution": "Ashwin Kumar from Bangalore, India",
+          "license": "CC BY-SA 2.0",
+          "width": 3264,
+          "height": 1840,
+          "imageConfidence": 0.9
+        },
+        "storyworthyScore": 0.87,
+        "mappableScore": 0.97,
+        "imageScore": 0.9,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.91,
+        "wikidataId": "Q2722759",
+        "wikipediaTitle": "Jaigarh Fort"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-johri-bazaar-93b3b167a3ff",
+        "title": "Johri Bazaar",
+        "altNames": [
+          "Johari Bazaar",
+          "Diafarabe"
+        ],
+        "shortLabel": "Johari Bazaar",
+        "lat": 26.908204,
+        "lng": 75.83259,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "bazaar",
+        "areaLabel": "Walled City",
+        "eraStart": 1727,
+        "eraEnd": 1800,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "trade-and-movement",
+          "urban-form-and-everyday-life",
+          "craft-and-patronage"
+        ],
+        "visitEstimateMin": 40,
+        "historicalSummary": "One of Jaipur’s historic market streets, part of the planned city’s commercial grid and still a lived trade corridor.",
+        "whyItMatters": "A direct survivor of Jaipur’s mercantile urbanism and street-based craft economy.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1605"
+        ],
+        "sourceQuality": 1,
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Diafarab%C3%A9.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Diafarab%C3%A9.jpg/1280px-Diafarab%C3%A9.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADiafarab%C3%A9.jpg",
+          "attribution": "Jacques Taberlet",
+          "license": "CC BY 3.0",
+          "width": 1920,
+          "height": 1080,
+          "imageConfidence": 0.9
+        },
+        "storyworthyScore": 0.89,
+        "mappableScore": 0.88,
+        "imageScore": 0.9,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.97,
+        "wikidataId": "Q1764757",
+        "wikipediaTitle": "Johari Bazaar"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-tripolia-bazaar-656c627b5b2a",
+        "title": "Tripolia Bazaar",
+        "altNames": [
+          "Tripolia Bazar"
+        ],
+        "shortLabel": "Tripolia Bazaar",
+        "lat": 26.923711,
+        "lng": 75.82302,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "bazaar",
+        "areaLabel": "Walled City",
+        "eraStart": 1727,
+        "eraEnd": 1800,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "trade-and-movement",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 35,
+        "historicalSummary": "Historic bazaar street in the gridded walled city, part of the continuous colonnaded market fabric emphasized by UNESCO.",
+        "whyItMatters": "Shows the everyday commercial form that makes Jaipur’s urban heritage alive rather than purely monumental.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1605"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.8,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.99,
+        "wikidataId": "Q3522012",
+        "wikipediaTitle": "Tripolia Bazaar"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-chandpole-bazaar-7aab8867932e",
+        "title": "Chandpole Bazaar",
+        "altNames": [
+          "Chandpol Bazaar",
+          "Basilica of St. George and of the Most Precious Blood"
+        ],
+        "shortLabel": "Chandpole Bazaar",
+        "lat": 26.926117,
+        "lng": 75.811762,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "bazaar",
+        "areaLabel": "Walled City",
+        "eraStart": 1727,
+        "eraEnd": 1800,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "trade-and-movement",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 35,
+        "historicalSummary": "A surviving market street within Jaipur’s planned grid, representative of the city’s enduring bazaar corridors.",
+        "whyItMatters": "Key evidence for the continuity of Jaipur’s trade-led street plan.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1605"
+        ],
+        "sourceQuality": 1,
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Walld%C3%BCrn%2C_Wallfahrtsbasilika_St_Georg_%28101%29.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Walld%C3%BCrn%2C_Wallfahrtsbasilika_St_Georg_%28101%29.jpg/1280px-Walld%C3%BCrn%2C_Wallfahrtsbasilika_St_Georg_%28101%29.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AWalld%C3%BCrn%2C_Wallfahrtsbasilika_St_Georg_(101).jpg",
+          "attribution": "Mattana",
+          "license": "CC BY-SA 3.0",
+          "width": 2000,
+          "height": 1000,
+          "imageConfidence": 0.9
+        },
+        "storyworthyScore": 0.89,
+        "mappableScore": 0.88,
+        "imageScore": 0.9,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.99,
+        "wikidataId": "Q2542789",
+        "wikipediaTitle": "Chandpole Bazaar"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-bapu-bazaar-5dc3cddb86ed",
+        "title": "Bapu Bazaar",
+        "altNames": [],
+        "shortLabel": "Bapu Bazaar",
+        "lat": 26.916538,
+        "lng": 75.82243,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "bazaar",
+        "areaLabel": "Walled City",
+        "eraStart": 1727,
+        "eraEnd": 1947,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism",
+          "colonial-and-princely-modernity"
+        ],
+        "interpretationTags": [
+          "trade-and-movement",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 35,
+        "historicalSummary": "A major commercial street in the old city that continues the bazaar logic of the original plan, though its present form includes later layers.",
+        "whyItMatters": "Useful for reading Jaipur’s surviving market life across premodern and princely-modern layers.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1605"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.73,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.82,
+        "routeFitScore": 0.99,
+        "wikipediaTitle": "Bapu Bazaar"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbuxfjyxc-albert-hall-museum-f3cd28e4b383",
+        "title": "Albert Hall Museum",
+        "altNames": [
+          "Government Central Museum"
+        ],
+        "shortLabel": "Albert Hall Museum",
+        "lat": 26.908204,
+        "lng": 75.83259,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "museum",
+        "areaLabel": "Ram Niwas Garden precinct",
+        "eraStart": 1887,
+        "eraEnd": 1887,
+        "eraLabels": [
+          "colonial-and-princely-modernity"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "craft-and-patronage"
+        ],
+        "visitEstimateMin": 75,
+        "historicalSummary": "A late-19th-century museum that helped institutionalize Jaipur’s art, craft, and collecting culture under princely-modern conditions.",
+        "whyItMatters": "Represents Jaipur’s museum culture and public memory beyond the walled city core.",
+        "evidenceUrls": [
+          "https://whc.unesco.org/en/list/1605"
+        ],
+        "sourceQuality": 0.74,
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Hadley_Caliman_in_Pori_1978.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Hadley_Caliman_in_Pori_1978.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AHadley_Caliman_in_Pori_1978.jpg",
+          "attribution": "Kotivalo",
+          "license": "CC BY-SA 3.0",
+          "width": 1005,
+          "height": 1621,
+          "imageConfidence": 0.9
+        },
+        "storyworthyScore": 0.82,
+        "mappableScore": 0.88,
+        "imageScore": 0.9,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.97,
+        "wikidataId": "Q470213",
+        "wikipediaTitle": "Albert Hall Museum"
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "url": "https://whc.unesco.org/en/list/1605",
+        "title": "Jaipur City, Rajasthan",
+        "publisher": "UNESCO World Heritage Centre",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/1338",
+        "title": "The Jantar Mantar, Jaipur",
+        "publisher": "UNESCO World Heritage Centre",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://asi.nic.in/pages/Jaipur-Circle",
+        "title": "Jaipur Circle",
+        "publisher": "Archaeological Survey of India",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://asi.nic.in/jantar-mantar-jaipur/",
+        "title": "Jantar Mantar, Jaipur",
+        "publisher": "Archaeological Survey of India",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q2723395",
+        "title": "City Palace",
+        "publisher": "Wikidata",
+        "kind": "wikimedia",
+        "quality": "medium"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q836531",
+        "title": "Hawa Mahal",
+        "publisher": "Wikidata",
+        "kind": "wikimedia",
+        "quality": "medium"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q5589834",
+        "title": "Govind Dev Ji Temple",
+        "publisher": "Wikidata",
+        "kind": "wikimedia",
+        "quality": "medium"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q4741286",
+        "title": "Amber Fort",
+        "publisher": "Wikidata",
+        "kind": "wikimedia",
+        "quality": "medium"
+      },
+      {
+        "url": "https://whc.unesco.org/en/list/247/",
+        "title": "Hill Forts of Rajasthan",
+        "publisher": "UNESCO World Heritage Centre",
+        "kind": "official",
+        "quality": "high"
+      }
+    ],
+    "eligibleEraScores": {
+      "early-foundations": 0,
+      "temple-and-courtly-citymaking": 0,
+      "sultanate-and-regional-capitals": 0,
+      "mughal-and-early-modern-urbanism": 0.92,
+      "colonial-and-princely-modernity": 0.88,
+      "postcolonial-civic-memory": 0
+    },
+    "eligibleInterpretationLensScores": {
+      "sacred-landscapes": 0,
+      "power-and-defense": 0.92,
+      "water-and-survival": 0,
+      "trade-and-movement": 0.9,
+      "craft-and-patronage": 0.92,
+      "ruins-and-afterlives": 0,
+      "memory-and-identity": 0.93,
+      "urban-form-and-everyday-life": 0.91
+    },
+    "imageCandidates": [
+      {
+        "siteId": "dxjuom1iehbsyzpbuxfjyxc-jantar-mantar-jaipur-9631770f3b11",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/Lil_Boosie.png",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/1/11/Lil_Boosie.png",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3ALil_Boosie.png",
+          "attribution": "TrillEntCMG",
+          "license": "CC BY-SA 3.0",
+          "width": 540,
+          "height": 960,
+          "imageConfidence": 0.9
+        }
+      },
+      {
+        "siteId": "dxjuom1iehbsyzpbuxfjyxc-city-palace-jaipur-671a5fc40a6e",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Jaipur_03-2016_22_City_Palace_complex.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Jaipur_03-2016_22_City_Palace_complex.jpg/1280px-Jaipur_03-2016_22_City_Palace_complex.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AJaipur_03-2016_22_City_Palace_complex.jpg",
+          "attribution": "A.Savin",
+          "license": "FAL",
+          "width": 5300,
+          "height": 2650,
+          "imageConfidence": 0.9
+        }
+      },
+      {
+        "siteId": "dxjuom1iehbsyzpbuxfjyxc-hawa-mahal-1b4f6a044742",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/1280px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AEast_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg",
+          "attribution": "Chainwit.",
+          "license": "CC BY-SA 4.0",
+          "width": 3345,
+          "height": 2509,
+          "imageConfidence": 0.9
+        }
+      },
+      {
+        "siteId": "dxjuom1iehbsyzpbuxfjyxc-govind-dev-ji-temple-79db62768c88",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Govind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Govind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg/1280px-Govind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AGovind_Dev_Ji_Temple%2C_Jaipur%2C_20191218_1059_9092.jpg",
+          "attribution": "Jakub Hałun",
+          "license": "CC BY-SA 4.0",
+          "width": 5532,
+          "height": 3680,
+          "imageConfidence": 0.9
+        }
+      },
+      {
+        "siteId": "dxjuom1iehbsyzpbuxfjyxc-amer-fort-d6ab34c5fa37",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Jaipur_03-2016_04_Amber_Fort.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Jaipur_03-2016_04_Amber_Fort.jpg/1280px-Jaipur_03-2016_04_Amber_Fort.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AJaipur_03-2016_04_Amber_Fort.jpg",
+          "attribution": "A.Savin",
+          "license": "FAL",
+          "width": 5317,
+          "height": 3323,
+          "imageConfidence": 0.9
+        }
+      },
+      {
+        "siteId": "dxjuom1iehbsyzpbuxfjyxc-nahargarh-fort-cdba20daa2f6",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Jaigarh_Fort_%284446103864%29.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Jaigarh_Fort_%284446103864%29.jpg/1280px-Jaigarh_Fort_%284446103864%29.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AJaigarh_Fort_(4446103864).jpg",
+          "attribution": "Ashwin Kumar from Bangalore, India",
+          "license": "CC BY-SA 2.0",
+          "width": 3264,
+          "height": 1840,
+          "imageConfidence": 0.9
+        }
+      },
+      {
+        "siteId": "dxjuom1iehbsyzpbuxfjyxc-jaigarh-fort-1c339b6e279f",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Jaigarh_Fort_%284446103864%29.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Jaigarh_Fort_%284446103864%29.jpg/1280px-Jaigarh_Fort_%284446103864%29.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AJaigarh_Fort_(4446103864).jpg",
+          "attribution": "Ashwin Kumar from Bangalore, India",
+          "license": "CC BY-SA 2.0",
+          "width": 3264,
+          "height": 1840,
+          "imageConfidence": 0.9
+        }
+      },
+      {
+        "siteId": "dxjuom1iehbsyzpbuxfjyxc-johri-bazaar-93b3b167a3ff",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Diafarab%C3%A9.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Diafarab%C3%A9.jpg/1280px-Diafarab%C3%A9.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADiafarab%C3%A9.jpg",
+          "attribution": "Jacques Taberlet",
+          "license": "CC BY 3.0",
+          "width": 1920,
+          "height": 1080,
+          "imageConfidence": 0.9
+        }
+      },
+      {
+        "siteId": "dxjuom1iehbsyzpbuxfjyxc-chandpole-bazaar-7aab8867932e",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Walld%C3%BCrn%2C_Wallfahrtsbasilika_St_Georg_%28101%29.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Walld%C3%BCrn%2C_Wallfahrtsbasilika_St_Georg_%28101%29.jpg/1280px-Walld%C3%BCrn%2C_Wallfahrtsbasilika_St_Georg_%28101%29.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AWalld%C3%BCrn%2C_Wallfahrtsbasilika_St_Georg_(101).jpg",
+          "attribution": "Mattana",
+          "license": "CC BY-SA 3.0",
+          "width": 2000,
+          "height": 1000,
+          "imageConfidence": 0.9
+        }
+      },
+      {
+        "siteId": "dxjuom1iehbsyzpbuxfjyxc-albert-hall-museum-f3cd28e4b383",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Hadley_Caliman_in_Pori_1978.jpg",
+          "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Hadley_Caliman_in_Pori_1978.jpg",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File%3AHadley_Caliman_in_Pori_1978.jpg",
+          "attribution": "Kotivalo",
+          "license": "CC BY-SA 3.0",
+          "width": 1005,
+          "height": 1621,
+          "imageConfidence": 0.9
+        }
+      }
+    ],
+    "warnings": [
+      "This dossier prioritizes standing, physically extant heritage within the Jaipur walled-city/metro area and nearby associated fort landscape; not every notable Jaipur monument is listed.",
+      "Coordinates are intentionally omitted per instruction.",
+      "Some candidates are supported primarily by UNESCO/Wikidata rather than ASI because ASI page discovery is incomplete in this browse session."
+    ]
+  }
+}

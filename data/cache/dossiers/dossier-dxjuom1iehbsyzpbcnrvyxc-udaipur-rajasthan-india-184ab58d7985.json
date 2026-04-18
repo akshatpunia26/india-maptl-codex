@@ -1,0 +1,555 @@
+{
+  "updatedAt": "2026-04-18T08:38:47.720Z",
+  "data": {
+    "key": "dossier-dxjuom1iehbsyzpbcnrvyxc-udaipur-rajasthan-india-184ab58d7985",
+    "builtAt": "2026-04-18T08:38:47.720Z",
+    "place": {
+      "label": "Udaipur, Rajasthan, India",
+      "canonicalLabel": "Udaipur, Rajasthan, India",
+      "center": [
+        73.69663,
+        24.58224
+      ],
+      "bbox": [
+        73.550322,
+        24.172067,
+        73.861521,
+        24.650264
+      ],
+      "placeType": "place",
+      "mapboxId": "dXJuOm1ieHBsYzpBcnRvYXc",
+      "displayContext": "Udaipur, Udaipur, Rajasthan, India"
+    },
+    "coverageConfidence": 0.84,
+    "candidateSites": [
+      {
+        "id": "dxjuom1iehbsyzpbcnrvyxc-city-palace-udaipur-82e13a520b16",
+        "title": "City Palace, Udaipur",
+        "altNames": [
+          "Udaipur City Palace",
+          "Maharana's Palace"
+        ],
+        "shortLabel": "City Palace",
+        "lat": 24.576319,
+        "lng": 73.694766,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "palace",
+        "areaLabel": "Old City / Lake Pichola edge",
+        "eraStart": 1559,
+        "eraEnd": 1800,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "urban-form-and-everyday-life",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 120,
+        "historicalSummary": "Core royal complex begun with the founding of Udaipur in 1559 and expanded over several centuries as the ceremonial and political center of Mewar.",
+        "whyItMatters": "Primary standing monument of Udaipur’s princely urban identity and courtly landscape.",
+        "evidenceUrls": [
+          "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur-city-palace.html",
+          "https://en.wikipedia.org/wiki/City_Palace,_Udaipur"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.99,
+        "wikipediaTitle": "City Palace, Udaipur"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbcnrvyxc-jagdish-temple-c738eb7dd2c9",
+        "title": "Jagdish Temple",
+        "altNames": [
+          "Jagdish Mandir"
+        ],
+        "shortLabel": "Jagdish Temple",
+        "lat": 24.57972222,
+        "lng": 73.68361111,
+        "coordSource": "wikidata",
+        "coordConfidence": 0.95,
+        "standingStatus": "standing",
+        "siteType": "temple",
+        "areaLabel": "Old City / near City Palace",
+        "eraStart": 1651,
+        "eraEnd": 1651,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "sacred-landscapes",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 45,
+        "historicalSummary": "Major Vaishnav temple in the center of the old city, dated by Rajasthan Tourism to 1651 and widely described as a landmark of Udaipur’s historic street fabric.",
+        "whyItMatters": "Important surviving sacred anchor in the historic urban core, linking ritual use with city-making.",
+        "evidenceUrls": [
+          "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur.html",
+          "https://en.wikipedia.org/wiki/Jagdish_Temple,_Udaipur",
+          "https://www.wikidata.org/wiki/Q12427765"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.97,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.98,
+        "wikidataId": "Q12427765",
+        "wikipediaTitle": "Jagdish Temple, Udaipur"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbcnrvyxc-ahar-cenotaphs-af76d27035e5",
+        "title": "Ahar Cenotaphs",
+        "altNames": [
+          "Ahar Chhatriya",
+          "Cenotaphs of the Maharanas of Mewar"
+        ],
+        "shortLabel": "Ahar Cenotaphs",
+        "lat": 24.58608921,
+        "lng": 73.70466746,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "cemetery",
+        "areaLabel": "Ahar",
+        "eraStart": 1500,
+        "eraEnd": 1900,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism",
+          "colonial-and-princely-modernity"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "ruins-and-afterlives"
+        ],
+        "visitEstimateMin": 50,
+        "historicalSummary": "A standing cluster of royal cenotaphs associated with the Maharanas of Mewar, physically linked to the Ahar area and the nearby museum/archaeological landscape.",
+        "whyItMatters": "Key funerary memorial landscape for Mewar dynastic memory within the Udaipur region.",
+        "evidenceUrls": [
+          "https://www.tourism.rajasthan.gov.in/museums-to-visit.html",
+          "https://en.wikipedia.org/wiki/Ahar_Cenotaphs",
+          "https://commons.wikimedia.org/wiki/Udaipur"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.78,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.68,
+        "routeFitScore": 0.99,
+        "wikipediaTitle": "Ahar Cenotaphs"
+      },
+      {
+        "id": "dxjuom1iehbsyzpbcnrvyxc-ahar-museum-11bc6b871723",
+        "title": "Ahar Museum",
+        "altNames": [
+          "Museum, Ahar, Udaipur"
+        ],
+        "shortLabel": "Ahar Museum",
+        "lat": 24.58608921,
+        "lng": 73.70466746,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "museum",
+        "areaLabel": "Ahar",
+        "eraStart": 1960,
+        "eraEnd": 1960,
+        "eraLabels": [
+          "postcolonial-civic-memory"
+        ],
+        "interpretationTags": [
+          "memory-and-identity",
+          "ruins-and-afterlives"
+        ],
+        "visitEstimateMin": 40,
+        "historicalSummary": "A state archaeology museum in Udaipur that presents excavated material and sits beside the Ahar cenotaph landscape.",
+        "whyItMatters": "Provides interpretive context for the ancient Ahar/Gilund archaeological zone and the royal memorial setting.",
+        "evidenceUrls": [
+          "https://www.tourism.rajasthan.gov.in/museums-to-visit.html",
+          "https://jkk.artandculture.rajasthan.gov.in/content/ArtandCulture/en/ArchaeologyandMuseum/ContactUs.html"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.99
+      },
+      {
+        "id": "dxjuom1iehbsyzpbcnrvyxc-sajjangarh-palace-4392faad4b1d",
+        "title": "Sajjangarh Palace",
+        "altNames": [
+          "Monsoon Palace",
+          "Sajjan Garh"
+        ],
+        "shortLabel": "Sajjangarh Palace",
+        "lat": 24.58608921,
+        "lng": 73.70466746,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "palace",
+        "areaLabel": "Aravalli hilltop west of the city",
+        "eraStart": 1884,
+        "eraEnd": 1884,
+        "eraLabels": [
+          "colonial-and-princely-modernity"
+        ],
+        "interpretationTags": [
+          "power-and-defense",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 75,
+        "historicalSummary": "Hilltop palace of the late princely period, visible as a skyline monument above Udaipur and part of the city’s scenic urban image.",
+        "whyItMatters": "Strong surviving marker of late Mewar princely modernity and cityscape symbolism.",
+        "evidenceUrls": [
+          "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur.html",
+          "https://en.wikipedia.org/wiki/Udaipur"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.78,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.99
+      },
+      {
+        "id": "dxjuom1iehbsyzpbcnrvyxc-saheliyon-ki-bari-8bd70825d5d6",
+        "title": "Saheliyon-ki-Bari",
+        "altNames": [
+          "Garden of the Maidens"
+        ],
+        "shortLabel": "Saheliyon-ki-Bari",
+        "lat": 24.60369819,
+        "lng": 73.68713425,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "garden",
+        "areaLabel": "North of old city",
+        "eraStart": 1710,
+        "eraEnd": 1750,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "water-and-survival",
+          "urban-form-and-everyday-life",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 45,
+        "historicalSummary": "Ornamental royal garden of fountains, pools, kiosks, and marble elements, preserved as a major leisure landscape of the early modern city.",
+        "whyItMatters": "Shows courtly water aesthetics and everyday elite urban life beyond forts and temples.",
+        "evidenceUrls": [
+          "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur.html",
+          "https://www.tourism.rajasthan.gov.in/content/dam/rajasthan-tourism/english/pdf/tender-pdf/Tender%20for%20translation%20of%20DOT%20Broucher%20in%20Russian%20language%2008052018.pdf"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.78,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.96
+      },
+      {
+        "id": "dxjuom1iehbsyzpbcnrvyxc-udaipur-city-wall-and-old-city-streetscape-2c03eb6f8aa4",
+        "title": "Udaipur City Wall and old-city streetscape",
+        "altNames": [
+          "Sheharpanah traces",
+          "historic old city fabric"
+        ],
+        "shortLabel": "Old city streetscape",
+        "lat": 24.579723,
+        "lng": 73.68417,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "trace",
+        "siteType": "street",
+        "areaLabel": "Old City",
+        "eraStart": 1559,
+        "eraEnd": 1800,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "urban-form-and-everyday-life",
+          "trade-and-movement",
+          "memory-and-identity"
+        ],
+        "visitEstimateMin": 60,
+        "historicalSummary": "Historic street fabric and wall traces around the old city are still legible in the urban grain, especially around the temple and palace core.",
+        "whyItMatters": "Important for understanding Udaipur as a lived court city rather than only a monument ensemble.",
+        "evidenceUrls": [
+          "https://en.wikipedia.org/wiki/Jagdish_Temple,_Udaipur",
+          "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur.html"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.69,
+        "mappableScore": 0.7,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.98
+      },
+      {
+        "id": "dxjuom1iehbsyzpbcnrvyxc-lake-pichola-waterfront-ghat-edge-569b8293ddf1",
+        "title": "Lake Pichola waterfront / ghat edge",
+        "altNames": [
+          "historic lake edge"
+        ],
+        "shortLabel": "Lake Pichola edge",
+        "lat": 24.579586,
+        "lng": 73.680214,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "waterfront",
+        "areaLabel": "Lake Pichola",
+        "eraStart": 1559,
+        "eraEnd": 1800,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "water-and-survival",
+          "power-and-defense",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 60,
+        "historicalSummary": "Historic lakeside setting tied to the founding of Udaipur and the palace complex; the lake edge remains central to the city’s spatial identity.",
+        "whyItMatters": "Core element of Udaipur’s hydraulic and ceremonial landscape.",
+        "evidenceUrls": [
+          "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur.html",
+          "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur-city-palace.html"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.84,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.97
+      },
+      {
+        "id": "dxjuom1iehbsyzpbcnrvyxc-jaisamand-lake-6126006d0dd2",
+        "title": "Jaisamand Lake",
+        "altNames": [
+          "Dhebar Lake"
+        ],
+        "shortLabel": "Jaisamand Lake",
+        "lat": 24.58608921,
+        "lng": 73.70466746,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "tank",
+        "areaLabel": "South-east of Udaipur region",
+        "eraStart": 1687,
+        "eraEnd": 1687,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism"
+        ],
+        "interpretationTags": [
+          "water-and-survival",
+          "power-and-defense"
+        ],
+        "visitEstimateMin": 90,
+        "historicalSummary": "Large man-made lake in the Udaipur region created in the late seventeenth century, still existing as a major water landscape.",
+        "whyItMatters": "Represents regional hydraulic ambition tied to Mewar rule and landscape engineering.",
+        "evidenceUrls": [
+          "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur.html"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.73,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.99
+      },
+      {
+        "id": "dxjuom1iehbsyzpbcnrvyxc-shilpgram-2e98724822f4",
+        "title": "Shilpgram",
+        "altNames": [
+          "Shilpgram rural arts and crafts complex"
+        ],
+        "shortLabel": "Shilpgram",
+        "lat": 24.62538,
+        "lng": 73.67577,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "civic-building",
+        "areaLabel": "North-west of Udaipur",
+        "eraStart": 1989,
+        "eraEnd": 1989,
+        "eraLabels": [
+          "postcolonial-civic-memory"
+        ],
+        "interpretationTags": [
+          "craft-and-patronage",
+          "memory-and-identity",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 90,
+        "historicalSummary": "A contemporary arts-and-crafts complex functioning as a living museum of western Indian rural lifestyles and craft traditions.",
+        "whyItMatters": "Important postcolonial cultural institution that reframes regional identity and artisanal continuity.",
+        "evidenceUrls": [
+          "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur.html"
+        ],
+        "sourceQuality": 1,
+        "image": null,
+        "storyworthyScore": 0.8,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.95,
+        "routeFitScore": 0.92
+      },
+      {
+        "id": "dxjuom1iehbsyzpbcnrvyxc-fateh-sagar-lake-edge-and-solar-observatory-setting-87e94a0b9857",
+        "title": "Fateh Sagar Lake edge and solar observatory setting",
+        "altNames": [
+          "Fateh Sagar waterfront"
+        ],
+        "shortLabel": "Fateh Sagar edge",
+        "lat": 24.596786,
+        "lng": 73.681598,
+        "coordSource": "mapbox-search",
+        "coordConfidence": 0.76,
+        "standingStatus": "standing",
+        "siteType": "waterfront",
+        "areaLabel": "Fateh Sagar",
+        "eraStart": 1680,
+        "eraEnd": 1900,
+        "eraLabels": [
+          "mughal-and-early-modern-urbanism",
+          "colonial-and-princely-modernity"
+        ],
+        "interpretationTags": [
+          "water-and-survival",
+          "urban-form-and-everyday-life"
+        ],
+        "visitEstimateMin": 60,
+        "historicalSummary": "Major lake landscape in the city, later associated with observatory and promenade uses in the princely/modern era.",
+        "whyItMatters": "Shows the continuing layering of water infrastructure, leisure, and civic landscape in Udaipur.",
+        "evidenceUrls": [
+          "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur.html"
+        ],
+        "sourceQuality": 0.74,
+        "image": null,
+        "storyworthyScore": 0.73,
+        "mappableScore": 0.88,
+        "imageScore": 0.2,
+        "chronologyScore": 0.82,
+        "routeFitScore": 0.96
+      }
+    ],
+    "sourceEvidence": [
+      {
+        "url": "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur.html",
+        "title": "Places to Visit in Udaipur, Tourist Places, Points of Interest - Rajasthan Tourism",
+        "publisher": "Government of Rajasthan",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://www.tourism.rajasthan.gov.in/content/rajasthan-tourism/en/tourist-destinations/udaipur-city-palace.html",
+        "title": "Udaipur City Palace Complex, A Architectural Marvel - Rajasthan Tourism",
+        "publisher": "Government of Rajasthan",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://devasthan.rajasthan.gov.in/Udaipur.asp",
+        "title": "Udaipur Temples - Devasthan Department, Rajasthan",
+        "publisher": "Government of Rajasthan",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://www.tourism.rajasthan.gov.in/museums-to-visit.html",
+        "title": "List of Museums to Visit in Rajasthan - Rajasthan Tourism",
+        "publisher": "Government of Rajasthan",
+        "kind": "official",
+        "quality": "high"
+      },
+      {
+        "url": "https://jkk.artandculture.rajasthan.gov.in/content/ArtandCulture/en/ArchaeologyandMuseum/ContactUs.html",
+        "title": "Contact Us - Archaeology and Museum, Rajasthan",
+        "publisher": "Government of Rajasthan",
+        "kind": "official",
+        "quality": "medium"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/City_Palace,_Udaipur",
+        "title": "City Palace, Udaipur",
+        "publisher": "Wikipedia",
+        "kind": "encyclopedic",
+        "quality": "medium"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Jagdish_Temple,_Udaipur",
+        "title": "Jagdish Temple, Udaipur",
+        "publisher": "Wikipedia",
+        "kind": "encyclopedic",
+        "quality": "medium"
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Ahar_Cenotaphs",
+        "title": "Ahar Cenotaphs",
+        "publisher": "Wikipedia",
+        "kind": "encyclopedic",
+        "quality": "medium"
+      },
+      {
+        "url": "https://www.wikidata.org/wiki/Q12427765",
+        "title": "Jagdish Temple, Udaipur (Q12427765)",
+        "publisher": "Wikidata",
+        "kind": "official",
+        "quality": "medium"
+      },
+      {
+        "url": "https://commons.wikimedia.org/wiki/Udaipur",
+        "title": "Udaipur - Wikimedia Commons",
+        "publisher": "Wikimedia",
+        "kind": "wikimedia",
+        "quality": "low"
+      }
+    ],
+    "eligibleEraScores": {
+      "early-foundations": 0,
+      "temple-and-courtly-citymaking": 0,
+      "sultanate-and-regional-capitals": 0,
+      "mughal-and-early-modern-urbanism": 0.88,
+      "colonial-and-princely-modernity": 0.87,
+      "postcolonial-civic-memory": 0.9
+    },
+    "eligibleInterpretationLensScores": {
+      "sacred-landscapes": 0,
+      "power-and-defense": 0.89,
+      "water-and-survival": 0.88,
+      "trade-and-movement": 0,
+      "craft-and-patronage": 0,
+      "ruins-and-afterlives": 0.89,
+      "memory-and-identity": 0.88,
+      "urban-form-and-everyday-life": 0.88
+    },
+    "imageCandidates": [],
+    "warnings": [
+      "Coverage is strongest for early-modern/princely Udaipur; no clearly standing pre-1200 urban monuments were verified from high-signal sources within the requested footprint.",
+      "Lake Palace is omitted because it is a hotel property and not a clearly public heritage monument layer in the source set.",
+      "Some sites are supported mainly by Rajasthan Tourism / state portals and Wikipedia/Wikidata due limited directly accessible ASI/UNESCO pages for Udaipur-specific standing sites."
+    ]
+  }
+}

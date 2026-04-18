@@ -1,0 +1,1308 @@
+{
+  "updatedAt": "2026-04-18T09:03:15.237Z",
+  "data": {
+    "pageid": 789127,
+    "ns": 0,
+    "title": "Q836531",
+    "lastrevid": 2473831287,
+    "modified": "2026-03-20T06:24:04Z",
+    "type": "item",
+    "id": "Q836531",
+    "labels": {
+      "en": {
+        "language": "en",
+        "value": "Hawa Mahal"
+      }
+    },
+    "descriptions": {
+      "en": {
+        "language": "en",
+        "value": "palace in Jaipur, Rajasthan, India"
+      }
+    },
+    "aliases": {
+      "en": [
+        {
+          "language": "en",
+          "value": "Hawa Mahal, Jaipur"
+        }
+      ]
+    },
+    "claims": {
+      "P373": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P373",
+            "hash": "49b0c7f5ab92dcf6eb9567ee852ac4e1c9e8bcf3",
+            "datavalue": {
+              "value": "Hawa Mahal",
+              "type": "string"
+            },
+            "datatype": "string"
+          },
+          "type": "statement",
+          "id": "q836531$79CB9BE1-C1AA-425E-921D-F84E7C581C79",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P625": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P625",
+            "hash": "899450ac970534effd63aa35ec53854cbe25bff4",
+            "datavalue": {
+              "value": {
+                "latitude": 26.924,
+                "longitude": 75.82672,
+                "altitude": null,
+                "precision": 0.0001,
+                "globe": "http://www.wikidata.org/entity/Q2"
+              },
+              "type": "globecoordinate"
+            },
+            "datatype": "globe-coordinate"
+          },
+          "type": "statement",
+          "id": "Q836531$262A7F3B-26B1-4FE5-BA26-3E33DA38848C",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 10000,
+                        "id": "Q10000"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P131": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P131",
+            "hash": "26c2d0f766b48126482d9fa5f619208d2760d2af",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1134781,
+                "id": "Q1134781"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$CFB0EC35-885E-4080-9E4F-2233630092BB",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d4bd87b862b12d99d26e86472d44f26858dee639",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "f30cbd35620c4ea6d0633aaf0210a8916130469b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 8447,
+                        "id": "Q8447"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P18": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P18",
+            "hash": "4012f8c86a15390c0c46265c66f3d6ce69e6a482",
+            "datavalue": {
+              "value": "East facade Hawa Mahal Jaipur from ground level (July 2022) - img 01.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q836531$F3E31BBD-F11D-4E55-99DD-35F13FEC4FF1",
+          "rank": "normal"
+        }
+      ],
+      "P646": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P646",
+            "hash": "ed3776b8de2c0f12774d28f58661794e5a4a0cee",
+            "datavalue": {
+              "value": "/m/06k7qc",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q836531$DEB545F5-CDB4-4499-95A4-DF696A5CFCA5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "2b00cb481cddcac7623114367489b5c194901c4a",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a94b740202b097dd33355e0e6c00e54b9395e5e0",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 15241312,
+                        "id": "Q15241312"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P577": [
+                  {
+                    "snaktype": "value",
+                    "property": "P577",
+                    "hash": "fde79ecb015112d2f29229ccc1ec514ed3e71fa2",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2013-10-28T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248",
+                "P577"
+              ]
+            }
+          ]
+        }
+      ],
+      "P17": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P17",
+            "hash": "18fb076bdc1c07e578546d1670ba193b768531ac",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 668,
+                "id": "Q668"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$962F226D-5883-4D45-9F94-F05B27E4B068",
+          "rank": "normal"
+        }
+      ],
+      "P31": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P31",
+            "hash": "a9269c53b6be27acc2f06780b28d0bcf4b794bbb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16560,
+                "id": "Q16560"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$08C3D40A-A471-4971-8D9C-E1C7F759FA10",
+          "rank": "normal"
+        }
+      ],
+      "P1566": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1566",
+            "hash": "f0452466bbfee2b150b192e8f23a5699b282467f",
+            "datavalue": {
+              "value": "7303256",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q836531$DAE9194B-2BD1-480D-9A8C-21FD499AAB10",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "88694a0f4d1486770c269f7db16a1982f74da69d",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "1b3ef912a2bd61e18dd43abd184337eb010b2e96",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 830106,
+                        "id": "Q830106"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P149": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P149",
+            "hash": "f24ec89d792cab205509018313156b361d236c20",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 542261,
+                "id": "Q542261"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$A1485EF4-3E43-4FD0-8666-5D4C7665EE0A",
+          "rank": "normal"
+        }
+      ],
+      "P84": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P84",
+            "hash": "d28f52cd443fb3880a8f84de7e56c6195b9b6a68",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6480034,
+                "id": "Q6480034"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$67A742CC-2407-4800-892D-A0B0DFCC7DC6",
+          "rank": "normal"
+        }
+      ],
+      "P276": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P276",
+            "hash": "207c195ecf04f119be4ea66edae1751204c98690",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 66485,
+                "id": "Q66485"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$B98333C5-1674-4814-ACC6-1003F101E438",
+          "rank": "normal"
+        }
+      ],
+      "P1619": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1619",
+            "hash": "73bb543b1c964b926776348a7396704f11822e94",
+            "datavalue": {
+              "value": {
+                "time": "+1799-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q836531$BE75AF88-D0AF-4042-80AD-760C37D86C26",
+          "rank": "normal"
+        }
+      ],
+      "P3417": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3417",
+            "hash": "7e22fa37d8f0656cb9dede80a90bd3df09e9469f",
+            "datavalue": {
+              "value": "Hawa-Mahal-1",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q836531$B7CA1496-46B0-4746-9FB9-59E357712EA5",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "3b0a5bb3c1f955edce73740124f7d935698092ad",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "3ac9682e789a3a3791d4fd088b265ea03abef101",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 51711,
+                        "id": "Q51711"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P1101": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1101",
+            "hash": "7873f81f8eac080eb264b2694f8b354b4d66afb0",
+            "datavalue": {
+              "value": {
+                "amount": "+5",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          },
+          "type": "statement",
+          "id": "Q836531$712657E0-6E2D-4155-9210-61F69F81D620",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d5847b9b6032aa8b13dae3c2dfd9ed5d114d21b3",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "5a343e7e758a4282a01316d3e959b6e653b767fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 11920,
+                        "id": "Q11920"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143"
+              ]
+            }
+          ]
+        }
+      ],
+      "P571": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P571",
+            "hash": "0928b143106007ba899b063620c71d9d86475508",
+            "datavalue": {
+              "value": {
+                "time": "+1799-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          },
+          "type": "statement",
+          "id": "Q836531$335EADF3-1A83-4180-BAEF-1FCC9842E81D",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c20e8c3f36e65784b929d5762e2f2facfe2006b6",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 328,
+                        "id": "Q328"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "de5f1e35024c36aaa0f81958c0ae1dcf89c8efc4",
+                    "datavalue": {
+                      "value": "https://en.wikipedia.org/w/index.php?title=Hawa_Mahal&oldid=850880562",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ],
+      "P244": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P244",
+            "hash": "947c412d399c1ef08043261cb8a5b1ba6bba69a7",
+            "datavalue": {
+              "value": "sh2016001970",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q836531$AB768AEE-F975-44DC-83AB-21B357444357",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ac5d47e9fbcc281bc0d27a205ae02e22ad24ce31",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "b560dc6b281a39d061e189d2eb299a426a06f1a2",
+                    "datavalue": {
+                      "value": "https://github.com/JohnMarkOckerbloom/ftl/blob/master/data/wikimap",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "0dcf4f64e93fdcc654e2c7534285881fe48b9f3d",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2019-04-03T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854",
+                "P813"
+              ]
+            }
+          ]
+        }
+      ],
+      "P7561": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7561",
+            "hash": "2ba314d05edc0672e4fbccdf4eb6f7e645ba31ef",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 86115919,
+                "id": "Q86115919"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$B05044D6-5A74-4FE2-97A3-6077F3342905",
+          "rank": "normal"
+        }
+      ],
+      "P1435": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1435",
+            "hash": "a1130d443b3803c4e0710694901ae727c1e06d65",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 17047640,
+                "id": "Q17047640"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$7bcb5a5c-4837-73d8-cb28-b933213307d5",
+          "rank": "normal"
+        }
+      ],
+      "P1371": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P1371",
+            "hash": "4e196bf9fbf1fa447bea21d0055ef5a2f9f55f21",
+            "datavalue": {
+              "value": "S-RJ-95",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q836531$9cc173ba-477d-7ece-add4-cf3e8cd59bab",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "fc89c73399cf90bc8b812c07a220c9329c248004",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "7a9990da9d875cc8ec8487194ae377c0265aceb5",
+                    "datavalue": {
+                      "value": "https://asi.nic.in/protected-monuments-in-rajasthan/",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P854"
+              ]
+            }
+          ]
+        }
+      ],
+      "P7772": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7772",
+            "hash": "fb1210f54f6f47fac8509fb48b5ce84d9192d93b",
+            "datavalue": {
+              "value": "palace-of-winds",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q836531$e56a0993-4bfb-d50e-95cc-6433a0f627a0",
+          "rank": "normal"
+        },
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P7772",
+            "hash": "99d7b7db02517153b5c8cb84459baf822cdae305",
+            "datavalue": {
+              "value": "hawa-mahal-palace-of-winds",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q836531$8DE571F4-B644-4C03-8200-AE4090FDEFC3",
+          "rank": "normal"
+        }
+      ],
+      "P8933": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8933",
+            "hash": "618dc8b07fb7691fc2109d821102cc846fd7eaf0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 104234994,
+                "id": "Q104234994"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$63411cf9-8931-4a0d-9c07-30b490bbfc78",
+          "rank": "normal"
+        }
+      ],
+      "P8596": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8596",
+            "hash": "1c634ac93c1346bfcdf550932163dae09fe95f0c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 104551144,
+                "id": "Q104551144"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$be4f6dcf-236b-454e-97b4-39494f2bb4ca",
+          "rank": "normal"
+        }
+      ],
+      "P88": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P88",
+            "hash": "ddc0723a324ad0829a6c36011459e115114fac13",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 7428550,
+                "id": "Q7428550"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$dd4e1714-4394-c4b6-3fcf-a266ae92a15f",
+          "rank": "normal"
+        }
+      ],
+      "P3451": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P3451",
+            "hash": "762de8b0f85d350c87e611afce12906aafebacda",
+            "datavalue": {
+              "value": "Palace of Wind - Hawa Mahal - Jaipur.jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q836531$f9d02539-4c32-43b4-5c32-e216686612db",
+          "rank": "normal"
+        }
+      ],
+      "P8189": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P8189",
+            "hash": "de31f55bf5eec7b8aa1686a2b702b67eca1415e6",
+            "datavalue": {
+              "value": "987007398299405171",
+              "type": "string"
+            },
+            "datatype": "external-id"
+          },
+          "type": "statement",
+          "id": "Q836531$D07C9500-F76F-4D84-8E05-B56B8161C1C7",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "ecb7a39cf436eb1fba419853af168ef9f2ba1dab",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "a03bb6ffe37be9554492f4eea5bd18afcb57df19",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 106509962,
+                        "id": "Q106509962"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P248"
+              ]
+            }
+          ]
+        }
+      ],
+      "P138": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P138",
+            "hash": "889491c98401659f7c1c9be05167d18875984da0",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 8094,
+                "id": "Q8094"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "id": "Q836531$3563ebb5-45e5-afa5-3f1d-4ccdf1f9312d",
+          "rank": "normal"
+        }
+      ],
+      "P5775": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5775",
+            "hash": "a2ed7913bd69ad960d06c8d91726d6d5a5c90662",
+            "datavalue": {
+              "value": "Hawa Mahal (Windows).jpg",
+              "type": "string"
+            },
+            "datatype": "commonsMedia"
+          },
+          "type": "statement",
+          "id": "Q836531$bf092fd9-460f-a413-0533-85f3b6cf98b8",
+          "rank": "normal"
+        }
+      ],
+      "P5008": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P5008",
+            "hash": "136e3fbe19158e73e4bfebf3f2d98a9df8638b7e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 6173448,
+                "id": "Q6173448"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          "type": "statement",
+          "qualifiers": {
+            "P585": [
+              {
+                "snaktype": "value",
+                "property": "P585",
+                "hash": "7661f66dd5b82a1ea92515ddb16c09ce3088edea",
+                "datavalue": {
+                  "value": {
+                    "time": "+2022-10-31T00:00:00Z",
+                    "timezone": 0,
+                    "before": 0,
+                    "after": 0,
+                    "precision": 11,
+                    "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                  },
+                  "type": "time"
+                },
+                "datatype": "time"
+              }
+            ]
+          },
+          "qualifiers-order": [
+            "P585"
+          ],
+          "id": "Q836531$0042667D-128A-4894-9C4E-7613DE754F02",
+          "rank": "normal"
+        }
+      ],
+      "P856": [
+        {
+          "mainsnak": {
+            "snaktype": "value",
+            "property": "P856",
+            "hash": "0a168e42f246f65760f817e015ebccc2c656a559",
+            "datavalue": {
+              "value": "http://museumsrajasthan.gov.in/monument/hawa-mahal",
+              "type": "string"
+            },
+            "datatype": "url"
+          },
+          "type": "statement",
+          "id": "Q836531$4B2D7B1F-9E55-4D39-9E52-E0F1C5EABFCD",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "b988f9b24aad3a1f2820e618e80d7771e7816285",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "c60ff6958b296682e7d5f424dbec24ea1ca0a07b",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 24237997,
+                        "id": "Q24237997"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P4656": [
+                  {
+                    "snaktype": "value",
+                    "property": "P4656",
+                    "hash": "f7df70f8e29c0e4d9461c55d98f6d82e97f36388",
+                    "datavalue": {
+                      "value": "https://it.wikivoyage.org/wiki/Jaipur?oldid=776375",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              },
+              "snaks-order": [
+                "P143",
+                "P4656"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "sitelinks": {
+      "arwiki": {
+        "site": "arwiki",
+        "title": "قصر الرياح",
+        "badges": []
+      },
+      "arzwiki": {
+        "site": "arzwiki",
+        "title": "قصر الرياح",
+        "badges": []
+      },
+      "astwiki": {
+        "site": "astwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "aswiki": {
+        "site": "aswiki",
+        "title": "হাৱা মহল",
+        "badges": []
+      },
+      "bawiki": {
+        "site": "bawiki",
+        "title": "Һауа-Махал",
+        "badges": []
+      },
+      "bewiki": {
+        "site": "bewiki",
+        "title": "Палац Вятроў",
+        "badges": []
+      },
+      "bgwiki": {
+        "site": "bgwiki",
+        "title": "Хава Махал",
+        "badges": []
+      },
+      "bnwiki": {
+        "site": "bnwiki",
+        "title": "হাওয়া মহল",
+        "badges": []
+      },
+      "cawiki": {
+        "site": "cawiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "ckbwiki": {
+        "site": "ckbwiki",
+        "title": "ھەوا مەحەل",
+        "badges": []
+      },
+      "commonswiki": {
+        "site": "commonswiki",
+        "title": "Category:Hawa Mahal",
+        "badges": []
+      },
+      "cswiki": {
+        "site": "cswiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "dewiki": {
+        "site": "dewiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "enwiki": {
+        "site": "enwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "eswiki": {
+        "site": "eswiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "euwiki": {
+        "site": "euwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "fawiki": {
+        "site": "fawiki",
+        "title": "هوا محل",
+        "badges": []
+      },
+      "fiwiki": {
+        "site": "fiwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "frwiki": {
+        "site": "frwiki",
+        "title": "Palais des vents",
+        "badges": []
+      },
+      "guwiki": {
+        "site": "guwiki",
+        "title": "હવા મહેલ",
+        "badges": []
+      },
+      "hewiki": {
+        "site": "hewiki",
+        "title": "ארמון הרוחות",
+        "badges": []
+      },
+      "hiwiki": {
+        "site": "hiwiki",
+        "title": "हवामहल",
+        "badges": []
+      },
+      "hrwiki": {
+        "site": "hrwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "hywiki": {
+        "site": "hywiki",
+        "title": "Հավա Մահալ",
+        "badges": []
+      },
+      "idwiki": {
+        "site": "idwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "itwiki": {
+        "site": "itwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "jawiki": {
+        "site": "jawiki",
+        "title": "ハワー・マハル",
+        "badges": []
+      },
+      "knwiki": {
+        "site": "knwiki",
+        "title": "ಹವಾ ಮಹಲ್",
+        "badges": []
+      },
+      "kowiki": {
+        "site": "kowiki",
+        "title": "하와마할",
+        "badges": []
+      },
+      "kswiki": {
+        "site": "kswiki",
+        "title": "ہوا مَحل",
+        "badges": []
+      },
+      "lbwiki": {
+        "site": "lbwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "lowiki": {
+        "site": "lowiki",
+        "title": "ຫະວາມາຮາລ",
+        "badges": []
+      },
+      "mlwiki": {
+        "site": "mlwiki",
+        "title": "ഹവാ മഹൽ",
+        "badges": []
+      },
+      "mrwiki": {
+        "site": "mrwiki",
+        "title": "हवा महल",
+        "badges": []
+      },
+      "mtwiki": {
+        "site": "mtwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "nlwiki": {
+        "site": "nlwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "nowiki": {
+        "site": "nowiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "ocwiki": {
+        "site": "ocwiki",
+        "title": "Palais dei Vents",
+        "badges": []
+      },
+      "orwiki": {
+        "site": "orwiki",
+        "title": "ହାୱା ମହଲ",
+        "badges": []
+      },
+      "pawiki": {
+        "site": "pawiki",
+        "title": "ਹਵਾ ਮਹਿਲ",
+        "badges": []
+      },
+      "plwiki": {
+        "site": "plwiki",
+        "title": "Pałac Wiatrów",
+        "badges": []
+      },
+      "pnbwiki": {
+        "site": "pnbwiki",
+        "title": "ہوا محل",
+        "badges": []
+      },
+      "ptwiki": {
+        "site": "ptwiki",
+        "title": "Palácio dos Ventos",
+        "badges": []
+      },
+      "rowiki": {
+        "site": "rowiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "ruwiki": {
+        "site": "ruwiki",
+        "title": "Хава-Махал",
+        "badges": []
+      },
+      "slwiki": {
+        "site": "slwiki",
+        "title": "Hava Mahal",
+        "badges": []
+      },
+      "srwiki": {
+        "site": "srwiki",
+        "title": "Hava Mahal",
+        "badges": []
+      },
+      "svwiki": {
+        "site": "svwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "tawiki": {
+        "site": "tawiki",
+        "title": "ஹவா மஹால்",
+        "badges": []
+      },
+      "tewiki": {
+        "site": "tewiki",
+        "title": "హవా మహల్",
+        "badges": []
+      },
+      "thwiki": {
+        "site": "thwiki",
+        "title": "หะวามหัล",
+        "badges": []
+      },
+      "ukwiki": {
+        "site": "ukwiki",
+        "title": "Гава-Магал",
+        "badges": []
+      },
+      "urwiki": {
+        "site": "urwiki",
+        "title": "ہوا محل",
+        "badges": []
+      },
+      "uzwiki": {
+        "site": "uzwiki",
+        "title": "Hava Mahal",
+        "badges": []
+      },
+      "viwiki": {
+        "site": "viwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "warwiki": {
+        "site": "warwiki",
+        "title": "Hawa Mahal",
+        "badges": []
+      },
+      "wuuwiki": {
+        "site": "wuuwiki",
+        "title": "风之宫",
+        "badges": []
+      },
+      "zh_yuewiki": {
+        "site": "zh_yuewiki",
+        "title": "風之宮",
+        "badges": []
+      },
+      "zhwiki": {
+        "site": "zhwiki",
+        "title": "风之宫",
+        "badges": []
+      }
+    }
+  }
+}
