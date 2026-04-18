@@ -8,7 +8,6 @@ const requestSchema = z.object({
   selectedEra: z.enum(ERA_LENS_IDS),
   selectedInterpretationLens: z.enum(INTERPRETATION_LENS_IDS),
   tripLength: z.string().min(1),
-  pace: z.string().min(1),
 });
 
 export async function POST(request: Request) {

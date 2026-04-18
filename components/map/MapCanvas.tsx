@@ -33,6 +33,7 @@ interface MapCanvasProps {
   enableFocusFly?: boolean;
   compact?: boolean;
   showSatellite?: boolean;
+  overviewMode?: boolean;
 }
 
 function configureBasemap(map: mapboxgl.Map) {
@@ -114,6 +115,7 @@ export default function MapCanvas({
   enableFocusFly = true,
   compact = false,
   showSatellite = false,
+  overviewMode = false,
 }: MapCanvasProps) {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
@@ -125,28 +127,12 @@ export default function MapCanvas({
   const previousSceneRef = useRef("");
   const initialViewRef = useRef({ destination, compact });
 
-  // Refs for current data so satellite toggle can re-apply after style load
-  const currentPlacesRef = useRef(places);
-  const currentRouteRef = useRef(routeCoordinates);
-  const currentActivePlaceIdRef = useRef(activePlaceId);
-  const currentShowMarkersRef = useRef(showMarkers);
-  const currentShowRouteRef = useRef(showRoute);
-  const currentShowLabelsRef = useRef(showLabels);
-
   // Increment to force data-update effect after satellite style loads
   const [styleRevision, setStyleRevision] = useState(0);
 
   useEffect(() => {
     latestSelectRef.current = onMarkerSelect;
   }, [onMarkerSelect]);
-
-  // Keep data refs current every render
-  currentPlacesRef.current = places;
-  currentRouteRef.current = routeCoordinates;
-  currentActivePlaceIdRef.current = activePlaceId;
-  currentShowMarkersRef.current = showMarkers;
-  currentShowRouteRef.current = showRoute;
-  currentShowLabelsRef.current = showLabels;
 
   // Map initialization
   useEffect(() => {
@@ -225,7 +211,6 @@ export default function MapCanvas({
     });
 
     map.setStyle(targetStyle);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showSatellite]);
 
   // Data update — runs when any relevant prop or styleRevision changes
@@ -264,6 +249,20 @@ export default function MapCanvas({
     previousActivePlaceRef.current = activePlaceId;
     previousSceneRef.current = sceneKey;
 
+    if (overviewMode && showMarkers && places.length > 1) {
+      const points = places.map((place) => [place.lng, place.lat] as [number, number]);
+      const bounds = points.reduce(
+        (acc, point) => acc.extend(point),
+        new mapboxgl.LngLatBounds(points[0], points[0]),
+      );
+      map.fitBounds(bounds, {
+        padding: compact ? 56 : 84,
+        duration: 900,
+        essential: true,
+      });
+      return;
+    }
+
     if (destinationChanged || (!showMarkers && sceneChanged)) {
       map.fitBounds(destination.bounds, {
         padding: compact ? 48 : 72,
@@ -274,12 +273,14 @@ export default function MapCanvas({
     }
 
     if (showMarkers && enableFocusFly && activePlace && (activePlaceChanged || sceneChanged)) {
-      map.easeTo({
+      map.flyTo({
         center: [activePlace.lng, activePlace.lat],
         zoom: Math.max(destination.zoom + 1.2, 13),
-        pitch: compact ? 28 : 42,
-        bearing: compact ? 4 : 8,
-        duration: 900,
+        pitch: compact ? 32 : 56,
+        bearing: (activeIndex * 36) % 360,
+        speed: 0.8,
+        curve: 1.42,
+        duration: 1400,
         essential: true,
       });
     }
@@ -293,6 +294,7 @@ export default function MapCanvas({
     showLabels,
     showMarkers,
     showRoute,
+    overviewMode,
     styleRevision,
   ]);
 
